@@ -1,2 +1,2 @@
 # mobile-sdk
-If your business have an mobile app. You can use this SDK to integration with MoMo
+If your business have a mobile app. You can use this SDK to integrate MoMo app into your app.

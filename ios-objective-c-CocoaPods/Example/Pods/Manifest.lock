@@ -1,0 +1,22 @@
+PODS:
+  - MoMoiOSsdkv2 (2.2.0)
+
+DEPENDENCIES:
+  - MoMoiOSsdkv2 (from `https://github.com/momodevelopment/MoMoiOSsdkv2.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  MoMoiOSsdkv2:
+    :branch: master
+    :git: https://github.com/momodevelopment/MoMoiOSsdkv2.git
+
+CHECKOUT OPTIONS:
+  MoMoiOSsdkv2:
+    :commit: dc2979099341c9e64cc64b329f1f248795da93b4
+    :git: https://github.com/momodevelopment/MoMoiOSsdkv2.git
+
+SPEC CHECKSUMS:
+  MoMoiOSsdkv2: 89dd2aac52332c29aad9b7ccfba7d3e06f56b647
+
+PODFILE CHECKSUM: 639c45be52da71454bdbb1db306e6e1d2778172c
+
+COCOAPODS: 1.2.1

@@ -1,0 +1,719 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E644A661A3703A86C11F385B3C08BB /* momo_lock_symbol.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6EFA0EA018E15DFEB15256257A2DC1 /* momo_lock_symbol.png */; };
+		05103755E243699885DF14B634AF6EB7 /* MoMoiOSsdkv2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8C5B5C3BA1E9DD23087CF8153EF0F5 /* MoMoiOSsdkv2-dummy.m */; };
+		384BD542C7974378344DAD60E8FBFD24 /* momo_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D12A32F932ABF7CDE182987FBE8CD70 /* momo_back.png */; };
+		43DA65BDA7A589BDC9C1B3D08C8324A6 /* MoMoPayment.h in Headers */ = {isa = PBXBuildFile; fileRef = 415D1F1AE916E799A8A0F03E389A26AD /* MoMoPayment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A034B99EFE4DD087160277F5FF56AE9 /* momo_ic_reload.png in Resources */ = {isa = PBXBuildFile; fileRef = C284B04E0C93505B1E63B1CE292232D3 /* momo_ic_reload.png */; };
+		8750534C05B5DE23AE03627966720838 /* momo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66241BC780E1C549DA7C96CF486A933E /* momo@2x.png */; };
+		8FD6DC9E7D362CB40778F7F3F8BBEFC2 /* MoMoiOSsdkv2-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BE32C961FA5AB5AB2CFFE5D5748479AE /* MoMoiOSsdkv2-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		917D0262192CE35D607DF5C4E7872633 /* momoclose.png in Resources */ = {isa = PBXBuildFile; fileRef = 209D663D403FA25242D7082CEB772629 /* momoclose.png */; };
+		91908FCF6D192AC893295BDCABBE8815 /* momo_highlights.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A09460B04A8693AC3EA7EE8BBF3B6 /* momo_highlights.png */; };
+		91C789F70850486BC9D63FCE855840CC /* momo_highlights@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2608B322CA9B2221E88039953F8E0F33 /* momo_highlights@2x.png */; };
+		93552D355BEEB692FC689780F7090255 /* Pods-MoMoiOSsdkv2_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBBAC9759CE74385076E2C3DF5A3809 /* Pods-MoMoiOSsdkv2_Example-dummy.m */; };
+		93ACEDFD3D437F46CE0C06376AB67C2F /* MoMoiOSsdkv2.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD6988895EC60F4DCB8E4553A98D8E83 /* MoMoiOSsdkv2.bundle */; };
+		9BDBD6E3ABDDAAA2CC1B5CF26278D1D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A391A87A76D430313EF5D600E421B2C9 /* MoMoDialogs.h in Headers */ = {isa = PBXBuildFile; fileRef = EFB51779ED6946AB360CA0894E8A4CAC /* MoMoDialogs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0DC45868592ECE73B63E100FFB6108E /* momo.png in Resources */ = {isa = PBXBuildFile; fileRef = C36C4B9C62EBC1BE13B469F531D5DEF0 /* momo.png */; };
+		B20CF16AFED3E1A31E32A1BB15E7A28F /* MoMoPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 52368D75DAF7157BCB32446051861C69 /* MoMoPayment.m */; };
+		C230941D5DCF0CDC767EE0791C3974E7 /* MoMoConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A39048DAD3EA71CDA320C37FE30AD6C7 /* MoMoConfig.m */; };
+		CB4D42691741ADF7814F910E21A26CA9 /* MoMoDialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = 934597CCAAB04CF005C4676006030572 /* MoMoDialogs.m */; };
+		CF9563BBD88F3D70FBA01466CD198F8E /* Pods-MoMoiOSsdkv2_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AD613634A7A1A4470B72891117167BAA /* Pods-MoMoiOSsdkv2_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF254D36C40D615BC59907C7C51FD718 /* MoMoConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 11887B5BE0F37E20ED5418799F6C5216 /* MoMoConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1AD41F150896BE7BA9B2EAE4C53617E /* momo_ic_reload_press.png in Resources */ = {isa = PBXBuildFile; fileRef = CC4D8253F5BE70F0DA864B0D1FE97474 /* momo_ic_reload_press.png */; };
+		F458B27378D592C120B511D437C98F70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		08FDE07F00EE36E1EFC530CF7DE59597 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA075D1A7D5E413E37469EB61DC5E7CF;
+			remoteInfo = MoMoiOSsdkv2;
+		};
+		C251C96DFEFD4D6A0D8498C1502AC69B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18E44692788942FF85770BF0FCFABD21;
+			remoteInfo = "MoMoiOSsdkv2-MoMoiOSsdkv2";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11887B5BE0F37E20ED5418799F6C5216 /* MoMoConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MoMoConfig.h; path = MoMoiOSsdkv2/Classes/MoMoConfig.h; sourceTree = "<group>"; };
+		1866A61A16BC3F1C3A26A0410B5C0420 /* Pods-MoMoiOSsdkv2_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoMoiOSsdkv2_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		1F1A74F8D8102E5032B5D357D5F64BA2 /* Pods-MoMoiOSsdkv2_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MoMoiOSsdkv2_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		209D663D403FA25242D7082CEB772629 /* momoclose.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = momoclose.png; path = MoMoiOSsdkv2/Assets/momoclose.png; sourceTree = "<group>"; };
+		243297373015541493D205D0C0926117 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2608B322CA9B2221E88039953F8E0F33 /* momo_highlights@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "momo_highlights@2x.png"; path = "MoMoiOSsdkv2/Assets/momo_highlights@2x.png"; sourceTree = "<group>"; };
+		3B3687FA062608A1F23F3571580F4B95 /* MoMoiOSsdkv2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MoMoiOSsdkv2.framework; path = MoMoiOSsdkv2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C69B84416E1F4E832C876E506FDA186 /* Pods-MoMoiOSsdkv2_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoMoiOSsdkv2_Example.release.xcconfig"; sourceTree = "<group>"; };
+		3D2A09460B04A8693AC3EA7EE8BBF3B6 /* momo_highlights.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = momo_highlights.png; path = MoMoiOSsdkv2/Assets/momo_highlights.png; sourceTree = "<group>"; };
+		415D1F1AE916E799A8A0F03E389A26AD /* MoMoPayment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MoMoPayment.h; path = MoMoiOSsdkv2/Classes/MoMoPayment.h; sourceTree = "<group>"; };
+		4546905D635F3DE396B7276877C7B295 /* Pods-MoMoiOSsdkv2_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoMoiOSsdkv2_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		52368D75DAF7157BCB32446051861C69 /* MoMoPayment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MoMoPayment.m; path = MoMoiOSsdkv2/Classes/MoMoPayment.m; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		66241BC780E1C549DA7C96CF486A933E /* momo@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "momo@2x.png"; path = "MoMoiOSsdkv2/Assets/momo@2x.png"; sourceTree = "<group>"; };
+		8C8C5B5C3BA1E9DD23087CF8153EF0F5 /* MoMoiOSsdkv2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MoMoiOSsdkv2-dummy.m"; sourceTree = "<group>"; };
+		934597CCAAB04CF005C4676006030572 /* MoMoDialogs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MoMoDialogs.m; path = MoMoiOSsdkv2/Classes/MoMoDialogs.m; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9BBBAC9759CE74385076E2C3DF5A3809 /* Pods-MoMoiOSsdkv2_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MoMoiOSsdkv2_Example-dummy.m"; sourceTree = "<group>"; };
+		9D12A32F932ABF7CDE182987FBE8CD70 /* momo_back.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = momo_back.png; path = MoMoiOSsdkv2/Assets/momo_back.png; sourceTree = "<group>"; };
+		9EBDE28CAACA103F68050952154FE928 /* Pods-MoMoiOSsdkv2_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MoMoiOSsdkv2_Example-frameworks.sh"; sourceTree = "<group>"; };
+		A39048DAD3EA71CDA320C37FE30AD6C7 /* MoMoConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MoMoConfig.m; path = MoMoiOSsdkv2/Classes/MoMoConfig.m; sourceTree = "<group>"; };
+		AD613634A7A1A4470B72891117167BAA /* Pods-MoMoiOSsdkv2_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MoMoiOSsdkv2_Example-umbrella.h"; sourceTree = "<group>"; };
+		AD6988895EC60F4DCB8E4553A98D8E83 /* MoMoiOSsdkv2.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MoMoiOSsdkv2.bundle; path = MoMoiOSsdkv2.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B33FA3CCBEA0DD75FE7A476562754977 /* Pods-MoMoiOSsdkv2_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MoMoiOSsdkv2_Example.modulemap"; sourceTree = "<group>"; };
+		BD1DCCFFF066EFE57E809429A9FD9BC6 /* ResourceBundle-MoMoiOSsdkv2-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MoMoiOSsdkv2-Info.plist"; sourceTree = "<group>"; };
+		BE32C961FA5AB5AB2CFFE5D5748479AE /* MoMoiOSsdkv2-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MoMoiOSsdkv2-umbrella.h"; sourceTree = "<group>"; };
+		C284B04E0C93505B1E63B1CE292232D3 /* momo_ic_reload.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = momo_ic_reload.png; path = MoMoiOSsdkv2/Assets/momo_ic_reload.png; sourceTree = "<group>"; };
+		C36C4B9C62EBC1BE13B469F531D5DEF0 /* momo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = momo.png; path = MoMoiOSsdkv2/Assets/momo.png; sourceTree = "<group>"; };
+		CC4D8253F5BE70F0DA864B0D1FE97474 /* momo_ic_reload_press.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = momo_ic_reload_press.png; path = MoMoiOSsdkv2/Assets/momo_ic_reload_press.png; sourceTree = "<group>"; };
+		DE13C85EAEA3037DCED67D4F76F35E9A /* Pods_MoMoiOSsdkv2_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MoMoiOSsdkv2_Example.framework; path = "Pods-MoMoiOSsdkv2_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8A72ABA67F786DC869AB088130C6EB1 /* MoMoiOSsdkv2-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MoMoiOSsdkv2-prefix.pch"; sourceTree = "<group>"; };
+		EBE423A9475AADAEA8C484676AB6893C /* MoMoiOSsdkv2.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoMoiOSsdkv2.xcconfig; sourceTree = "<group>"; };
+		EC6EFA0EA018E15DFEB15256257A2DC1 /* momo_lock_symbol.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = momo_lock_symbol.png; path = MoMoiOSsdkv2/Assets/momo_lock_symbol.png; sourceTree = "<group>"; };
+		EFB51779ED6946AB360CA0894E8A4CAC /* MoMoDialogs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MoMoDialogs.h; path = MoMoiOSsdkv2/Classes/MoMoDialogs.h; sourceTree = "<group>"; };
+		F109A8EBA08BF5E3675CFA137FA258D1 /* Pods-MoMoiOSsdkv2_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MoMoiOSsdkv2_Example-resources.sh"; sourceTree = "<group>"; };
+		F19D3CC09E23A4855C31C0933E64AC41 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC4E50CCB354F5993C20A076FDD0FCF1 /* MoMoiOSsdkv2.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MoMoiOSsdkv2.modulemap; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		08CF7AFC9EE1BE5BA2B29FD5E2098247 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F458B27378D592C120B511D437C98F70 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9226EB4296200EA40241E0ECD5CA7A09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDBD6E3ABDDAAA2CC1B5CF26278D1D7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99DA103F4CBECEB70C2F4433D5874610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		011E36667A53D2EFE565B3EEAC195649 /* Pods-MoMoiOSsdkv2_Example */ = {
+			isa = PBXGroup;
+			children = (
+				F19D3CC09E23A4855C31C0933E64AC41 /* Info.plist */,
+				B33FA3CCBEA0DD75FE7A476562754977 /* Pods-MoMoiOSsdkv2_Example.modulemap */,
+				1F1A74F8D8102E5032B5D357D5F64BA2 /* Pods-MoMoiOSsdkv2_Example-acknowledgements.markdown */,
+				1866A61A16BC3F1C3A26A0410B5C0420 /* Pods-MoMoiOSsdkv2_Example-acknowledgements.plist */,
+				9BBBAC9759CE74385076E2C3DF5A3809 /* Pods-MoMoiOSsdkv2_Example-dummy.m */,
+				9EBDE28CAACA103F68050952154FE928 /* Pods-MoMoiOSsdkv2_Example-frameworks.sh */,
+				F109A8EBA08BF5E3675CFA137FA258D1 /* Pods-MoMoiOSsdkv2_Example-resources.sh */,
+				AD613634A7A1A4470B72891117167BAA /* Pods-MoMoiOSsdkv2_Example-umbrella.h */,
+				4546905D635F3DE396B7276877C7B295 /* Pods-MoMoiOSsdkv2_Example.debug.xcconfig */,
+				3C69B84416E1F4E832C876E506FDA186 /* Pods-MoMoiOSsdkv2_Example.release.xcconfig */,
+			);
+			name = "Pods-MoMoiOSsdkv2_Example";
+			path = "Target Support Files/Pods-MoMoiOSsdkv2_Example";
+			sourceTree = "<group>";
+		};
+		193C836822625912A7EF036046ED471F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B3D6E366F85CA95399DA712432A99E7 /* MoMoiOSsdkv2 */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4B3D6E366F85CA95399DA712432A99E7 /* MoMoiOSsdkv2 */ = {
+			isa = PBXGroup;
+			children = (
+				11887B5BE0F37E20ED5418799F6C5216 /* MoMoConfig.h */,
+				A39048DAD3EA71CDA320C37FE30AD6C7 /* MoMoConfig.m */,
+				EFB51779ED6946AB360CA0894E8A4CAC /* MoMoDialogs.h */,
+				934597CCAAB04CF005C4676006030572 /* MoMoDialogs.m */,
+				415D1F1AE916E799A8A0F03E389A26AD /* MoMoPayment.h */,
+				52368D75DAF7157BCB32446051861C69 /* MoMoPayment.m */,
+				EAB642ACCDF81DE9DBF6E5C2C7C0AB51 /* Resources */,
+				D5492FDCCE2A10E050AF77103E5BFACD /* Support Files */,
+			);
+			name = MoMoiOSsdkv2;
+			path = MoMoiOSsdkv2;
+			sourceTree = "<group>";
+		};
+		5290268996D6CD240BE6AD82ECBF4C99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD6988895EC60F4DCB8E4553A98D8E83 /* MoMoiOSsdkv2.bundle */,
+				3B3687FA062608A1F23F3571580F4B95 /* MoMoiOSsdkv2.framework */,
+				DE13C85EAEA3037DCED67D4F76F35E9A /* Pods_MoMoiOSsdkv2_Example.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				193C836822625912A7EF036046ED471F /* Pods */,
+				5290268996D6CD240BE6AD82ECBF4C99 /* Products */,
+				B934EF06423D7D3A3F9A497D4C62B190 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B934EF06423D7D3A3F9A497D4C62B190 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				011E36667A53D2EFE565B3EEAC195649 /* Pods-MoMoiOSsdkv2_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D5492FDCCE2A10E050AF77103E5BFACD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				243297373015541493D205D0C0926117 /* Info.plist */,
+				FC4E50CCB354F5993C20A076FDD0FCF1 /* MoMoiOSsdkv2.modulemap */,
+				EBE423A9475AADAEA8C484676AB6893C /* MoMoiOSsdkv2.xcconfig */,
+				8C8C5B5C3BA1E9DD23087CF8153EF0F5 /* MoMoiOSsdkv2-dummy.m */,
+				E8A72ABA67F786DC869AB088130C6EB1 /* MoMoiOSsdkv2-prefix.pch */,
+				BE32C961FA5AB5AB2CFFE5D5748479AE /* MoMoiOSsdkv2-umbrella.h */,
+				BD1DCCFFF066EFE57E809429A9FD9BC6 /* ResourceBundle-MoMoiOSsdkv2-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MoMoiOSsdkv2";
+			sourceTree = "<group>";
+		};
+		EAB642ACCDF81DE9DBF6E5C2C7C0AB51 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C36C4B9C62EBC1BE13B469F531D5DEF0 /* momo.png */,
+				66241BC780E1C549DA7C96CF486A933E /* momo@2x.png */,
+				9D12A32F932ABF7CDE182987FBE8CD70 /* momo_back.png */,
+				3D2A09460B04A8693AC3EA7EE8BBF3B6 /* momo_highlights.png */,
+				2608B322CA9B2221E88039953F8E0F33 /* momo_highlights@2x.png */,
+				C284B04E0C93505B1E63B1CE292232D3 /* momo_ic_reload.png */,
+				CC4D8253F5BE70F0DA864B0D1FE97474 /* momo_ic_reload_press.png */,
+				EC6EFA0EA018E15DFEB15256257A2DC1 /* momo_lock_symbol.png */,
+				209D663D403FA25242D7082CEB772629 /* momoclose.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1E8B7B61046F24DD39C2C9C80D67AC6A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF9563BBD88F3D70FBA01466CD198F8E /* Pods-MoMoiOSsdkv2_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93CFFCBDD5B2C3C4C8CBA55EA04D9CEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF254D36C40D615BC59907C7C51FD718 /* MoMoConfig.h in Headers */,
+				A391A87A76D430313EF5D600E421B2C9 /* MoMoDialogs.h in Headers */,
+				8FD6DC9E7D362CB40778F7F3F8BBEFC2 /* MoMoiOSsdkv2-umbrella.h in Headers */,
+				43DA65BDA7A589BDC9C1B3D08C8324A6 /* MoMoPayment.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		18E44692788942FF85770BF0FCFABD21 /* MoMoiOSsdkv2-MoMoiOSsdkv2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9B7968E9B3C15944020892F68F1154C /* Build configuration list for PBXNativeTarget "MoMoiOSsdkv2-MoMoiOSsdkv2" */;
+			buildPhases = (
+				F7AE54CBFB1B25395D52BC34644E4E23 /* Sources */,
+				99DA103F4CBECEB70C2F4433D5874610 /* Frameworks */,
+				E5A589E79B64761307ADE6B0E321045A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MoMoiOSsdkv2-MoMoiOSsdkv2";
+			productName = "MoMoiOSsdkv2-MoMoiOSsdkv2";
+			productReference = AD6988895EC60F4DCB8E4553A98D8E83 /* MoMoiOSsdkv2.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		56999AC6A0CBF5DE405538D86BB1BC9A /* Pods-MoMoiOSsdkv2_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25C572BAEEDED96B6174203F4F026F47 /* Build configuration list for PBXNativeTarget "Pods-MoMoiOSsdkv2_Example" */;
+			buildPhases = (
+				ADED71695FD342045F83E637D8EFFA38 /* Sources */,
+				08CF7AFC9EE1BE5BA2B29FD5E2098247 /* Frameworks */,
+				1E8B7B61046F24DD39C2C9C80D67AC6A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17CB5F4A47B25CC7F2C6C8F7BD3301BB /* PBXTargetDependency */,
+			);
+			name = "Pods-MoMoiOSsdkv2_Example";
+			productName = "Pods-MoMoiOSsdkv2_Example";
+			productReference = DE13C85EAEA3037DCED67D4F76F35E9A /* Pods_MoMoiOSsdkv2_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA075D1A7D5E413E37469EB61DC5E7CF /* MoMoiOSsdkv2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6F5D865A2016006081759ED43C6248B /* Build configuration list for PBXNativeTarget "MoMoiOSsdkv2" */;
+			buildPhases = (
+				59666F9FD242E79A3309E660B48C4C6C /* Sources */,
+				9226EB4296200EA40241E0ECD5CA7A09 /* Frameworks */,
+				EDF692D4856BF3075A39885BB9A3E3F6 /* Resources */,
+				93CFFCBDD5B2C3C4C8CBA55EA04D9CEA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A3B5779AA7753FC0286954D4A1C1F9B7 /* PBXTargetDependency */,
+			);
+			name = MoMoiOSsdkv2;
+			productName = MoMoiOSsdkv2;
+			productReference = 3B3687FA062608A1F23F3571580F4B95 /* MoMoiOSsdkv2.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 5290268996D6CD240BE6AD82ECBF4C99 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA075D1A7D5E413E37469EB61DC5E7CF /* MoMoiOSsdkv2 */,
+				18E44692788942FF85770BF0FCFABD21 /* MoMoiOSsdkv2-MoMoiOSsdkv2 */,
+				56999AC6A0CBF5DE405538D86BB1BC9A /* Pods-MoMoiOSsdkv2_Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E5A589E79B64761307ADE6B0E321045A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0DC45868592ECE73B63E100FFB6108E /* momo.png in Resources */,
+				8750534C05B5DE23AE03627966720838 /* momo@2x.png in Resources */,
+				384BD542C7974378344DAD60E8FBFD24 /* momo_back.png in Resources */,
+				91908FCF6D192AC893295BDCABBE8815 /* momo_highlights.png in Resources */,
+				91C789F70850486BC9D63FCE855840CC /* momo_highlights@2x.png in Resources */,
+				7A034B99EFE4DD087160277F5FF56AE9 /* momo_ic_reload.png in Resources */,
+				F1AD41F150896BE7BA9B2EAE4C53617E /* momo_ic_reload_press.png in Resources */,
+				00E644A661A3703A86C11F385B3C08BB /* momo_lock_symbol.png in Resources */,
+				917D0262192CE35D607DF5C4E7872633 /* momoclose.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF692D4856BF3075A39885BB9A3E3F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93ACEDFD3D437F46CE0C06376AB67C2F /* MoMoiOSsdkv2.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59666F9FD242E79A3309E660B48C4C6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C230941D5DCF0CDC767EE0791C3974E7 /* MoMoConfig.m in Sources */,
+				CB4D42691741ADF7814F910E21A26CA9 /* MoMoDialogs.m in Sources */,
+				05103755E243699885DF14B634AF6EB7 /* MoMoiOSsdkv2-dummy.m in Sources */,
+				B20CF16AFED3E1A31E32A1BB15E7A28F /* MoMoPayment.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADED71695FD342045F83E637D8EFFA38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93552D355BEEB692FC689780F7090255 /* Pods-MoMoiOSsdkv2_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7AE54CBFB1B25395D52BC34644E4E23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17CB5F4A47B25CC7F2C6C8F7BD3301BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MoMoiOSsdkv2;
+			target = BA075D1A7D5E413E37469EB61DC5E7CF /* MoMoiOSsdkv2 */;
+			targetProxy = 08FDE07F00EE36E1EFC530CF7DE59597 /* PBXContainerItemProxy */;
+		};
+		A3B5779AA7753FC0286954D4A1C1F9B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MoMoiOSsdkv2-MoMoiOSsdkv2";
+			target = 18E44692788942FF85770BF0FCFABD21 /* MoMoiOSsdkv2-MoMoiOSsdkv2 */;
+			targetProxy = C251C96DFEFD4D6A0D8498C1502AC69B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		157AF0CD5E5AB2A2E74D3B8ECD865185 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53FAD8848AB789C471CF62A4BC9F0A29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C69B84416E1F4E832C876E506FDA186 /* Pods-MoMoiOSsdkv2_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MoMoiOSsdkv2_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MoMoiOSsdkv2_Example/Pods-MoMoiOSsdkv2_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MoMoiOSsdkv2_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		70B43192DCF01206CAAB8D5EF100E8D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBE423A9475AADAEA8C484676AB6893C /* MoMoiOSsdkv2.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MoMoiOSsdkv2/MoMoiOSsdkv2-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MoMoiOSsdkv2/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MoMoiOSsdkv2/MoMoiOSsdkv2.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MoMoiOSsdkv2;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7B07AF674CC6461476AD4FA41C34F612 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBE423A9475AADAEA8C484676AB6893C /* MoMoiOSsdkv2.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MoMoiOSsdkv2";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/MoMoiOSsdkv2/ResourceBundle-MoMoiOSsdkv2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = MoMoiOSsdkv2;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		88EA1F9488BF6B2B39A95E73BF249145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4546905D635F3DE396B7276877C7B295 /* Pods-MoMoiOSsdkv2_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MoMoiOSsdkv2_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MoMoiOSsdkv2_Example/Pods-MoMoiOSsdkv2_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MoMoiOSsdkv2_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8ECFE52D1571FD5FC8BC3C675963478E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBE423A9475AADAEA8C484676AB6893C /* MoMoiOSsdkv2.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MoMoiOSsdkv2/MoMoiOSsdkv2-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MoMoiOSsdkv2/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MoMoiOSsdkv2/MoMoiOSsdkv2.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MoMoiOSsdkv2;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B3BEABA05EE7362095A076EFD3A54982 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBE423A9475AADAEA8C484676AB6893C /* MoMoiOSsdkv2.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MoMoiOSsdkv2";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/MoMoiOSsdkv2/ResourceBundle-MoMoiOSsdkv2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = MoMoiOSsdkv2;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		D7B1487F48E36BAD2CEF0AFCA4908B67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25C572BAEEDED96B6174203F4F026F47 /* Build configuration list for PBXNativeTarget "Pods-MoMoiOSsdkv2_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88EA1F9488BF6B2B39A95E73BF249145 /* Debug */,
+				53FAD8848AB789C471CF62A4BC9F0A29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7B1487F48E36BAD2CEF0AFCA4908B67 /* Debug */,
+				157AF0CD5E5AB2A2E74D3B8ECD865185 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9B7968E9B3C15944020892F68F1154C /* Build configuration list for PBXNativeTarget "MoMoiOSsdkv2-MoMoiOSsdkv2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B07AF674CC6461476AD4FA41C34F612 /* Debug */,
+				B3BEABA05EE7362095A076EFD3A54982 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6F5D865A2016006081759ED43C6248B /* Build configuration list for PBXNativeTarget "MoMoiOSsdkv2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ECFE52D1571FD5FC8BC3C675963478E /* Debug */,
+				70B43192DCF01206CAAB8D5EF100E8D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

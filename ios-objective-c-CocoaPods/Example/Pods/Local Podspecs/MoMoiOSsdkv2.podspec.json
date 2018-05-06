@@ -1,0 +1,27 @@
+{
+  "name": "MoMoiOSsdkv2",
+  "version": "2.2.0",
+  "summary": "MoMo Sdk framework for ObjC.",
+  "description": "MoMo SDK is designed to work with iOS 8.0 or newest. Swift 2.0 , ObjC supported",
+  "homepage": "https://github.com/momodevelopment/MoMoiOSsdkv2",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "momodevelopment": "lanhluu.vn@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/momodevelopment/MoMoiOSsdkv2.git",
+    "tag": "2.2.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "MoMoiOSsdkv2/Classes/**/*",
+  "resource_bundles": {
+    "MoMoiOSsdkv2": [
+      "MoMoiOSsdkv2/Assets/*.png"
+    ]
+  }
+}

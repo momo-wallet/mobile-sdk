@@ -1,0 +1,6 @@
+use_frameworks!
+
+target 'MomoiOSSwiftSdkV2_Example' do
+    #pod 'MomoiOSSwiftSdkV2', :path => '../'
+   pod 'MomoiOSSwiftSdkV2', :git => 'https://github.com/momodevelopment/MomoiOSSwiftSdkV2.git',:branch => "master"
+end

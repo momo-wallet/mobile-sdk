@@ -1,0 +1,6 @@
+framework module Pods_MoMoiOSsdkv2_Example {
+  umbrella header "Pods-MoMoiOSsdkv2_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

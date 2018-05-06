@@ -1,0 +1,6 @@
+framework module MoMoiOSsdkv2 {
+  umbrella header "MoMoiOSsdkv2-umbrella.h"
+
+  export *
+  module * { export * }
+}

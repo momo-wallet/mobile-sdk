@@ -1,0 +1,6 @@
+use_frameworks!
+
+target 'MoMoiOSsdkv2_Example' do
+    #pod 'MoMoiOSsdkv2', :path => '../'
+    pod 'MoMoiOSsdkv2', :git => 'https://github.com/momodevelopment/MoMoiOSsdkv2.git',:branch => "master"
+end

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--pressed state-->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="5dp"/>
+            <gradient android:startColor="@color/btn_selected"
+                      android:endColor="@color/btn_selected"/>
+        </shape>
+    </item>
+    <!--default state-->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="5dp"/>
+            <gradient android:startColor="@color/momo_color"
+                      android:endColor="@color/momo_color"/>
+        </shape>
+    </item>
+</selector>

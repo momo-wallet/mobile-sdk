@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SDK Demo (partner app)</string>
+    <string name="payment_through_momo">"Thanh toán"</string>
+    <string name="mapping_through_momo">"Bắt đầu liên kết"</string>
+    <string name="link_momo">"Liên kết MoMo"</string>
+    <string name="payment_momo">"Thanh toán qua MoMo"</string>
+    <string name="not_receive_info">"Không nhận được thông tin"</string>
+    <string name="not_receive_info_err">"Không gởi được yêu cầu vui lòng kiểm tra lại"</string>
+</resources>

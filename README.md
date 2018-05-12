@@ -1,9 +1,5 @@
 # mobile-sdk
 If your business have a mobile app. You can use this SDK to integrate MoMo app into your app.
-
-# mobile-sdk
--If your business have a mobile app. You can use this SDK to integrate MoMo app into your app.
-  If your business have a mobile app. You can use this SDK to integrate MoMo app into your app.
  
  # iOS App
  ### STEP 1: Config file Plist (CFBundleURLTypes and LSApplicationQueriesSchemes)

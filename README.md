@@ -5,8 +5,8 @@ If your business have a mobile app. You can use this SDK to integrate MoMo app i
 -If your business have a mobile app. You can use this SDK to integrate MoMo app into your app.
   If your business have a mobile app. You can use this SDK to integrate MoMo app into your app.
  
- ## iOS App
- #IMPORTANT: Config file Plist
+ # iOS App
+ ### STEP 1: Config file Plist (CFBundleURLTypes and LSApplicationQueriesSchemes)
  
  ```
  <key>CFBundleURLTypes</key>
@@ -30,6 +30,33 @@ If your business have a mobile app. You can use this SDK to integrate MoMo app i
    <true/>
  </dict>
  ```
- #partnerSchemeId: provided by MoMo , get from business.momo.vn
+- CFBundleURLTypes: add scheme <partnerSchemeId> . Note: partnerSchemeId provided by MoMo , get from business.momo.vn
+ - LSApplicationQueriesSchemes: add scheme "momo"
  
- ## Android App
+ ### STEP 2: Your Button CTA / Open MoMo app. Build the deeplink as bellow
+  ```
+ momo://?action=gettoken&merchantname=CGV Cinemas&amount=99000&merchantcode=CGV01&language=vi&description=Buy ticket&fee=0&ipaddress=192.168.1.154&username=username_accountId@yahoo.com&sdkversion=2.0&appScheme=partnerSchemeId
+```
+- partnerSchemeId: match with partnerSchemeId as Step 1
+```
+Deeplink Params description
+
+Name             Type    REQUIRED ?    Description
+action          String    required      value = gettoken. DO NOT EDIT
+partner         String    option        value = merchant. DO NOT EDIT
+merchantcode    String    required      provided by MoMo. get from business.momo.vn
+merchantname    String    required      partner name / merchant name
+appScheme       String    required      partnerSchemeId provided by MoMo , get from business.momo.vn
+amount          int       required      bill amount total
+language        String    option        DO NOT EDIT. value = vi
+description     String    option        bill description
+fee             int       option        fee amount (just review). default = 0
+username        String    option        billId/user id/user identify/user email
+extra           String    option        decodebase64 json string - that should be more bill extra info
+```
+
+### Sample app ios-objective-c-CocoaPods, ios-swift-CocoaPods
+
+ # Android App
+ 
+ 

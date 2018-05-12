@@ -49,6 +49,7 @@ class ViewController: UIViewController {
         paymentinfo["description"] = "Thanh toán vé may bay Vietjet Air"
         paymentinfo["extra"] = "{\"key1\":\"value1\",\"key2\":\"value2\"}"
         paymentinfo["username"] = payment_userId
+        paymentinfo["appScheme"] = "partnerSchemeId" //<partnerSchemeId>: app uniqueueId provided by MoMo , get from business.momo.vn. PLEASE MAKE SURE TO ADD <partnerSchemeId> TO PLIST file ( URL types > URL Schemes )
         MoMoPayment.sharedInstance.createPaymentInformation(info: paymentinfo)
         
         //STEP 3: INIT LAYOUT - ADD BUTTON PAYMENT VIA MOMO

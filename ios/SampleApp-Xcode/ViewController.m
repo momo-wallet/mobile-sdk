@@ -250,7 +250,7 @@
                                         @"vi",@"language",
                                         @"username_accountId@yahoo.com",@"username",
                                         nil];
-    
+    [paymentinfo setValue:@"partnerSchemeId" forKey:@"appScheme"]; //<partnerSchemeId>: app uniqueueId provided by MoMo , get from business.momo.vn. PLEASE MAKE SURE TO ADD <partnerSchemeId> TO PLIST file ( URL types > URL Schemes )
     
     
      //Development environment (only testing)

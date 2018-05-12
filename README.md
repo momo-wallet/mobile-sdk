@@ -43,7 +43,7 @@ Deeplink Params description
 
 Name             Type    REQUIRED ?    Description
 action          String    required      value = gettoken. DO NOT EDIT
-partner         String    option        value = merchant. DO NOT EDIT
+partner         String    required      value = merchant. DO NOT EDIT
 merchantcode    String    required      provided by MoMo. get from business.momo.vn
 merchantname    String    required      partner name / merchant name
 appScheme       String    required      partnerSchemeId provided by MoMo , get from business.momo.vn
@@ -56,7 +56,28 @@ extra           String    option        decodebase64 json string - that should b
 ```
 
 ### Sample app ios-objective-c-CocoaPods, ios-swift-CocoaPods
-
+    -   https://github.com/momo-wallet/mobile-sdk/tree/master/ios
  # Android App
+
+### Sample app android
+    -   https://github.com/momo-wallet/mobile-sdk/tree/master/android
+ 
+ ## Version
+ 
+ ```
+ Version 2.0
+ ```
+ 
+ ## Authors
+ 
+ * **Lành Lưu** - lanh.luu@mservice . com . vn
+ * **Hưng Đỗ** - hung.do@mservice . com . vn
+ 
+ 
+ ## License
+ Since 2015 (c) MoMo
+ 
+ ## Contact - Support
+ * itc.payment@mservice.com.vn
  
  

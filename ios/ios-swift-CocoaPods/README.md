@@ -145,6 +145,7 @@ func initOrderAndButtonAction() {
         paymentinfo["description"] = "Buy Vietjet Air Ticket"
         paymentinfo["extra"] = "{\"key1\":\"value1\",\"key2\":\"value2\"}"
         paymentinfo["username"] = payment_userId
+        paymentinfo["appScheme"] = "vntrip.vn.app"
         MoMoPayment.sharedInstance.createPaymentInformation(info: paymentinfo)
 
     //STEP 2: ADD BUTTON ACTION TO PAY VIA MOMO WALLET

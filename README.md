@@ -47,8 +47,9 @@ amount          int       required      bill amount total
 language        String    option        DO NOT EDIT. value = vi
 description     String    option        bill description
 fee             int       option        fee amount (just review). default = 0
-username        String    option        billId/user id/user identify/user email
-extra           String    option        decodebase64 json string - that should be more bill extra info
+username        String    option        user id/user identify/user email
+billId          String    option        billId/Oder id
+extra           String    option        json string - that should be more bill extra info
 ```
 
 ### Sample app ios-objective-c-CocoaPods, ios-swift-CocoaPods

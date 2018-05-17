@@ -67,11 +67,12 @@ private void requestPayment() {
         eventValue.put(MoMoParameterNamePayment.AMOUNT, amount);
         eventValue.put(MoMoParameterNamePayment.DESCRIPTION, description);
         //client Optional
+        eventValue.put(MoMoParameterNamePayment.MERCHANT_BILL_ID, "merchant_billId_");	
         eventValue.put(MoMoParameterNamePayment.FEE, fee);
         eventValue.put(MoMoParameterNamePayment.MERCHANT_NAME_LABEL, merchantNameLabel);
 
         //client call webview
-        eventValue.put(MoMoParameterNamePayment.REQUEST_ID,  merchantCode+"-req-28nyli"+ System.currentTimeMillis());
+        eventValue.put(MoMoParameterNamePayment.REQUEST_ID,  merchantCode+"merchant_billId_"+System.currentTimeMillis());
         eventValue.put(MoMoParameterNamePayment.PARTNER_CODE, merchantCode);
 
         JSONObject objExtraData = new JSONObject();

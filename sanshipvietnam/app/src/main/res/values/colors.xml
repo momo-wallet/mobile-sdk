@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#325340</color>
+    <color name="colorPrimaryDark">#325340</color>
+    <color name="colorAccent">#325340</color>
+
+    <color name="momo_color">#E0078C</color>
+    <color name="btn_selected">#7d004c</color>
+
+</resources>

@@ -1,0 +1,1 @@
+include ':app', ':momo_partner_sdk'

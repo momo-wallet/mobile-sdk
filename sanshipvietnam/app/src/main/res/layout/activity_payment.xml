@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF">
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:padding="15dp"
+            android:orientation="vertical"
+            >
+            <TextView android:layout_width="fill_parent"
+                android:id="@+id/tvEnvironment"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:typeface="serif"
+                android:text="Development Environment"
+                android:textColor="#cd1076"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="20sp"/>
+            <TextView android:layout_width="match_parent"
+                android:id="@+id/tvMerchantCode"
+                android:layout_height="wrap_content"
+                android:text="Merchant Code: #your_merchant_code "
+                android:textColor="#000"
+                android:textSize="18sp"/>
+            <TextView android:layout_width="match_parent"
+                android:id="@+id/tvMerchantName"
+                android:layout_height="wrap_content"
+                android:text="Merchant Name: #your_merchant_name"
+                android:textColor="#000"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/edAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Input amount default 10.000đ"/>
+
+            <TextView android:id="@+id/tvMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:layout_marginBottom="20dp"
+                android:hint="show message"
+                />
+
+            <Button
+                android:id="@+id/btnPayMoMo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_through_momo"
+                style="@style/Btn_Style_Confirm" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+

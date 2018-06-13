@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#325340</color>
+    <color name="colorPrimaryDark">#325340</color>
+    <color name="colorAccent">#325340</color>
+
+    <color name="momo_color">#E0078C</color>
+    <color name="btn_selected">#7d004c</color>
+    <color name="statusbar_default">#325340</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="color_url">#d3d3d3</color>
+    <color name="bg_color_url">#396049</color>
+
+</resources>

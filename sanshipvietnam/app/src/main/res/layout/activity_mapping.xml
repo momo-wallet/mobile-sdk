@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF">
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:padding="15dp"
+            android:orientation="vertical"
+            >
+            <TextView android:layout_width="fill_parent"
+                android:id="@+id/tvEnvironment"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:typeface="serif"
+                android:text="Development Environment"
+                android:textColor="#cd1076"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="20sp">
+            </TextView>
+
+            <TextView android:layout_width="match_parent"
+                android:id="@+id/tvClientId"
+                android:layout_height="wrap_content"
+                android:text="Client Id: #client id "
+                android:textColor="#000"
+                android:textSize="18sp"/>
+
+            <TextView android:layout_width="match_parent"
+                android:id="@+id/tvUsername"
+                android:layout_height="wrap_content"
+                android:text="Username: #username "
+                android:textColor="#000"
+                android:textSize="18sp"/>
+
+            <TextView android:layout_width="match_parent"
+                android:id="@+id/tvPartnerCode"
+                android:layout_height="wrap_content"
+                android:text="PartnerCode: #PartnerCode "
+                android:textColor="#000"
+                android:textSize="18sp"/>
+
+            <TextView android:id="@+id/tvMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:hint="show message"
+                android:layout_marginBottom="20dp"
+                />
+            <Button
+                android:id="@+id/btnMappingMoMo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mapping_through_momo"
+                style="@style/Btn_Style_Confirm" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+

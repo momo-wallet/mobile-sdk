@@ -33,7 +33,7 @@ Step 1. Config file Plist
 </dict>
 ```
 Step 2. Import SDK
-AppDelegate instance
+AppDelegate instance - Objective C
 ```
 #import "MoMoPayment.h"
 
@@ -41,6 +41,18 @@ AppDelegate instance
 {
     [[MoMoPayment shareInstant] handleOpenUrl:url];
     return YES;
+}
+```
+AppDelegate instance - Swift
+```
+func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+    MoMoPayment.sharedInstance.handleOpenUrl(url: url, sourceApp: sourceApplication!)
+    return true
+}
+    
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+    MoMoPayment.sharedInstance.handleOpenUrl(url: url, sourceApp: "")
+    return true
 }
 ```
 
@@ -121,13 +133,6 @@ MOMO NOTIFICATION KEYS SHOULD BE REMOVED WHEN THE VIEWCONTROLLERS DEALLOCATING O
           NSLog(@"::MoMoPay Log: %@",message);
       }
   }
-}
--(void)NoficationCenterTokenStartRequest:(NSNotification*)notif
-{
-    if (notif.object != nil && [notif.object isEqualToString:@"MoMoWebDialogs"]) {
-        dialog = [[MoMoDialogs alloc] init];
-        [self presentViewController:dialog animated:YES completion:nil];
-    }
 }
 ```
 Add Button Action to Pay Via MOMO

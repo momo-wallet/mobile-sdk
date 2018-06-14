@@ -25,13 +25,12 @@ let MOMO_PAY_CLIENT_TRANSFER_DESCRIPTION = "description"
 let MOMO_PAY_CLIENT_USERNAME = "username"
 let MOMO_PAY_CLIENT_ACTION = "action"
 let MOMO_NOTIFICATION_CENTER_TOKEN_RECEIVED = "NoficationCenterTokenReceived"
-let MOMO_PAY_CLIENT_ENVIRONTMENT = "MOMO_PAY_CLIENT_ENVIRONTMENT"
 /*
  Sanbox bundleId "momo"
  Production bundleId "com.mservice.com.vn.momotransfer"
  */
-let MOMO_APP_BUNDLE_ID = "com.momo.appv2.ios"
-let MOMO_APP_BUNDLE_ID_PRODUCT = "com.mservice.com.vn.momotransfer"
+let MOMO_APP_BUNDLE_ID = "momo"
+//let MOMO_APP_BUNDLE_ID_PRODUCT = "com.mservice.com.vn.momotransfer"
 let MOMO_PAY_SDK_VERSION = "2.2"
 let MOMO_APP_ITUNES_DOWNLOAD_PATH = "itms-apps://itunes.apple.com/us/app/momo-chuyen-nhan-tien/id918751511"
 
@@ -44,7 +43,7 @@ let MOMO_TOKEN_RESPONSE_LOGIN_REQUIRE = "2"
 let MOMO_TOKEN_RESPONSE_NO_WALLET = "3"
 let MOMO_TOKEN_RESPONSE_USER_CANCELED = "4"
 
-class MoMoConfig {
+public class MoMoConfig {
     enum MOMO_ENVIRONEMENT: Int {
         case DEFAULT = 1, DEVELOPMENT = 2, PRODUCTION = 3
     }
@@ -111,15 +110,6 @@ class MoMoConfig {
     class func getIPAddress() -> String {
         
         return "10.10.100.100"
-    }
-    
-    class func setupEnvironment(type: MoMoConfig.MOMO_ENVIRONEMENT) {
-        Foundation.UserDefaults.standard.setValue(Int(type.rawValue), forKey: MOMO_PAY_CLIENT_ENVIRONTMENT)
-        Foundation.UserDefaults.standard.synchronize()
-    }
-    
-    class func getEnvironment() -> Int {
-        return UserDefaults.standard.integer(forKey: MOMO_PAY_CLIENT_ENVIRONTMENT) 
     }
     
     class func getDeviceInfoString() -> String {

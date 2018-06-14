@@ -1,6 +1,0 @@
-framework module MomoiOSSwiftSdkV2 {
-  umbrella header "MomoiOSSwiftSdkV2-umbrella.h"
-
-  export *
-  module * { export * }
-}

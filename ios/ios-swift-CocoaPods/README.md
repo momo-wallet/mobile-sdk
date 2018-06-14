@@ -120,7 +120,7 @@ override func viewDidLoad() {
 @objc func NoficationCenterTokenReceived(notif: NSNotification) {
         //Token Replied - Call Payment to MoMo Server
         print("::MoMoPay Log::Received Token Replied::\(notif.object!)")
-        lblMessage.text = "RequestToken response:\n  \(notif.object as Any)"
+        //lblMessage.text = "RequestToken response:\n  \(notif.object as Any)"
         
         let response:NSMutableDictionary = notif.object! as! NSMutableDictionary
         
@@ -146,7 +146,7 @@ override func viewDidLoad() {
             orderInfo.setValue(payment_merchantCode,            forKey: "merchantcode");
             orderInfo.setValue(merchant_username,            forKey: "username");
             
-            lblMessage.text = "Get token success! Processing payment..."
+            //lblMessage.text = "Get token success! Processing payment..."
             submitOrderToServer(parram: orderInfo)
             
         }

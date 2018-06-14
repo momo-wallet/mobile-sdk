@@ -154,6 +154,61 @@ override func viewDidLoad() {
             lblMessage.text = "RequestToken response:\n \(notif.object!) | Fail token. Please check input params "
         }
 }
+
+func submitOrderToServer(parram: NSMutableDictionary) {
+        
+    //lblMessage.text = "Please wait..."
+    let when = DispatchTime.now() + 2 // change 5 to desired number of seconds
+    DispatchQueue.main.asyncAfter(deadline: when) {
+        // Your code with delay
+        //self.lblMessage.text = "Submit order...."
+        let alert = UIAlertView()
+        alert.title = "MoMoPay alert"
+        alert.message = "please continue submit param <phonenumber,data> to server side"
+        alert.addButton(withTitle: "Ok")
+        alert.show()
+
+    }
+    print("<MoMoPay> WARNING: implement this feature on your server side")
+
+    /**********END Sample send request on Your Server -To - MoMo Server
+     **********WARNING: must to remove it on your product app
+     **********/
+
+    let API_REQUEST_PATH = "http://staging.partner.com/api/payment"
+
+    do {
+        let jsonData = try JSONSerialization.data(withJSONObject: parram, options: .prettyPrinted)
+        print("requestPayment -> \(jsonData)")
+        // create post request
+        let url = NSURL(string: API_REQUEST_PATH)!
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("gzip", forHTTPHeaderField: "Accept-Encoding")
+        request.httpBody = jsonData
+
+        let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
+            if error != nil{
+                print("Error -> \(String(describing: error))")
+            }
+            else{
+                do {
+                    let result = try JSONSerialization.jsonObject(with: data!, options: []) as? [String:AnyObject]
+                    print("Response-> \(String(describing: result))")
+                } catch {
+                    print("Error -> \(error)")
+                }
+            }
+
+        }
+
+        task.resume()
+
+    } catch {
+        print(error)
+    }
+}
 ```
 ## Author
 

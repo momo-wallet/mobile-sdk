@@ -52,9 +52,15 @@ billId          String    option        billId/Oder id
 extra           String    option        json string - that should be more bill extra info
 ```
 
-### Sample app ios-objective-c-CocoaPods, ios-swift-CocoaPods
-    -   https://github.com/momo-wallet/mobile-sdk/tree/master/ios
- # Android App
+
+
+
+
+
+### Sample app ios-swift-CocoaPods
+    -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momodevelopment/MomoiOSSwiftSdk.git", :branch => "master", submodules: true
+
+# Android App
 
 ### Sample app android
     -   https://github.com/momo-wallet/mobile-sdk/tree/master/android

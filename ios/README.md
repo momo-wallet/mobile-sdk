@@ -154,7 +154,7 @@ override func viewDidLoad() {
             lblMessage.text = "RequestToken response:\n \(notif.object!) | Fail token. Please check input params "
         }
 }
-
+```
 ## Author
 
 MoMo Development Team

@@ -18,25 +18,21 @@ struct Version{
     static let iOS9 = (Version.SYS_VERSION_FLOAT >= 9.0 && Version.SYS_VERSION_FLOAT < 10.0)
     static let iOS10 = (Version.SYS_VERSION_FLOAT >= 10.0)
 }
-class MoMoPayment: NSObject {
+public class MoMoPayment: NSObject {
     class var sharedInstance:MoMoPayment {
         return _sharedInstance
     }
     
-    open func initMerchant(merchantCode merchantcode: String, merchantName merchantname: String, merchantNameLabel merchantnamelabel: String) {
+    public static func initMerchant(merchantCode: String, merchantName: String, merchantNameLabel: String) {
         
-        MoMoConfig .setMerchantcode(merchantCode: merchantcode)
-        MoMoConfig .setMerchantname(merchantName: merchantname)
-        MoMoConfig .setMerchantnameLabel(merchantnameLabel: merchantnamelabel)
+        MoMoConfig .setMerchantcode(merchantCode: merchantCode)
+        MoMoConfig .setMerchantname(merchantName: merchantName)
+        MoMoConfig .setMerchantnameLabel(merchantnameLabel: merchantNameLabel)
         MoMoConfig .setPublickey(merchantpublickey:"")
-        print("<MoMoPay> initializing successful - Your merchantcode \(merchantcode)")
+        print("<MoMoPay> initializing successful - Your merchantcode \(merchantCode)")
     }
     
-    open func setupEnvironment(environment: MoMoConfig.MOMO_ENVIRONEMENT){
-        MoMoConfig .setupEnvironment(type: environment)
-    }
-    
-    open func handleOpenUrl(url: URL, sourceApp: String) {
+    public static func handleOpenUrl(url: URL, sourceApp: String) {
         //let sourceURI = url.absoluteString! as String
         let sourceURI = url.absoluteString;
         let response = getDictionaryFromUrlQuery(query: sourceURI)
@@ -69,14 +65,14 @@ class MoMoPayment: NSObject {
         }
     }
     
-    func getQueryStringParameter(url: String?, param: String) -> String? {
+    public static func getQueryStringParameter(url: String?, param: String) -> String? {
         if let url = url, let urlComponents = URLComponents(string: url), let queryItems = (urlComponents.queryItems) {
             return queryItems.filter({ (item) in item.name == param }).first?.value ?? "NIL"
         }
         return "NIL"
     }
     
-    open func getDictionaryFromUrlQuery(query: String) -> (NSDictionary) {
+    public static func getDictionaryFromUrlQuery(query: String) -> (NSDictionary) {
         let info : NSMutableDictionary = NSMutableDictionary()
         //let openUrl:URL = URL(string:query)!
         let momoappversion:String = getQueryStringParameter(url: query,param: "momoappversion")!
@@ -110,23 +106,22 @@ class MoMoPayment: NSObject {
         return info
     }
     
-    open func createPaymentInformation(info: NSMutableDictionary) {
-        info[MOMO_PAY_CLIENT_ACTION]   = MOMO_PAY_SDK_ACTION_GETTOKEN
+    public static func createPaymentInformation(info: NSMutableDictionary) {
         paymentInfo = info
     }
     
-    @objc open func addMoMoPayCustomButton(button: UIButton, forControlEvents controlEvents: UIControlEvents, toView parrentView: UIView) -> UIButton {
-        
-        button.addTarget(self, action: #selector(self.requestToken), for: .touchUpInside)
-        
-        parrentView.addSubview(button)
-        return button
-    }
+//    @objc open func addMoMoPayCustomButton(button: UIButton, forControlEvents controlEvents: UIControlEvents, toView parrentView: UIView) -> UIButton {
+//        
+//        button.addTarget(self, action: #selector(self.requestToken), for: .touchUpInside)
+//        
+//        parrentView.addSubview(button)
+//        return button
+//    }
     
     
-    @objc open func requestToken() {
+    public static func requestToken() {
 
-        if (paymentInfo as NSMutableDictionary!) == nil {
+        if (paymentInfo as NSMutableDictionary?) == nil {
             print("<MoMoPay> Payment pakageApp should not be null.")
             return;
         }
@@ -134,20 +129,16 @@ class MoMoPayment: NSObject {
         print("<MoMoPay> requestToken")
         let bundleId = Bundle.main.bundleIdentifier
         //Open MoMo App to get token
-        var inputParams = "action=\(MoMoConfig.getAction())&partner=merchant"
-        paymentInfo?[MOMO_PAY_CLIENT_MERCHANT_CODE_KEY] = MoMoConfig.getMerchantcode()
-        paymentInfo?[MOMO_PAY_CLIENT_MERCHANT_NAME_KEY] = MoMoConfig.getMerchantname()
-        paymentInfo?[MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY] = MoMoConfig.getMerchantnameLabel()
+        var inputParams = "action=\(MOMO_PAY_SDK_ACTION_GETTOKEN)&partner=merchant"
+        //paymentInfo?[MOMO_PAY_CLIENT_MERCHANT_CODE_KEY] = MoMoConfig.getMerchantcode()
+        //paymentInfo?[MOMO_PAY_CLIENT_MERCHANT_NAME_KEY] = MoMoConfig.getMerchantname()
+        //paymentInfo?[MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY] = MoMoConfig.getMerchantnameLabel()
         paymentInfo?[MOMO_PAY_CLIENT_PUBLIC_KEY_KEY] = ""
         paymentInfo?[MOMO_PAY_CLIENT_IP_ADDRESS_KEY] = MoMoConfig.getIPAddress()
         paymentInfo?[MOMO_PAY_CLIENT_OS_KEY] = MoMoConfig.getDeviceInfoString()
         paymentInfo?[MOMO_PAY_CLIENT_APP_SOURCE_KEY] = bundleId
         paymentInfo?[MOMO_PAY_SDK_VERSION_KEY] = MOMO_PAY_SDK_VERSION
         for key in (paymentInfo?.allKeys)! {
-            //
-            //inputParams = "\(inputParams)&\(key)=\(paymentInfo?[key] as! String)"
-            print("<MoMoPay> key \(key)")
-            
             let _value = paymentInfo?[key] as? String ;
             if _value == nil {
                 inputParams.append("&\(key as! String)=\(paymentInfo?[key] as! Int)")
@@ -173,17 +164,12 @@ class MoMoPayment: NSObject {
                 else {
                     inputParams.append("&\(key as! String)=\(paymentInfo?[key] as! String)")
                 }
-                
+                print("<MoMoPay> request param > \(key) = \(paymentInfo?[key] as! String)")
             }
             
         }
         
-        var appSource:String = "\(MOMO_APP_BUNDLE_ID_PRODUCT)://?\(inputParams)"
-        
-        let _env = MoMoConfig.getEnvironment()
-        if (_env < 3){
-            appSource = "\(MOMO_APP_BUNDLE_ID)://?\(inputParams)"
-        }
+        var appSource:String = "\(MOMO_APP_BUNDLE_ID)://?\(inputParams)"
         
         appSource = appSource.removingPercentEncoding! as String
         appSource = appSource.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
@@ -234,7 +220,7 @@ class MoMoPayment: NSObject {
 
     open func requestPayment(parram: NSMutableDictionary) {
         print("<MoMoPay> please implement this function by your self")
-        
+        //
     }
     
 }

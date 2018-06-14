@@ -89,8 +89,8 @@ override func viewDidLoad() {
     paymentinfo["merchantname"] = "CGV Cinemas"
     paymentinfo["merchantnamelabel"] = "Service"
 
-    paymentinfo["amount"] = payment_amount
-    paymentinfo["fee"] = payment_fee_display
+    paymentinfo["amount"] = 20000
+    paymentinfo["fee"] = 0
     paymentinfo["description"] = "Thanh toán vé xem phim"
     paymentinfo["extra"] = "{\"key1\":\"value1\",\"key2\":\"value2\"}"
     paymentinfo["username"] = payment_userId

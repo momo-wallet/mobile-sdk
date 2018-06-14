@@ -37,7 +37,7 @@ Step 1. Config file Plist
     <string></string>
     <key>CFBundleURLSchemes</key>
     <array>
-      <string>momopartner0001</string>
+      <string>momopartnerscheme001</string>
     </array>
   </dict>
 </array>

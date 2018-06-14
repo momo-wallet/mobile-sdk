@@ -158,7 +158,9 @@ override func viewDidLoad() {
 ## Author
 
 MoMo Development Team
+
 Lanh.Luu lanh.luu @ mservice.com.vn
+
 ## License
 
 MomoiOSSwiftSdk is available under the MIT license. See the LICENSE file for more info.

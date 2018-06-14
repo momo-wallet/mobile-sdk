@@ -1,0 +1,24 @@
+PODS:
+  - MomoiOSSwiftSdk (2.0.0)
+
+DEPENDENCIES:
+  - MomoiOSSwiftSdk (from `https://github.com/momodevelopment/MomoiOSSwiftSdk.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  MomoiOSSwiftSdk:
+    :branch: master
+    :git: https://github.com/momodevelopment/MomoiOSSwiftSdk.git
+    :submodules: true
+
+CHECKOUT OPTIONS:
+  MomoiOSSwiftSdk:
+    :commit: bb5bcf08a3486f24d4539786a536fd44fa742940
+    :git: https://github.com/momodevelopment/MomoiOSSwiftSdk.git
+    :submodules: true
+
+SPEC CHECKSUMS:
+  MomoiOSSwiftSdk: ddc963228e693d2480a188ea8ad4b001c4ec694f
+
+PODFILE CHECKSUM: 73844fb9a1ddcdca4e2c7d5a2f473246023b6c2c
+
+COCOAPODS: 1.5.2

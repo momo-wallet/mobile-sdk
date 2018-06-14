@@ -1,0 +1,22 @@
+{
+  "name": "MomoiOSSwiftSdk",
+  "version": "2.0.0",
+  "summary": "MoMo mobile SDK",
+  "description": "Mobile framework to payment",
+  "homepage": "https://github.com/momodevelopment/MomoiOSSwiftSdk.git",
+  "license": "MIT",
+  "authors": {
+    "Lanh Luu": "lanh.luu@mservice.com.vn"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/momodevelopment/MomoiOSSwiftSdk.git",
+    "tag": "2.0.0"
+  },
+  "source_files": [
+    "MomoiOSSwiftSdk",
+    "**/*"
+  ]
+}

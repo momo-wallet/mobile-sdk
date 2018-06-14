@@ -1,0 +1,6 @@
+framework module MomoiOSSwiftSdk {
+  umbrella header "MomoiOSSwiftSdk-umbrella.h"
+
+  export *
+  module * { export * }
+}

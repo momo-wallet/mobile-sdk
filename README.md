@@ -45,13 +45,14 @@ merchantname    String    required      partner name / merchant name
 appScheme       String    required      partnerSchemeId provided by MoMo , get from business.momo.vn
 amount          int       required      bill amount total
 description     String    required      bill description
-language        String    option        DO NOT EDIT. value = vi
-fee             int       option        fee amount (just review). default = 0
-username        String    option        user id/user identify/user email
-billId          String    option        billId/Oder id
-extra           String    option        json string - that should be more bill extra info
+language        String    optional        DO NOT EDIT. value = vi
+fee             int       optional        fee amount (just review). default = 0
+username        String    optional        user id/user identify/user email
+billId          String    optional        billId/Oder id
+orderLabel      String    optional        Contract Number 
+orderId         String    optional        Contract id
+extra           String    optional        json string - that should be more bill extra info
 ```
-
 
 
 

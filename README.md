@@ -49,7 +49,7 @@ language        String    optional        DO NOT EDIT. value = vi
 fee             int       optional        fee amount (just review). default = 0
 username        String    optional        user id/user identify/user email
 billId          String    optional        billId/Oder id
-orderLabel      String    optional        Contract Number 
+orderLabel      String    optional        Contract Number Hint/Label  
 orderId         String    optional        Contract id
 extra           String    optional        json string - that should be more bill extra info
 ```

@@ -37,21 +37,22 @@ If your business have a mobile app. You can use this SDK to integrate MoMo app i
 ```
 Deeplink Params description
 
-Name             Type    REQUIRED ?    Description
-action          String    required      value = gettoken. DO NOT EDIT
-partner         String    required      value = merchant. DO NOT EDIT
-merchantcode    String    required      provided by MoMo. get from business.momo.vn
-merchantname    String    required      partner name / merchant name
-appScheme       String    required      partnerSchemeId provided by MoMo , get from business.momo.vn
-amount          int       required      bill amount total
-description     String    required      bill description
-language        String    optional        DO NOT EDIT. value = vi
-fee             int       optional        fee amount (just review). default = 0
-username        String    optional        user id/user identify/user email
-billId          String    optional        billId/Oder id
-orderLabel      String    optional        Contract Number Hint/Label  
-orderId         String    optional        Contract id
-extra           String    optional        json string - that should be more bill extra info
+Name                    Type      REQUIRED ?     Description
+action                 String    required      value = gettoken. DO NOT EDIT
+partner                String    required      value = merchant. DO NOT EDIT
+merchantcode           String    required      provided by MoMo. get from business.momo.vn
+merchantname           String    required      partner name / merchant name
+merchantnamelabel      String    optional      Merchantname Hint/Label
+appScheme              String    required      partnerSchemeId provided by MoMo , get from business.momo.vn
+amount                 int       required      bill amount total
+description            String    required      bill description
+language               String    optional        DO NOT EDIT. value = vi
+fee                    int       optional        fee amount (just review). default = 0
+username               String    optional        user id/user identify/user email
+billId                 String    optional        billId/Oder id
+orderLabel             String    optional        Contract Number Hint/Label  
+orderId                String    optional        Contract id
+extra                  String    optional        json string - that should be more bill extra info
 ```
 
 

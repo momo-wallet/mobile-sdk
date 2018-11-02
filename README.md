@@ -60,7 +60,6 @@ extra                  String    optional        json string - that should be mo
     -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momodevelopment/MomoiOSSwiftSdk.git", :branch => "master", submodules: true
 
 
-# Android App - Mobile SDK
 
 # Android App
 

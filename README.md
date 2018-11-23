@@ -1,9 +1,9 @@
 # mobile-sdk
 If your business have a mobile app. You can use this SDK to integrate MoMo app into your app.
- 
+
  # iOS APP
  ### STEP 1: Config file Plist (CFBundleURLTypes and LSApplicationQueriesSchemes)
- 
+
  ```
  <key>CFBundleURLTypes</key>
  <array>
@@ -28,7 +28,7 @@ If your business have a mobile app. You can use this SDK to integrate MoMo app i
  ```
 - CFBundleURLTypes: add scheme <partnerSchemeId> . Note: partnerSchemeId provided by MoMo , get from business.momo.vn
  - LSApplicationQueriesSchemes: add scheme "momo"
- 
+
  ### STEP 2: Your Button CTA / Open MoMo app. Build the deeplink as bellow
   ```
  momo://?action=gettoken&merchantname=CGV Cinemas&amount=99000&merchantcode=CGV01&language=vi&description=Buy ticket&fee=0&ipaddress=192.168.1.154&username=username_accountId@yahoo.com&sdkversion=2.0&appScheme=partnerSchemeId
@@ -86,10 +86,10 @@ allprojects {
 Add the dependency:
 ```
 dependencies {
-	        compile 'com.github.momo-wallet:mobile-sdk:1.0.2'
+	        compile 'com.github.momodevelopment:androidsdkV2.2:0.8'
 }
 ```
- 
+
 Step 2. Config AndroidMainfest
 ```
 <uses-permission android:name="android.permission.INTERNET" />
@@ -108,15 +108,15 @@ private String merchantCode = "SCB01";
 private String merchantNameLabel = "Nhà cung cấp";
 private String description = "Thanh toán dịch vụ ABC";
 
-void onCreate(Bundle savedInstanceState) 
+void onCreate(Bundle savedInstanceState)
         AppMoMoLib.getInstance().setEnvironment(AppMoMoLib.ENVIRONMENT.DEVELOPMENT); // AppMoMoLib.ENVIRONMENT.PRODUCTION
 ```
 - Display MoMo button label language (required): English = "MoMo e-wallet", Vietnamese = "Ví MoMo"
-- Display icon or button color (optional): title color #b0006d , icon http://app.momo.vn:81/momo_app/logo/MoMo.png 
+- Display icon or button color (optional): title color #b0006d , icon http://app.momo.vn:81/momo_app/logo/MoMo.png
 
 Step 4. Get token & request payment
 ```
-//Get token through MoMo app 
+//Get token through MoMo app
 private void requestPayment() {
         AppMoMoLib.getInstance().setAction(AppMoMoLib.ACTION.PAYMENT);
         AppMoMoLib.getInstance().setActionType(AppMoMoLib.ACTION_TYPE.GET_TOKEN);
@@ -130,7 +130,7 @@ private void requestPayment() {
         eventValue.put(MoMoParameterNamePayment.AMOUNT, amount);
         eventValue.put(MoMoParameterNamePayment.DESCRIPTION, description);
         //client Optional
-        eventValue.put(MoMoParameterNamePayment.MERCHANT_BILL_ID, "merchant_billId_");	
+        eventValue.put(MoMoParameterNamePayment.MERCHANT_BILL_ID, "merchant_billId_");
         eventValue.put(MoMoParameterNamePayment.FEE, fee);
         eventValue.put(MoMoParameterNamePayment.MERCHANT_NAME_LABEL, merchantNameLabel);
 
@@ -153,29 +153,27 @@ private void requestPayment() {
         eventValue.put(MoMoParameterNamePayment.EXTRA_DATA, objExtraData.toString());
         eventValue.put(MoMoParameterNamePayment.REQUEST_TYPE, "payment");
         eventValue.put(MoMoParameterNamePayment.LANGUAGE, "vi");
-        eventValue.put(MoMoParameterNamePayment.SUBMIT_URL_WEB, MOMO_WEB_SDK_DEV);
-        
 
         eventValue.put(MoMoParameterNamePayment.EXTRA, "");
         AppMoMoLib.getInstance().requestMoMoCallBack(this, eventValue);
 
 
-    } 
-//Get token callback from MoMo app an submit to server side 
+    }
+//Get token callback from MoMo app an submit to server side
 void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == AppMoMoLib.getInstance().REQUEST_CODE_MOMO && resultCode == -1) {
             if(data != null) {
                 if(data.getIntExtra("status", -1) == 0) {
-                    //TOKEN IS AVAILABLE 
+                    //TOKEN IS AVAILABLE
                     tvMessage.setText("message: " + "Get token " + data.getStringExtra("message"));
-                    String token = data.getStringExtra("data"); //Token response 
+                    String token = data.getStringExtra("data"); //Token response
                     String phoneNumber = data.getStringExtra("phonenumber");
                     String env = data.getStringExtra("env");
                     if(env == null){
                         env = "app";
                     }
-                    
+
                     if(token != null && !token.equals("")) {
                         // TODO: send phoneNumber & token to your server side to process payment with MoMo server
                         // IF Momo topup success, continue to process your order
@@ -183,7 +181,7 @@ void onActivityResult(int requestCode, int resultCode, Intent data) {
                         tvMessage.setText("message: " + this.getString(R.string.not_receive_info));
                     }
                 } else if(data.getIntExtra("status", -1) == 1) {
-                    //TOKEN FAIL 
+                    //TOKEN FAIL
                     String message = data.getStringExtra("message") != null?data.getStringExtra("message"):"Thất bại";
                     tvMessage.setText("message: " + message);
                 } else if(data.getIntExtra("status", -1) == 2) {
@@ -203,23 +201,21 @@ void onActivityResult(int requestCode, int resultCode, Intent data) {
 ```
 ### Sample app android
     -   https://github.com/momo-wallet/mobile-sdk/tree/master/android
- 
+
  ## Version
- 
+
  ```
  Version 2.0
  ```
- 
+
  ## Authors
- 
+
  * **Lành Lưu** - lanh.luu@mservice . com . vn
  * **Hưng Đỗ** - hung.do@mservice . com . vn
- 
- 
+
+
  ## License
  Since 2015 (c) MoMo
- 
+
  ## Contact - Support
  * itc.payment@mservice.com.vn
- 
- 

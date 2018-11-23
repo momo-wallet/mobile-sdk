@@ -1,0 +1,62 @@
+
+<!--
+ ***************************
+ Author: Lanh Luu
+ Dated: 28/06/2018
+ lanh.luu@mservice.com.vn
+ Copyright @MoMo
+ ***************************
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MoMo Universal Link Tool</title>
+  <link rel="stylesheet" href="./resource/jquery-ui.css">
+<script src="./resource/jquery-3.1.0.min.js"></script>
+  <script src="./resource/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="./resource/universallink.css" />
+  <script src="./resource/universalsdk.js"></script>
+  <style>
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        table {
+        	font-size: 1em;
+        }
+  </style>
+
+</head>
+<body>
+      <div class="header" id="headerMain">
+        <div id="logo"><a href="#"><img class="img-responsive" alt="Ví MoMo"/></a>
+        &nbsp;</div>
+      </div>
+      <div class="content">
+      <div class="mobile_site container-fluid" style="overflow-x: hidden; padding: 0px 15px 0px 15px !important;">
+              
+      </div>
+      <div class="footer">
+        <span>© 2018</span>
+        <span>Powered by MoMo Development</span>
+      </div>
+      <script>
+          window.onscroll = function() { scrollHandler()};
+          var header = document.getElementById("headerMain");
+          var sticky = header.offsetTop;
+          function scrollHandler() {
+            if (window.pageYOffset > sticky) {
+              header.classList.add("sticky");
+            } else {
+              header.classList.remove("sticky");
+            }
+          }
+      </script>
+
+      <script>
+          window.jQuery || document.write('<script src="js/vendor/jquery-3.1.0.min.js"><\/script>')
+      </script>
+</body>
+</html>

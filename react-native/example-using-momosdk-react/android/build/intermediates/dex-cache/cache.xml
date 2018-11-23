@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/72c1f48b29ad4b8559a8fd1bdf7076cb95d67d09/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ba16f8b75456b392d8107bc3ed63877b8469ac45">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_cd2f64bcbfca868d358885442b2e8ee920cfc001.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.facebook.infer.annotation/infer-annotation/0.11.2/f514ff4ca022a579d9cf7524846988b646ae4491/infer-annotation-0.11.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="f514ff4ca022a579d9cf7524846988b646ae4491">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/infer-annotation-0.11.2_9aad5f574ba45c05ee23adf1897a9b8aa4faeb55.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/Documents/TestLab/example_momosdk/node_modules/react-native-momosdk/android/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d4980cfad92182a334abd13945c9a125d41ebfa8">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_18b8b417d3d865c02d32224bab73db19d60df8c6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/eba7a1ffe6cad9125f5b643be7f94aea8180988d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="26e08c73415d43f2fa1cca5212d2e4d650503ddd">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_c49bd8deec7bcb2844719921a90dd1cb757b2b00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/66d3e83e51a45473ecaa4c01af16b35247c4b0d3/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="e3b76ad3c1f40d13f12aa2458deaca8d6820a5e7">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_081b0f005463d6a920583e6500fb60d55b1a7029.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/0ecb07d702f0060ccd895da2ca86502781decf6c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="3304d33470ff64cf83bce9189ff3648a42eb2aa7">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_18b1c64bc2b0487a798835cbfcacfcc55dd471a6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.11.0/54ec442e9c0fac51265110cf0cb44dfe5ad1ea05/okhttp-urlconnection-3.11.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="54ec442e9c0fac51265110cf0cb44dfe5ad1ea05">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.11.0_1ca498673b806ddfa6d436ed1e026d9987ed4d42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_7fd884f1739587db6bf300c309ce170dd10a45b7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/98e6abf17fefbb22c814b56001e141137c28cf93/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="2feadd535770271ca57b7b431f42151aa4af324a">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_b142ed993be7edd572041ab3619366117fdda2b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/9aebe883478be5cc1a2824eaf85d2871ca562edc/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="874f1143c11f5d38533efe512bf913e3e847e7df">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_16614bab7bab59b9c15d145560ea2acbfaa3297e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.11.0/75966e05a49046ca2ae734e5626f28837a8d1e82/okhttp-3.11.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="75966e05a49046ca2ae734e5626f28837a8d1e82">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/okhttp-3.11.0_25f743fbc33065745c2a09894f63fe5e39317088.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/700dd9d821ecf7039718d1dbd3dd27dd2e3e2346/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="bf98d9bbac6d175c40d9a3d1d8da77fbbcf0a81c">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_ca6ec81bc37e4110400af86ef77c18a73a426f40.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/54858c060094f9499009c6bfb07938051762cd34/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="71d380aeac037e63bab7bda2ba211777e16a2f42">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_f62450c26b3cacf1403c1fe278b39c82d9826d7c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/77dd4e140e2df0e90bada0e36700f11d31a3af23/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="cc5b65162cf57363b4a924805f16947660918cdf">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_a16d9b2630c9c7ef7e0d91536680d9b5107052f9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/27.1.1/39ded76b5e1ce1c5b2688e1d25cdc20ecee32007/support-annotations-27.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="39ded76b5e1ce1c5b2688e1d25cdc20ecee32007">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/support-annotations-27.1.1_e4d6cc191265f50c0aed76652574f36007737e59.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.facebook.infer.annotation/infer-annotation/0.11.2/f514ff4ca022a579d9cf7524846988b646ae4491/infer-annotation-0.11.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f514ff4ca022a579d9cf7524846988b646ae4491">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/infer-annotation-0.11.2_9aad5f574ba45c05ee23adf1897a9b8aa4faeb55.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/Documents/TestLab/example_momosdk/node_modules/react-native-momosdk/android/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="c6a2e1647139cbd38d4bd9aaa433f388b3bb21c6">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_18b8b417d3d865c02d32224bab73db19d60df8c6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/3eef083349c6ddf2d8ccc597c7318fe5ce486795/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="61741c492af29679431ed009915fe0538dd6b1ce">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_aaacb90b1a7de9f720c5ff12765081988c812bab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/cdfe47a1af886a862e590f00e9511050e80232c8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ec657bb192b20229696216bf233779b16bf75a54">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_dc9195d8372e1264b9b5bf8f41ad8a3ce8cb01eb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/66d3e83e51a45473ecaa4c01af16b35247c4b0d3/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e3b76ad3c1f40d13f12aa2458deaca8d6820a5e7">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_081b0f005463d6a920583e6500fb60d55b1a7029.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/eba7a1ffe6cad9125f5b643be7f94aea8180988d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="26e08c73415d43f2fa1cca5212d2e4d650503ddd">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_c49bd8deec7bcb2844719921a90dd1cb757b2b00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/98e6abf17fefbb22c814b56001e141137c28cf93/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2feadd535770271ca57b7b431f42151aa4af324a">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_b142ed993be7edd572041ab3619366117fdda2b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/da2487b7808d188b5e41b834cd65f817a14d2577/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2648a2080054daa5ff07cbce9fded91153be4b11">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_ffa4f535ac65d6b4c76ca57bb64d373f4fa6ebef.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.1.0/8007981f7d7540d89cd18471b8e5dcd2b4f99167/common-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="8007981f7d7540d89cd18471b8e5dcd2b4f99167">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/common-1.1.0_25ccb2831fc6dd153f5876d41bac0b8704e0fb53.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/0ecb07d702f0060ccd895da2ca86502781decf6c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="3304d33470ff64cf83bce9189ff3648a42eb2aa7">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_18b1c64bc2b0487a798835cbfcacfcc55dd471a6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/700dd9d821ecf7039718d1dbd3dd27dd2e3e2346/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="bf98d9bbac6d175c40d9a3d1d8da77fbbcf0a81c">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_ca6ec81bc37e4110400af86ef77c18a73a426f40.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/77dd4e140e2df0e90bada0e36700f11d31a3af23/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="cc5b65162cf57363b4a924805f16947660918cdf">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_a16d9b2630c9c7ef7e0d91536680d9b5107052f9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="25ea2e8b0c338a877313bd4672d3fe056ea78f0d">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.2_80aab5874e6a0ef5b712379139f9248bd0a0a64f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/da2487b7808d188b5e41b834cd65f817a14d2577/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="2648a2080054daa5ff07cbce9fded91153be4b11">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_ffa4f535ac65d6b4c76ca57bb64d373f4fa6ebef.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.11.0/75966e05a49046ca2ae734e5626f28837a8d1e82/okhttp-3.11.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="75966e05a49046ca2ae734e5626f28837a8d1e82">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/okhttp-3.11.0_25f743fbc33065745c2a09894f63fe5e39317088.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_17c694366897cc7db8f987805025167e0776ff73.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/54858c060094f9499009c6bfb07938051762cd34/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="71d380aeac037e63bab7bda2ba211777e16a2f42">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_f62450c26b3cacf1403c1fe278b39c82d9826d7c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/7981fc9873b9e27ef2cd6ff227a7dd676e1e39f5/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="c9a721adcd7dbae7a197b0ef81102336539f63ff">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_20a6084be5bf9607ea574e8ed3f9babae9deea87.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/cdfe47a1af886a862e590f00e9511050e80232c8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="ec657bb192b20229696216bf233779b16bf75a54">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_dc9195d8372e1264b9b5bf8f41ad8a3ce8cb01eb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.1.0/8007981f7d7540d89cd18471b8e5dcd2b4f99167/common-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8007981f7d7540d89cd18471b8e5dcd2b4f99167">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/common-1.1.0_25ccb2831fc6dd153f5876d41bac0b8704e0fb53.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/3eef083349c6ddf2d8ccc597c7318fe5ce486795/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="61741c492af29679431ed009915fe0538dd6b1ce">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_aaacb90b1a7de9f720c5ff12765081988c812bab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/ff6bf17411f644f1b08bac4c3c74dc6423e6b8e9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="23dcb4803d3103bde3f3f5db978a726338fe49ae">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_895a735e2be936e3d842d7397c866ac74ba01446.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/c5ec79006c71a0e87070453993eaad77a1871e8c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="8a9fd7c97f1d13f97f3b52f9d2e54cd857d5acf9">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_4e8026fd6886364a9d0def1a1a92fd169b595e30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/653c993a6427058fd3ce65006cf93c4d37ff3936/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="97e7f5a4a05a245ebaaec93fe8917c066ce00d98">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_001d9b2844c133c1b9164d569b137cdb21908d63.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/0d6c41b1b60daba82b9522137c77b9752c9831fa/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="e2bbe48deed35056023eed2cdc0cc92e5c7d3617">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_88e2f92a463ca8aabfe437198ba0f69c379b9ac0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.1.0/edf3f7bfb84a7521d0599efa3b0113a0ee90f85/common-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="0edf3f7bfb84a7521d0599efa3b0113a0ee90f85">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/common-1.1.0_6d5406da460246acd400cd0c273c098deba62cf3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/ff6bf17411f644f1b08bac4c3c74dc6423e6b8e9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="23dcb4803d3103bde3f3f5db978a726338fe49ae">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_895a735e2be936e3d842d7397c866ac74ba01446.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/14b57335b6446344c15cbc0749f9f46c6d94c32d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="d968b9bd0011800e0d333d1571b8d34bcb8a0b6e">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_d3d17134f10c42572f7e9ac4cc7b613b31b10322.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="25ea2e8b0c338a877313bd4672d3fe056ea78f0d">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.2_80aab5874e6a0ef5b712379139f9248bd0a0a64f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/03424fe5e22b800800966ed46e2810c34a0f5424/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="df777c6b52d3e1840381b41615b99f290201638d">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_3ebef5d9ef82a705a541f79ff7e0a49d88c3bf68.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/824847dc1831e85695aa8b0db52add3ddf46eebc/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="1fd3ceac7f415975323d52c6c6057db409a907f6">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_1de65d396251832d2df9e67dd9d97f990446773d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.14.0/102d7be47241d781ef95f1581d414b0943053130/okio-1.14.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="102d7be47241d781ef95f1581d414b0943053130">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/okio-1.14.0_81f2c251d2e14466e5a44fa5db747cbfa7da2141.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_17c694366897cc7db8f987805025167e0776ff73.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/7981fc9873b9e27ef2cd6ff227a7dd676e1e39f5/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c9a721adcd7dbae7a197b0ef81102336539f63ff">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_20a6084be5bf9607ea574e8ed3f9babae9deea87.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_7fd884f1739587db6bf300c309ce170dd10a45b7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.11.0/54ec442e9c0fac51265110cf0cb44dfe5ad1ea05/okhttp-urlconnection-3.11.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="54ec442e9c0fac51265110cf0cb44dfe5ad1ea05">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.11.0_1ca498673b806ddfa6d436ed1e026d9987ed4d42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/0d6c41b1b60daba82b9522137c77b9752c9831fa/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e2bbe48deed35056023eed2cdc0cc92e5c7d3617">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_88e2f92a463ca8aabfe437198ba0f69c379b9ac0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/c5ec79006c71a0e87070453993eaad77a1871e8c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8a9fd7c97f1d13f97f3b52f9d2e54cd857d5acf9">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_4e8026fd6886364a9d0def1a1a92fd169b595e30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/653c993a6427058fd3ce65006cf93c4d37ff3936/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="97e7f5a4a05a245ebaaec93fe8917c066ce00d98">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_001d9b2844c133c1b9164d569b137cdb21908d63.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.1.0/edf3f7bfb84a7521d0599efa3b0113a0ee90f85/common-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="0edf3f7bfb84a7521d0599efa3b0113a0ee90f85">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/common-1.1.0_6d5406da460246acd400cd0c273c098deba62cf3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/27.1.1/39ded76b5e1ce1c5b2688e1d25cdc20ecee32007/support-annotations-27.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="39ded76b5e1ce1c5b2688e1d25cdc20ecee32007">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/support-annotations-27.1.1_e4d6cc191265f50c0aed76652574f36007737e59.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/9aebe883478be5cc1a2824eaf85d2871ca562edc/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="874f1143c11f5d38533efe512bf913e3e847e7df">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_16614bab7bab59b9c15d145560ea2acbfaa3297e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/03424fe5e22b800800966ed46e2810c34a0f5424/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="df777c6b52d3e1840381b41615b99f290201638d">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_3ebef5d9ef82a705a541f79ff7e0a49d88c3bf68.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/14b57335b6446344c15cbc0749f9f46c6d94c32d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d968b9bd0011800e0d333d1571b8d34bcb8a0b6e">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_d3d17134f10c42572f7e9ac4cc7b613b31b10322.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/824847dc1831e85695aa8b0db52add3ddf46eebc/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="1fd3ceac7f415975323d52c6c6057db409a907f6">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_1de65d396251832d2df9e67dd9d97f990446773d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.android/build-cache/72c1f48b29ad4b8559a8fd1bdf7076cb95d67d09/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="ba16f8b75456b392d8107bc3ed63877b8469ac45">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/classes_cd2f64bcbfca868d358885442b2e8ee920cfc001.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lanhluu/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.14.0/102d7be47241d781ef95f1581d414b0943053130/okio-1.14.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.2"
+        sha1="102d7be47241d781ef95f1581d414b0943053130">
+        <dex dex="/Users/lanhluu/Documents/TestLab/example_momosdk/android/app/build/intermediates/pre-dexed/debug/okio-1.14.0_81f2c251d2e14466e5a44fa5db747cbfa7da2141.jar" />
+    </item>
+
+</items>

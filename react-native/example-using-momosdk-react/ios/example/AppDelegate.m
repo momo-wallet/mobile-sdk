@@ -33,7 +33,6 @@
 
 /*iOS 9 or newest*/
 -(BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
-  //[RNMomosdk emitEventWithName:@"event-emitted" andPayload:@{@"url":url.absoluteString}];
   [RNMomosdk handleOpenUrl:url];
   return YES;
 }

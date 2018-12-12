@@ -123,7 +123,6 @@ override func viewDidLoad() {
     // Do any additional setup after loading the view, typically from a nib.
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenReceived:) name:@"NoficationCenterTokenReceived" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenStartRequest:) name:@"NoficationCenterTokenStartRequest" object:nil];
     ///
     NSMutableDictionary *paymentinfo = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                             [NSNumber numberWithInt:99000],@"amount",

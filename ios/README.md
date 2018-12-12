@@ -65,6 +65,18 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
     MoMoPayment.handleOpenUrl(url: url, sourceApp: "")
     return true
 }
+
+//Objective-c code
+
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    [[MoMoPayment shareInstant] handleOpenUrl:url];
+    return YES;
+}
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    [[MoMoPayment shareInstant] handleOpenUrl:url];
+    return YES;
+}
 ```
 
 Step 3. Update Layout Payment
@@ -230,6 +242,33 @@ func submitOrderToServer(parram: NSMutableDictionary) {
 
     } catch {
         print(error)
+    }
+}
+
+//Objective-c Code
+-(void)processMoMoNoficationCenterTokenReceived:(NSNotification*)notif{
+NSString *sourceText = [NSString stringWithFormat:@"%@",notif.object];
+    
+    NSURL *url = [NSURL URLWithString:sourceText];
+    if (url) {
+        sourceText = url.query;
+    }
+    
+    NSArray *parameters = [sourceText componentsSeparatedByString:@"&"];
+    
+    NSDictionary *response = [self getDictionaryFromComponents:parameters];
+    NSString *status = [NSString stringWithFormat:@"%@",[response objectForKey:@"status"]];
+    NSString *message = [NSString stringWithFormat:@"%@",[response objectForKey:@"message"]];
+    if ([status isEqualToString:@"0"]) {
+        
+        NSLog(@"::MoMoPay Log: SUCESS TOKEN.");
+        NSString *data = [NSString stringWithFormat:@"%@",[response objectForKey:@"data"]];//session data
+        NSString *phoneNumber =  [NSString stringWithFormat:@"%@",[response objectForKey:@"phonenumber"]];//wallet Id
+        NSLog(@">>response::phoneNumber %@ , data:: %@",phoneNumber, data);
+    }
+    else
+    {
+        NSLog(@"::MoMoPay Log: %@",message);
     }
 }
 

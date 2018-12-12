@@ -73,6 +73,7 @@ Step 3. Update Layout Payment
 MOMO NOTIFICATION KEYS SHOULD BE REMOVED WHEN THE VIEWCONTROLLERS DEALLOCATING OR DISMISSING COMPLETED
 (Notification keys: NoficationCenterTokenReceived , NoficationCenterTokenStartRequest)
 ```
+//Swift code
 import MomoiOSSwiftSdk
 
 override func viewDidLoad() {
@@ -114,6 +115,30 @@ override func viewDidLoad() {
 @objc func gettoken() {
     MoMoPayment.requestToken()
 }
+
+
+//Objective-c Code 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenReceived:) name:@"NoficationCenterTokenReceived" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenStartRequest:) name:@"NoficationCenterTokenStartRequest" object:nil];
+    ///
+    NSMutableDictionary *paymentinfo = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                            [NSNumber numberWithInt:99000],@"amount",
+                                            [NSNumber numberWithInt:0],@"fee",
+                                            @"Buy CGV Cinemas",@"description",
+                                            @"{\"key1\":\"value1\",\"key2\":\"value2\"}",@"extra", //OPTIONAL
+                                            @"vi",@"language",
+                                            @"your_orderId",@"orderId",
+                                            @"Người dùng",@"orderLabel",
+                                            @"momopartnerscheme001": @"appScheme",
+                                            nil];
+    //environment MOMO_SDK_PRODUCTION or MOMO_SDK_DEVELOPMENT use only one appScheme "momo"
+    [[MoMoPayment shareInstant] initPaymentInformation:paymentinfo momoAppScheme:@"momo" environment:MOMO_SDK_DEVELOPMENT];
+}
+
 ```
 #Handle MoMoNotificationReceive
 ```

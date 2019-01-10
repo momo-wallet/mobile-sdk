@@ -112,7 +112,7 @@ void onCreate(Bundle savedInstanceState)
         AppMoMoLib.getInstance().setEnvironment(AppMoMoLib.ENVIRONMENT.DEVELOPMENT); // AppMoMoLib.ENVIRONMENT.PRODUCTION
 ```
 - Display MoMo button label language (required): English = "MoMo e-wallet", Vietnamese = "Ví MoMo"
-- Display icon or button color (optional): title color #b0006d , icon http://app.momo.vn:81/momo_app/logo/MoMo.png
+- Display icon or button color (optional): title color #b0006d , icon https://img.mservice.io/momo-payment/icon/images/logo512.png
 
 Step 4. Get token & request payment
 ```

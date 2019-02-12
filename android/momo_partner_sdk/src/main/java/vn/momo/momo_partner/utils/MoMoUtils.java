@@ -2,8 +2,6 @@ package vn.momo.momo_partner.utils;
 
 import android.os.Build;
 import android.util.Base64;
-import org.apache.http.conn.util.InetAddressUtils;
-
 import java.io.UnsupportedEncodingException;
 import java.net.InetAddress;
 import java.net.NetworkInterface;

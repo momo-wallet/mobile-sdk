@@ -50,7 +50,7 @@ const merchantcode = "CGV01";
 const merchantNameLabel = "Nhà cung cấp";
 const billdescription = "Fast and Furious 8";
 const amount = 50000;
-
+const enviroment = "0"; //"1": production
 
 componentDidMount(){
     EventEmitter.addListener('RCTMoMoNoficationCenterRequestTokenReceived', (response) => {
@@ -74,6 +74,7 @@ componentDidMount(){
 onPress = async () => {
     let jsonData = {};
     jsonData.isDev = true; //true: SANBOX , false: PRODUCTION
+    jsonData.enviroment = enviroment;
     jsonData.action = "gettoken"; //DO NOT EDIT
     jsonData.merchantname = merchantname; //edit your merchantname here
     jsonData.merchantcode = merchantcode; //edit your merchantcode here

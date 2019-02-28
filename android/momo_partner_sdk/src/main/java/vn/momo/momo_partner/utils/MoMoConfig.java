@@ -20,9 +20,5 @@ public class MoMoConfig {
     public static final String ACTION_TYPE_GET_TOKEN = "gettoken";//action mapping
     public static final String ACTION_TYPE_LINK = "link";//action payment
 
-    public static final String INTENT_URL_WEB = "url";//dev
-    public static final String INTENT_JSON_DATA = "INTENT_JSON_DATA";//dev
-    public static final String INTENT_URL_REQUEST = "INTENT_URL_REQUEST";//dev
-
     public static final int MOMO_TIME_OUT = 60000;
 }

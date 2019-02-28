@@ -20,6 +20,4 @@ public interface MoMoParameterNamePayment {
     String EXTRA_DATA = "extraData";
     String REQUEST_TYPE = "requestType";
     String LANGUAGE = "language";
-    String SUBMIT_URL_WEB = "SUBMIT_URL_WEB";
-    String MERCHANT_BILL_ID = "billId";
 }

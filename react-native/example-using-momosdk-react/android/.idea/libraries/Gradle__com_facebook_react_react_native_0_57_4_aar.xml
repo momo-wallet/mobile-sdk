@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.facebook.react:react-native:0.57.4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/832b99590b94f80035d3bb4e4063314d76bb902d/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/832b99590b94f80035d3bb4e4063314d76bb902d/output/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../node_modules/react-native/android/com/facebook/react/react-native/0.57.4/react-native-0.57.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../node_modules/react-native/android/com/facebook/react/react-native/0.57.4/react-native-0.57.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -11,7 +11,6 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -38,7 +37,6 @@ public class PaymentActivity extends Activity {
     private String merchantCode = "CGV19072017";
     private String merchantNameLabel = "Nhà cung cấp";
     private String description = "Fast & Furious 8";
-    private String MOMO_WEB_SDK_DEV = "http://118.69.187.119:9090/sdk/api/v1/payment/request";//debug
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +65,9 @@ public class PaymentActivity extends Activity {
     private void requestPayment() {
         AppMoMoLib.getInstance().setAction(AppMoMoLib.ACTION.PAYMENT);
         AppMoMoLib.getInstance().setActionType(AppMoMoLib.ACTION_TYPE.GET_TOKEN);
+        //Set token tracking
+        AppMoMoLib.getInstance().setToken("eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNT01PIiwiY3JlYXRlZCI6IlR1ZSBEZWMgMjUgMTU6NTA6MzIgSUNUIDIwMTgiLCJpYXQiOjE1NDU3Mjc4MzJ9.0tv2FgQhFFXcO7vK2lEoTUcduxpCe15siOnbnEjls9E");
+
         if (edAmount.getText().toString() != null && edAmount.getText().toString().trim().length() != 0)
             amount = edAmount.getText().toString().trim();
 
@@ -80,7 +81,6 @@ public class PaymentActivity extends Activity {
         eventValue.put(MoMoParameterNamePayment.FEE, fee);
         eventValue.put(MoMoParameterNamePayment.MERCHANT_NAME_LABEL, merchantNameLabel);
 
-        //client call webview
         eventValue.put(MoMoParameterNamePayment.REQUEST_ID,  merchantCode+"-"+ UUID.randomUUID().toString());
         eventValue.put(MoMoParameterNamePayment.PARTNER_CODE, "CGV19072017");
 
@@ -99,29 +99,16 @@ public class PaymentActivity extends Activity {
         eventValue.put(MoMoParameterNamePayment.EXTRA_DATA, objExtraData.toString());
         eventValue.put(MoMoParameterNamePayment.REQUEST_TYPE, "payment");
         eventValue.put(MoMoParameterNamePayment.LANGUAGE, "vi");
-        eventValue.put(MoMoParameterNamePayment.SUBMIT_URL_WEB, MOMO_WEB_SDK_DEV);
-
-        //client info custom parameter
-//        JSONObject objExtra = new JSONObject();
-//        try {
-//            objExtra.put("mobile", "+840966132647");
-//            objExtra.put("email", "momo-email@gmail.com");
-//            objExtra.put("fullname", "SDK Team");
-//            objExtra.put("lang", "en");
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-
         eventValue.put(MoMoParameterNamePayment.EXTRA, "");
+        //Request momo app
         AppMoMoLib.getInstance().requestMoMoCallBack(this, eventValue);
-
-
     }
 
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        AppMoMoLib.getInstance().trackEventResult(this,data);//request tracking result data
         if(requestCode == AppMoMoLib.getInstance().REQUEST_CODE_MOMO && resultCode == -1) {
             if(data != null) {
                 if(data.getIntExtra("status", -1) == 0) {

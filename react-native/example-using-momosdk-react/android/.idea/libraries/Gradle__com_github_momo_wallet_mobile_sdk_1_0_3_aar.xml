@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.momo-wallet:mobile-sdk:1.0.3@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/c4a35c8174dde454d3c4b3d032318c3c095beef5/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/c4a35c8174dde454d3c4b3d032318c3c095beef5/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

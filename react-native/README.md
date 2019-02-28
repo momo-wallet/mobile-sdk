@@ -73,7 +73,6 @@ componentDidMount(){
 // TODO: Action to Request Payment MoMo App
 onPress = async () => {
     let jsonData = {};
-    jsonData.isDev = true; //true: SANBOX , false: PRODUCTION
     jsonData.enviroment = enviroment;
     jsonData.action = "gettoken"; //DO NOT EDIT
     jsonData.merchantname = merchantname; //edit your merchantname here

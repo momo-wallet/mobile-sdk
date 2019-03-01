@@ -14,6 +14,23 @@
 ### Manual installation
 
 
+#### Android
+
+1. Open up `android/app/src/main/java/[...]/MainActivity.java`
+- Add `import com.reactlibrary.RNMomosdkPackage;` to the imports at the top of the file
+- Add `new RNMomosdkPackage()` to the list returned by the `getPackages()` method
+
+2. Append the following lines to `android/settings.gradle`:
+```
+include ':react-native-momosdk'
+project(':react-native-momosdk').projectDir = new File(rootProject.projectDir,     '../node_modules/react-native-momosdk/android')
+```
+
+3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
+```
+compile project(':react-native-momosdk')
+```
+
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
@@ -21,24 +38,51 @@
 3. In XCode, in the project navigator, select your project. Add `libRNMomosdk.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
-#### Android
+#### Config file Plist (CFBundleURLTypes and LSApplicationQueriesSchemes)
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNMomosdkPackage;` to the imports at the top of the file
-  - Add `new RNMomosdkPackage()` to the list returned by the `getPackages()` method
+```
+ <key>CFBundleURLTypes</key>
+ <array>
+   <dict>
+     <key>CFBundleURLName</key>
+     <string></string>
+     <key>CFBundleURLSchemes</key>
+     <array>
+       <string>partnerSchemeId</string>
+     </array>
+   </dict>
+ </array>
+ <key>LSApplicationQueriesSchemes</key>
+ <array>
+   <string>momo</string>
+ </array>
+ <key>NSAppTransportSecurity</key>
+ <dict>
+   <key>NSAllowsArbitraryLoads</key>
+   <true/>
+ </dict>
+```
 
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-momosdk'
-  	project(':react-native-momosdk').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-momosdk/android')
-  	```
+```
+AppDelegate
+#import "RNMomosdk.h"
+/*iOS 9 or newest*/
+-(BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+  [RNMomosdk handleOpenUrl:url];
+  return YES;
+}
 
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-momosdk')
-  	```
+/*iOS 8 or lower*/
+-(BOOL)application:(UIApplication *)application
+             openURL:(NSURL *)url
+   sourceApplication:(NSString *)sourceApplication
+          annotation:(id)annotation;{
+  [RNMomosdk handleOpenUrl:url];
+  return YES;
+}
+ ```
 
-## Usage
+## Usage & Example code
 ```javascript
 import { Platform, DeviceEventEmitter,NativeModules, NativeEventEmitter} from 'react-native';
 import RNMomosdk from 'react-native-momosdk';
@@ -50,7 +94,8 @@ const merchantcode = "CGV01";
 const merchantNameLabel = "Nhà cung cấp";
 const billdescription = "Fast and Furious 8";
 const amount = 50000;
-const enviroment = "0"; //"1": production
+const enviroment = "0"; //"0": SANBOX , "1": PRODUCTION
+
 
 componentDidMount(){
     EventEmitter.addListener('RCTMoMoNoficationCenterRequestTokenReceived', (response) => {
@@ -64,7 +109,7 @@ componentDidMount(){
                 let message = response.message;
               } else {
                 //let message = response.message;
-                //Has Error: Get message here - status == 5 or status == 6
+                //Has Error: show message here
               }
         }catch(ex){}
     });
@@ -73,7 +118,7 @@ componentDidMount(){
 // TODO: Action to Request Payment MoMo App
 onPress = async () => {
     let jsonData = {};
-    jsonData.enviroment = enviroment;
+    jsonData.enviroment = enviroment; //SANBOX OR PRODUCTION
     jsonData.action = "gettoken"; //DO NOT EDIT
     jsonData.merchantname = merchantname; //edit your merchantname here
     jsonData.merchantcode = merchantcode; //edit your merchantcode here
@@ -103,7 +148,7 @@ async momoHandleResponse(response){
 
     } else {
       //let message = response.message;
-      //Has Error: Get message here - status == 5 or status == 6
+      //Has Error: show message here
     }
   }catch(ex){}
 }

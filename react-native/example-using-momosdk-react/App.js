@@ -101,8 +101,9 @@ export default class App extends Component<Props> {
   onPress = async () => {
     if (!this.state.processing){
       let jsonData = {};
-      jsonData.enviroment = enviroment;
+      jsonData.enviroment = "0"; //"0": SANBOX , "1": PRODUCTION
       jsonData.action = "gettoken";
+      jsonData.isDev = true; //SANBOX only , remove this key on PRODUCTION 
       jsonData.merchantname = merchantname;
       jsonData.merchantcode = merchantcode;
       jsonData.merchantnamelabel = merchantNameLabel;

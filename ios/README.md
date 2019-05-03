@@ -101,6 +101,10 @@ override func viewDidLoad() {
     super.viewDidLoad()
     
     //STEP 1: addObserver Notification
+        //Remove all MOMO NOTIFICATION by self
+    NotificationCenter.default.removeObserver(self, name: "NoficationCenterTokenReceived", object: nil)
+    NotificationCenter.default.removeObserver(self, name: "NoficationCenterTokenReceivedUri", object: nil)
+        //Registration MOMO NOTIFICATION by self
         NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenReceived), name:NSNotification.Name(rawValue: "NoficationCenterTokenReceived"), object: nil)
         //        NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenReceived), name:NSNotification.Name(rawValue: "NoficationCenterTokenReceivedUri"), object: nil)
         //
@@ -110,7 +114,7 @@ override func viewDidLoad() {
     paymentinfo["merchantcode"] = "CGV01"
     paymentinfo["merchantname"] = "CGV Cinemas"
     paymentinfo["merchantnamelabel"] = "Service"
-
+    paymentinfo["orderId"] = "ID123456789"
     paymentinfo["amount"] = 20000
     paymentinfo["fee"] = 0
     paymentinfo["description"] = "Thanh toán vé xem phim"

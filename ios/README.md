@@ -145,8 +145,9 @@ override func viewDidLoad() {
 //Objective-c Code 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-
+    //Remove all MOMO NOTIFICATION by self
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NoficationCenterTokenReceived" object:nil];
+    //Registration MOMO NOTIFICATION by self
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenReceived:) name:@"NoficationCenterTokenReceived" object:nil];
     ///
     NSMutableDictionary *paymentinfo = [[NSMutableDictionary alloc] initWithObjectsAndKeys:

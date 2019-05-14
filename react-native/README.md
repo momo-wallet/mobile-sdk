@@ -1,5 +1,5 @@
 
-# react-native-momosdk v1.2.5
+# react-native-momosdk v1.2.6
 
 ### Module to create e-wallet payment method. That is the way to payment customer's order by their MoMo e-wallet.
 
@@ -107,6 +107,7 @@ componentDidMount(){
                 let momoToken = response.data;
                 let phonenumber = response.phonenumber;
                 let message = response.message;
+                let orderId = response.refOrderId;
               } else {
                 //let message = response.message;
                 //Has Error: show message here
@@ -140,7 +141,7 @@ onPress = async () => {
       let dataPayment = await RNMomosdk.requestPayment(jsonData);
       this.momoHandleResponse(dataPayment);
     }else{
-      RNMomosdk.requestPayment(JSON.stringify(jsonData));
+      RNMomosdk.requestPayment(jsonData);
     }
 }
 

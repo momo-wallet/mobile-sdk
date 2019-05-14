@@ -48,6 +48,14 @@ export default class App extends Component<Props> {
         }catch(ex){}
 
     });
+    
+    //OPTIONAL
+    EventEmitter.addListener('RCTMoMoNoficationCenterRequestTokenState',(response) => {
+        console.log("<MoMoPay>Listen.RequestTokenState:: " + response.status);
+        // status = 1: Parameters valid & ready to open MoMo app.
+        // status = 2: canOpenURL failed for URL MoMo app 
+        // status = 3: Parameters invalid
+    })
   }
   
   formatNumberToMoney(number, defaultNum, predicate) {

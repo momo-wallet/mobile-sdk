@@ -39,6 +39,8 @@ export default class App extends Component<Props> {
                 let momoToken = response.data;
                 let phonenumber = response.phonenumber;
                 let message = response.message;
+                let orderId = response.refOrderId; //your orderId
+                let requestId = response.refRequestId; //your requestId
                 //continue to submit momoToken,phonenumber to server
               } else {
                 me.setState({ description: "message: Get token fail", processing: false });
@@ -110,6 +112,7 @@ export default class App extends Component<Props> {
       jsonData.description = billdescription;
       jsonData.amount = this.state.amount;
       jsonData.orderId = "bill234284290348";
+      jsonData.requestId = "your_requestId";
       jsonData.orderLabel = "Ma don hang";
       jsonData.appScheme = "momocgv20170101";// iOS App Only , get from Info.plist > key URL types > URL Schemes. Check Readme
       console.log("data_request_payment " + JSON.stringify(jsonData));

@@ -62,22 +62,20 @@ private void requestPayment() {
 
         Map<String, Object> eventValue = new HashMap<>();
         //client Required
-        eventValue.put(MoMoParameterNamePayment.MERCHANT_NAME, merchantName); //VD: Google, Apple, Tiki , CGV Cinemas, 
-        eventValue.put(MoMoParameterNamePayment.MERCHANT_CODE, merchantCode);
-        eventValue.put(MoMoParameterNamePayment.AMOUNT, amount);
-        eventValue.put(MoMoParameterNamePayment.DESCRIPTION, description);
-
-	//client Optional
-	eventValue.put(MoMoParameterNamePayment.MERCHANT_NAME_LABEL, "Dịch vụ");//gán nhãn 
-        eventValue.put(MoMoParameterNamePayment.FEE, fee);
-        
-	//client bill info 
-	eventValue.put("orderId", "orderId123456789"); // giá trị 
+        eventValue.put("merchantname", merchantName); //Tên đối tác. được đăng ký tại https://business.momo.vn. VD: Google, Apple, Tiki , CGV Cinemas
+        eventValue.put("merchantcode", merchantCode); //Mã đối tác, được cung cấp bởi MoMo tại https://business.momo.vn 
+        eventValue.put("amount", total_amount); //Kiểu integer 
+	eventValue.put("orderId", "orderId123456789"); //uniqueue id cho BillId, giá trị duy nhất cho mỗi BILL 
 	eventValue.put("orderLabel", "Mã đơn hàng"); //gán nhãn 
+	
+	//client Optional - bill info
+	eventValue.put("merchantnamelabel", "Dịch vụ");//gán nhãn 
+        eventValue.put("fee", total_fee); //Kiểu integer
+	eventValue.put("description", description); //mô tả đơn hàng - short description 
 
-        //client call webview
-        eventValue.put(MoMoParameterNamePayment.REQUEST_ID,  merchantCode+"merchant_billId_"+System.currentTimeMillis());
-        eventValue.put(MoMoParameterNamePayment.PARTNER_CODE, merchantCode);
+        //client extra data 
+        eventValue.put("requestId",  merchantCode+"merchant_billId_"+System.currentTimeMillis());
+        eventValue.put("partnerCode", merchantCode);
 	//Example extra data 
         JSONObject objExtraData = new JSONObject();
         try {
@@ -87,13 +85,12 @@ private void requestPayment() {
             objExtraData.put("screen_name", "Special");
             objExtraData.put("movie_name", "Kẻ Trộm Mặt Trăng 3");
             objExtraData.put("movie_format", "2D");
-            objExtraData.put("ticket", "{\"ticket\":{\"01\":{\"type\":\"std\",\"price\":110000,\"qty\":3}}}");
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        eventValue.put(MoMoParameterNamePayment.EXTRA_DATA, objExtraData.toString());
+        eventValue.put("extraData", objExtraData.toString());
 
-        eventValue.put(MoMoParameterNamePayment.EXTRA, "");
+        eventValue.put("extra", "");
         AppMoMoLib.getInstance().requestMoMoCallBack(this, eventValue);
 
 

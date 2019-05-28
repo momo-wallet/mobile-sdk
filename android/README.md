@@ -62,19 +62,23 @@ private void requestPayment() {
 
         Map<String, Object> eventValue = new HashMap<>();
         //client Required
-        eventValue.put(MoMoParameterNamePayment.MERCHANT_NAME, merchantName);
+        eventValue.put(MoMoParameterNamePayment.MERCHANT_NAME, merchantName); //VD: Google, Apple, Tiki , CGV Cinemas, 
         eventValue.put(MoMoParameterNamePayment.MERCHANT_CODE, merchantCode);
         eventValue.put(MoMoParameterNamePayment.AMOUNT, amount);
         eventValue.put(MoMoParameterNamePayment.DESCRIPTION, description);
-        //client Optional
-        eventValue.put(MoMoParameterNamePayment.MERCHANT_BILL_ID, "merchant_billId_");	
+
+	//client Optional
+	eventValue.put(MoMoParameterNamePayment.MERCHANT_NAME_LABEL, "Dịch vụ");//gán nhãn 
         eventValue.put(MoMoParameterNamePayment.FEE, fee);
-        eventValue.put(MoMoParameterNamePayment.MERCHANT_NAME_LABEL, merchantNameLabel);
+        
+	//client bill info 
+	eventValue.put("orderId", "orderId123456789"); // giá trị 
+	eventValue.put("orderLabel", "Mã đơn hàng"); //gán nhãn 
 
         //client call webview
         eventValue.put(MoMoParameterNamePayment.REQUEST_ID,  merchantCode+"merchant_billId_"+System.currentTimeMillis());
         eventValue.put(MoMoParameterNamePayment.PARTNER_CODE, merchantCode);
-
+	//Example extra data 
         JSONObject objExtraData = new JSONObject();
         try {
             objExtraData.put("site_code", "008");
@@ -88,8 +92,6 @@ private void requestPayment() {
             e.printStackTrace();
         }
         eventValue.put(MoMoParameterNamePayment.EXTRA_DATA, objExtraData.toString());
-        eventValue.put(MoMoParameterNamePayment.REQUEST_TYPE, "payment");
-        eventValue.put(MoMoParameterNamePayment.LANGUAGE, "vi");
 
         eventValue.put(MoMoParameterNamePayment.EXTRA, "");
         AppMoMoLib.getInstance().requestMoMoCallBack(this, eventValue);

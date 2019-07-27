@@ -32,7 +32,7 @@ If your business have a mobile app. You can use this SDK to integrate MoMo app i
  ### STEP 2: Your Button CTA / Open MoMo app. Build the deeplink as bellow
 
 ```
-Deeplink Params description
+Params description
 
 Name                    Type      REQUIRED ?     Description
 action                 String    required      value = gettoken. DO NOT EDIT
@@ -50,6 +50,23 @@ fee                    int       optional        fee amount (just review). defau
 username               String    optional        user id/user identify/user email
 extra                  String    optional        json string - that should be more bill extra info
 ```
+####momosdk generate deeplink base
+```
+let paymentinfo = NSMutableDictionary()
+    paymentinfo["merchantcode"] = "CGV01"
+    paymentinfo["merchantname"] = "CGV Cinemas"
+    paymentinfo["merchantnamelabel"] = "Service"
+    paymentinfo["orderId"] = "012345XXX"
+    paymentinfo["orderLabel"] = "OrderID"
+    paymentinfo["amount"] = 20000
+    paymentinfo["fee"] = 0
+    paymentinfo["description"] = "Thanh toán vé xem phim"
+    paymentinfo["extra"] = "{\"key1\":\"value1\",\"key2\":\"value2\"}"
+    paymentinfo["username"] = payment_userId
+    paymentinfo["appScheme"] = "momopartnerscheme001" 
+    MoMoPayment.createPaymentInformation(info: paymentinfo)
+```
+
 ####momosdk generate deeplink base
 ```
  momo://?action=gettoken&merchantcode=CGV01&merchantname=CGV Cinemas&amount=99000&orderId=012345XXX&description=Buy ticket&fee=0&ipaddress=192.168.1.154&username=username_accountId@yahoo.com&sdkversion=2.0&appScheme=partnerSchemeId

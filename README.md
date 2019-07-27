@@ -50,7 +50,7 @@ fee                    int       optional        fee amount (just review). defau
 username               String    optional        user id/user identify/user email
 extra                  String    optional        json string - that should be more bill extra info
 ```
-####momosdk generate deeplink base
+####usage method
 ```
 let paymentinfo = NSMutableDictionary()
     paymentinfo["merchantcode"] = "CGV01"

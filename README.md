@@ -50,7 +50,7 @@ fee                    int       optional        fee amount (just review). defau
 username               String    optional        user id/user identify/user email
 extra                  String    optional        json string - that should be more bill extra info
 ```
-####usage method
+#### usage method
 ```
 let paymentinfo = NSMutableDictionary()
     paymentinfo["merchantcode"] = "CGV01"
@@ -67,7 +67,7 @@ let paymentinfo = NSMutableDictionary()
     MoMoPayment.createPaymentInformation(info: paymentinfo)
 ```
 
-####momosdk generate deeplink base
+#### momosdk generate deeplink base
 ```
  momo://?action=gettoken&merchantcode=CGV01&merchantname=CGV Cinemas&amount=99000&orderId=012345XXX&description=Buy ticket&fee=0&ipaddress=192.168.1.154&username=username_accountId@yahoo.com&sdkversion=2.0&appScheme=partnerSchemeId
 ```

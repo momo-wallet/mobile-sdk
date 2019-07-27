@@ -27,13 +27,10 @@ If your business have a mobile app. You can use this SDK to integrate MoMo app i
  </dict>
  ```
 - CFBundleURLTypes: add scheme <partnerSchemeId> . Note: partnerSchemeId provided by MoMo , get from business.momo.vn
- - LSApplicationQueriesSchemes: add scheme "momo"
-
- ### STEP 2: Your Button CTA / Open MoMo app. Build the deeplink as bellow
-  ```
- momo://?action=gettoken&merchantname=CGV Cinemas&amount=99000&merchantcode=CGV01&language=vi&description=Buy ticket&fee=0&ipaddress=192.168.1.154&username=username_accountId@yahoo.com&sdkversion=2.0&appScheme=partnerSchemeId
-```
+- LSApplicationQueriesSchemes: add scheme "momo"
 - partnerSchemeId: match with partnerSchemeId as Step 1
+ ### STEP 2: Your Button CTA / Open MoMo app. Build the deeplink as bellow
+
 ```
 Deeplink Params description
 
@@ -44,17 +41,19 @@ merchantcode           String    required      provided by MoMo. get from busine
 merchantname           String    required      partner name / merchant name
 merchantnamelabel      String    optional      Merchantname Hint/Label
 appScheme              String    required      partnerSchemeId provided by MoMo , get from business.momo.vn
+orderId                String    required      billing purchaseId / Contract id
 amount                 int       required      bill amount total
+orderLabel             String    optional      Contract Number Hint/Label . Example value: "OrderId" , "BillId"
 description            String    required      bill description
 language               String    optional        DO NOT EDIT. value = vi
 fee                    int       optional        fee amount (just review). default = 0
 username               String    optional        user id/user identify/user email
-billId                 String    optional        billId/Oder id
-orderLabel             String    optional        Contract Number Hint/Label  
-orderId                String    optional        Contract id
 extra                  String    optional        json string - that should be more bill extra info
 ```
-
+####momosdk generate deeplink base
+```
+ momo://?action=gettoken&merchantcode=CGV01&merchantname=CGV Cinemas&amount=99000&orderId=012345XXX&description=Buy ticket&fee=0&ipaddress=192.168.1.154&username=username_accountId@yahoo.com&sdkversion=2.0&appScheme=partnerSchemeId
+```
 
 ### Sample app ios-swift-CocoaPods
     -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momodevelopment/MomoiOSSwiftSdk.git", :branch => "master", submodules: true
@@ -209,9 +208,8 @@ void onActivityResult(int requestCode, int resultCode, Intent data) {
 
  ## Authors
 
- * **Lành Lưu** - lanh.luu@mservice . com . vn
- * **Hưng Đỗ** - hung.do@mservice . com . vn
-
+ * **Lành Lưu**
+ * **Hưng Đỗ**
 
  ## License
  Since 2015 (c) MoMo

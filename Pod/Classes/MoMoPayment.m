@@ -24,7 +24,7 @@ static NSMutableDictionary *paymentInfo = nil;
     return shareInstance;
 }
 
-- (void)initializingAppBundleId:(NSString*)bundleid merchantId:(NSString*)merchantId merchantName:(NSString*)merchantname merchantNameTitle:(NSString*)merchantNameTitle billTitle:(NSString*)billTitle{
+- (void)initAppBundleId:(NSString*)bundleid partnerCode:(NSString*)partnerCode partnerName:(NSString*)partnerName partnerNameLabel:(NSString*)partnerNameLabel billLabel:(NSString*)billLabel{
     [MoMoConfig setAppBundleId:bundleid];
     [MoMoConfig setMerchantcode:merchantId];
     [MoMoConfig setMerchantname:merchantname];
@@ -33,7 +33,6 @@ static NSMutableDictionary *paymentInfo = nil;
     //[MoMoConfig setPublickey:publickey];
     NSLog(@"<MoMoPay> initializing successful");
 }
-
 -(void)setMerchantName:(NSString*)merchantname merchantNameTitle:(NSString*)merchantNameTitle{
     
 }

@@ -26,7 +26,7 @@ dependencies {
 	        compile 'com.github.momodevelopment:androidsdkV2.2:2.3'
 }
 ```
- 
+
 Step 2. Config AndroidMainfest
 ```
 <uses-permission android:name="android.permission.INTERNET" />
@@ -45,15 +45,14 @@ private String merchantCode = "SCB01";
 private String merchantNameLabel = "Nhà cung cấp";
 private String description = "Thanh toán dịch vụ ABC";
 
-void onCreate(Bundle savedInstanceState) 
+void onCreate(Bundle savedInstanceState)
         AppMoMoLib.getInstance().setEnvironment(AppMoMoLib.ENVIRONMENT.DEVELOPMENT); // AppMoMoLib.ENVIRONMENT.PRODUCTION
 ```
 - Display MoMo button label language (required): English = "MoMo e-wallet", Vietnamese = "Ví MoMo"
-- Display icon or button color (optional): title color #b0006d , icon http://app.momo.vn:81/momo_app/logo/MoMo.png 
-
+- Display icon or button color (optional): title color #b0006d , icon https://img.mservice.io/momo-payment/icon/images/logo512.png
 Step 4. Get token & request payment
 ```
-//Get token through MoMo app 
+//Get token through MoMo app
 private void requestPayment() {
         AppMoMoLib.getInstance().setAction(AppMoMoLib.ACTION.PAYMENT);
         AppMoMoLib.getInstance().setActionType(AppMoMoLib.ACTION_TYPE.GET_TOKEN);
@@ -63,20 +62,20 @@ private void requestPayment() {
         Map<String, Object> eventValue = new HashMap<>();
         //client Required
         eventValue.put("merchantname", merchantName); //Tên đối tác. được đăng ký tại https://business.momo.vn. VD: Google, Apple, Tiki , CGV Cinemas
-        eventValue.put("merchantcode", merchantCode); //Mã đối tác, được cung cấp bởi MoMo tại https://business.momo.vn 
-        eventValue.put("amount", total_amount); //Kiểu integer 
-	eventValue.put("orderId", "orderId123456789"); //uniqueue id cho BillId, giá trị duy nhất cho mỗi BILL 
-	eventValue.put("orderLabel", "Mã đơn hàng"); //gán nhãn 
-	
-	//client Optional - bill info
-	eventValue.put("merchantnamelabel", "Dịch vụ");//gán nhãn 
-        eventValue.put("fee", total_fee); //Kiểu integer
-	eventValue.put("description", description); //mô tả đơn hàng - short description 
+        eventValue.put("merchantcode", merchantCode); //Mã đối tác, được cung cấp bởi MoMo tại https://business.momo.vn
+        eventValue.put("amount", total_amount); //Kiểu integer
+	eventValue.put("orderId", "orderId123456789"); //uniqueue id cho BillId, giá trị duy nhất cho mỗi BILL
+	eventValue.put("orderLabel", "Mã đơn hàng"); //gán nhãn
 
-        //client extra data 
+	//client Optional - bill info
+	eventValue.put("merchantnamelabel", "Dịch vụ");//gán nhãn
+        eventValue.put("fee", total_fee); //Kiểu integer
+	eventValue.put("description", description); //mô tả đơn hàng - short description
+
+        //client extra data
         eventValue.put("requestId",  merchantCode+"merchant_billId_"+System.currentTimeMillis());
         eventValue.put("partnerCode", merchantCode);
-	//Example extra data 
+	//Example extra data
         JSONObject objExtraData = new JSONObject();
         try {
             objExtraData.put("site_code", "008");
@@ -94,22 +93,22 @@ private void requestPayment() {
         AppMoMoLib.getInstance().requestMoMoCallBack(this, eventValue);
 
 
-    } 
-//Get token callback from MoMo app an submit to server side 
+    }
+//Get token callback from MoMo app an submit to server side
 void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == AppMoMoLib.getInstance().REQUEST_CODE_MOMO && resultCode == -1) {
             if(data != null) {
                 if(data.getIntExtra("status", -1) == 0) {
-                    //TOKEN IS AVAILABLE 
+                    //TOKEN IS AVAILABLE
                     tvMessage.setText("message: " + "Get token " + data.getStringExtra("message"));
-                    String token = data.getStringExtra("data"); //Token response 
+                    String token = data.getStringExtra("data"); //Token response
                     String phoneNumber = data.getStringExtra("phonenumber");
                     String env = data.getStringExtra("env");
                     if(env == null){
                         env = "app";
                     }
-                    
+
                     if(token != null && !token.equals("")) {
                         // TODO: send phoneNumber & token to your server side to process payment with MoMo server
                         // IF Momo topup success, continue to process your order
@@ -117,7 +116,7 @@ void onActivityResult(int requestCode, int resultCode, Intent data) {
                         tvMessage.setText("message: " + this.getString(R.string.not_receive_info));
                     }
                 } else if(data.getIntExtra("status", -1) == 1) {
-                    //TOKEN FAIL 
+                    //TOKEN FAIL
                     String message = data.getStringExtra("message") != null?data.getStringExtra("message"):"Thất bại";
                     tvMessage.setText("message: " + message);
                 } else if(data.getIntExtra("status", -1) == 2) {
@@ -135,5 +134,3 @@ void onActivityResult(int requestCode, int resultCode, Intent data) {
         }
     }
 ```
-
-

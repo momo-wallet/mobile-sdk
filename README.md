@@ -1,82 +1,6 @@
 # mobile-sdk
 If your business have a mobile app. You can use this SDK to integrate MoMo app into your app.
 
- # iOS APP
- ### STEP 1: Config file Plist (CFBundleURLTypes and LSApplicationQueriesSchemes)
-
- ```
- <key>CFBundleURLTypes</key>
- <array>
-   <dict>
-     <key>CFBundleURLName</key>
-     <string></string>
-     <key>CFBundleURLSchemes</key>
-     <array>
-       <string>partnerSchemeId</string>
-     </array>
-   </dict>
- </array>
- <key>LSApplicationQueriesSchemes</key>
- <array>
-   <string>momo</string>
- </array>
- <key>NSAppTransportSecurity</key>
- <dict>
-   <key>NSAllowsArbitraryLoads</key>
-   <true/>
- </dict>
- ```
-- CFBundleURLTypes: add scheme <partnerSchemeId> . Note: partnerSchemeId provided by MoMo , get from business.momo.vn
-- LSApplicationQueriesSchemes: add scheme "momo"
-- partnerSchemeId: match with partnerSchemeId as Step 1
- ### STEP 2: Your Button CTA / Open MoMo app. Build the deeplink as bellow
-
-```
-Params description
-
-Name                    Type      REQUIRED ?     Description
-action                 String    required      value = gettoken. DO NOT EDIT
-partner                String    required      value = merchant. DO NOT EDIT
-merchantcode           String    required      provided by MoMo. get from business.momo.vn
-merchantname           String    required      partner name / merchant name
-merchantnamelabel      String    optional      Merchantname Hint/Label
-appScheme              String    required      partnerSchemeId provided by MoMo , get from business.momo.vn
-orderId                String    required      billing purchaseId / Contract id
-amount                 int       required      bill amount total
-orderLabel             String    optional      Contract Number Hint/Label . Example value: "OrderId" , "BillId"
-description            String    required      bill description
-language               String    optional        DO NOT EDIT. value = vi
-fee                    int       optional        fee amount (just review). default = 0
-username               String    optional        user id/user identify/user email
-extra                  String    optional        json string - that should be more bill extra info
-```
-#### usage method
-```
-let paymentinfo = NSMutableDictionary()
-    paymentinfo["merchantcode"] = "CGV01"
-    paymentinfo["merchantname"] = "CGV Cinemas"
-    paymentinfo["merchantnamelabel"] = "Service"
-    paymentinfo["orderId"] = "012345XXX"
-    paymentinfo["orderLabel"] = "OrderID"
-    paymentinfo["amount"] = 20000
-    paymentinfo["fee"] = 0
-    paymentinfo["description"] = "Thanh toán vé xem phim"
-    paymentinfo["extra"] = "{\"key1\":\"value1\",\"key2\":\"value2\"}"
-    paymentinfo["username"] = payment_userId
-    paymentinfo["appScheme"] = "momopartnerscheme001" 
-    MoMoPayment.createPaymentInformation(info: paymentinfo)
-```
-
-#### momosdk generate deeplink base
-```
- momo://?action=gettoken&merchantcode=CGV01&merchantname=CGV Cinemas&amount=99000&orderId=012345XXX&description=Buy ticket&fee=0&ipaddress=192.168.1.154&username=username_accountId@yahoo.com&sdkversion=2.0&appScheme=partnerSchemeId
-```
-
-### Sample app ios-swift-CocoaPods
-    -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momodevelopment/MomoiOSSwiftSdk.git", :branch => "master", submodules: true
-
-
-
 # Android App
 
 At a minimum, this SDK is designed to work with Android SDK 14.
@@ -142,20 +66,20 @@ private void requestPayment() {
         Map<String, Object> eventValue = new HashMap<>();
         //client Required
         eventValue.put("merchantname", merchantName); //Tên đối tác. được đăng ký tại https://business.momo.vn. VD: Google, Apple, Tiki , CGV Cinemas
-        eventValue.put("merchantcode", merchantCode); //Mã đối tác, được cung cấp bởi MoMo tại https://business.momo.vn 
-        eventValue.put("amount", total_amount); //Kiểu integer 
+        eventValue.put("merchantcode", merchantCode); //Mã đối tác, được cung cấp bởi MoMo tại https://business.momo.vn
+        eventValue.put("amount", total_amount); //Kiểu integer
 	eventValue.put("orderId", "orderId123456789"); //uniqueue id cho Bill order, giá trị duy nhất cho mỗi đơn hàng  
-	eventValue.put("orderLabel", "Mã đơn hàng"); //gán nhãn 
-	
-	//client Optional - bill info
-	eventValue.put("merchantnamelabel", "Dịch vụ");//gán nhãn 
-        eventValue.put("fee", total_fee); //Kiểu integer
-	eventValue.put("description", description); //mô tả đơn hàng - short description 
+	eventValue.put("orderLabel", "Mã đơn hàng"); //gán nhãn
 
-        //client extra data 
+	//client Optional - bill info
+	eventValue.put("merchantnamelabel", "Dịch vụ");//gán nhãn
+        eventValue.put("fee", total_fee); //Kiểu integer
+	eventValue.put("description", description); //mô tả đơn hàng - short description
+
+        //client extra data
         eventValue.put("requestId",  merchantCode+"merchant_billId_"+System.currentTimeMillis());
         eventValue.put("partnerCode", merchantCode);
-	//Example extra data 
+	//Example extra data
         JSONObject objExtraData = new JSONObject();
         try {
             objExtraData.put("site_code", "008");

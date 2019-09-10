@@ -24,14 +24,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NoficationCenterTokenStartRequest" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenStartRequest:) name:@"NoficationCenterTokenStartRequest" object:nil]; ///SHOULD BE REMOVE THIS KEY WHEN VIEWCONTROLLER DEALLOCATING OR DISMISSING COMPLETED
     
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NoficationCenterTokenReceived" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenReceived:) name:@"NoficationCenterTokenReceived" object:nil]; //SHOULD BE REMOVE THIS KEY WHEN VIEWCONTROLLER DEALLOCATING OR DISMISSING COMPLETED
     
     [[MoMoPayment shareInstant] initializingAppBundleId:@"com.abcFoody.LuckyLuck"
-                                             merchantId:@"CGV01" //
+                                             merchantId:@"CGV01"
                                            merchantName:@"CGV"
-                                      merchantNameTitle:@"Nhà cung cấp" billTitle:@"Nguoi dung"];
+                                      merchantNameTitle:@"Nhà cung cấp" billTitle:@"Mã thanh toán"];
     ///
     [self initOrderAndButtonAction];
 }
@@ -245,10 +247,12 @@
     
     [paymentinfo setValue:@"partnerSchemeId00001" forKey:@"appScheme"]; //<partnerSchemeId>: app uniqueueId provided by MoMo , get from business.momo.vn. PLEASE MAKE SURE TO ADD <partnerSchemeId> TO PLIST file ( URL types > URL Schemes )
     
-    //Development environment (only testing)
-    //[[MoMoPayment shareInstant] initPaymentInformation:paymentinfo momoAppScheme:@"com.momo.appv2.ios" environment:MOMO_SDK_PRODUCTION];
     
-    [[MoMoPayment shareInstant] initPaymentInformation:paymentinfo momoAppScheme:@"com.momo.appv2.ios" environment:MOMO_SDK_DEVELOPMENT];
+    //[[MoMoPayment shareInstant] initPayment:paymentinfo  environment:MOMO_SDK_PRODUCTION];
+    
+    //Development environment (only testing)
+    
+    [[MoMoPayment shareInstant] initPayment:paymentinfo environment:MOMO_SDK_DEVELOPMENT];
     
     //BUOC 2: add button Thanh toan bang Vi MoMo vao khu vuc ban can hien thi (Vi du o day la vung paymentArea)
     ///Custom button

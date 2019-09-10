@@ -46,7 +46,7 @@
 
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    [[MoMoPayment shareInstant] handleOpenUrl:url];
+    [[MoMoPayment shareInstances] handleOpenUrl:url];
     return YES;
 }
 

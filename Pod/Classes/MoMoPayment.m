@@ -278,81 +278,13 @@ static NSMutableDictionary *paymentInfo = nil;
 -(NSMutableDictionary*)getPaymentInfo{
     return paymentInfo;
 }
-- (void) requestWebpaymentData:(NSMutableDictionary*)dataPost requestType:(NSString*)requesttype
-{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyyMMdd-hhmmssss"];
-    NSString *requestId = [NSString stringWithFormat:@"%@-%@-%f",[MoMoConfig getMerchantcode],[[NSUUID UUID] UUIDString],[[NSDate date] timeIntervalSince1970]];
-    if (dataPost[@"extra"]) {
-        // Create NSData object
-        NSData *nsdata = [dataPost[@"extra"] dataUsingEncoding:NSUTF8StringEncoding];
-        // Get NSString from NSData object in Base64
-        NSString *base64Encoded = [nsdata base64EncodedStringWithOptions:0];
-        [dataPost setValue:base64Encoded forKey:@"extraData"];
-        [dataPost removeObjectForKey:@"extra"];
-    }
-    if ([requesttype isEqualToString:@"payment"]) {
-        [dataPost setValue:requestId forKey:@"requestId"];
-    }
-    [dataPost setValue:[MoMoConfig getMerchantcode]       forKey:MOMO_PAY_CLIENT_PARTNER_CODE_KEY];
-    [dataPost setValue:requesttype forKey:@"requestType"];
-    NSData *postData = [self encodeDictionary:dataPost];
-    
-    NSMutableURLRequest *urlrequest=[[NSMutableURLRequest alloc]init];
-    
-    [urlrequest setURL:[NSURL URLWithString:[MoMoConfig getSubmitUrl]]];
-    [urlrequest setHTTPMethod:@"POST"];
-    [urlrequest setValue:@"application/json;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [urlrequest setHTTPBody:postData];
-    [urlrequest setTimeoutInterval:10];
-    //NSLog(@">>>SDK config %@",[MoMoConfig getSubmitUrl]);
-    [NSURLConnection sendAsynchronousRequest:urlrequest queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse* response, NSData* data, NSError *error)
-     {
-         if ([requesttype isEqualToString:@"payment"]) {
-             BOOL isRegAvailable = YES;
-             if (!error) {
-                 id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                 //NSLog(@"json  %@",json);
-                 
-                 if ([json isKindOfClass:[NSDictionary class]]) {
-                     if ([json[@"code"] intValue] == 9696 || (json[@"code"] && [json[@"code"] intValue] != 0)) {
-                         isRegAvailable = NO;
-                     }
-                 }
-                 else {
-                     isRegAvailable = NO;
-                 }
-                 
-                 [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationCenterPresentMoMoWebDialog" object:json];
-             }
-             else
-             {
-                 isRegAvailable = NO;
-                 NSLog(@">>>error %@",error.description);
-                 [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationCenterPresentMoMoWebDialog" object:nil];
-             }
-             
-             if (!isRegAvailable){
-                 NSLog(@">>>Goto Apple Store");
-                 NSURL *appStoreURL = [NSURL URLWithString:[NSString stringWithFormat:MOMO_APP_ITUNES_DOWNLOAD_PATH]];
-                 if ([[UIApplication sharedApplication] canOpenURL:appStoreURL]) {
-                     
-                     [[UIApplication sharedApplication] openURL:appStoreURL];
-                 }
-             }
-         }
-         else{
-             //Do nothing
-         }
-         
-     }];
-}
+
 -(void)requestToken{
     if ([paymentInfo isKindOfClass:[NSNull class]]) {
         NSLog(@"<MoMoPay> Payment information should not be null.");
         return;
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"NoficationCenterStartRequestToken" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NoficationCenterStartRequestToken" object:@"InProgress"];
     //Open MoMo App to get token
     if ([paymentInfo isKindOfClass:[NSMutableDictionary class]]) {
         NSString *inputParams = [NSString stringWithFormat:@"action=%@&partner=merchant",[MoMoConfig getAction]];
@@ -386,7 +318,7 @@ static NSMutableDictionary *paymentInfo = nil;
         
         if ([[UIApplication sharedApplication] canOpenURL:ourURL])
         {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"NoficationCenterTokenStartRequest" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"NoficationCenterTokenStartRequest" object:@"AppMoMoInstalled"];
             
             UIApplication *application = [UIApplication sharedApplication];
             if (IS_IOS_10_OR_LATER && [application respondsToSelector:@selector(openURL:options:completionHandler:)]) {
@@ -401,8 +333,7 @@ static NSMutableDictionary *paymentInfo = nil;
             }
         }
         else{
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"NoficationCenterTokenStartRequest" object:@"MoMoWebDialogs"];
-            [self requestWebpaymentData:paymentInfo requestType:@"payment"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"NoficationCenterTokenStartRequest" object:@"AppMoMoNotInstall"];
         }
         
     }

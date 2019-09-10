@@ -30,10 +30,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NoficationCenterTokenReceived" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenReceived:) name:@"NoficationCenterTokenReceived" object:nil]; //SHOULD BE REMOVE THIS KEY WHEN VIEWCONTROLLER DEALLOCATING OR DISMISSING COMPLETED
     
-    [[MoMoPayment shareInstant] initializingAppBundleId:@"com.abcFoody.LuckyLuck"
-                                             merchantId:@"CGV01"
-                                           merchantName:@"CGV"
-                                      merchantNameTitle:@"Nhà cung cấp" billTitle:@"Mã thanh toán"];
+    [[MoMoPayment shareInstances] initAppBundleId:@"com.abcFoody.LuckyLuck" partnerCode:@"CGV01" partnerName:@"CGV" partnerNameLabel:@"Nhà cung cấp" billLabel:@"Mã thanh toán"];
     ///
     [self initOrderAndButtonAction];
 }
@@ -129,6 +126,12 @@
         }
         
         lblMessage.text = [NSString stringWithFormat:@">>response:: SUCESS TOKEN. \n %@",notif.object];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Noti"
+                                                        message:@"GET TOKEN SUCESS "
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
         
     }else
     {
@@ -145,6 +148,12 @@
         {
             NSLog(@"::MoMoPay Log: %@",message);
         }
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Noti"
+                                                        message: [ NSString stringWithFormat:@"GET TOKEN FAIL::%@",message]
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
 }
 
@@ -252,11 +261,11 @@
     
     //Development environment (only testing)
     
-    [[MoMoPayment shareInstant] initPayment:paymentinfo environment:MOMO_SDK_DEVELOPMENT];
+    [[MoMoPayment shareInstances] initPayment:paymentinfo environment:MOMO_SDK_DEVELOPMENT];
     
     //BUOC 2: add button Thanh toan bang Vi MoMo vao khu vuc ban can hien thi (Vi du o day la vung paymentArea)
     ///Custom button
-    [[MoMoPayment shareInstant] addMoMoPayCustomButton:btnPay forControlEvents:UIControlEventTouchUpInside toView:paymentArea];
+    [[MoMoPayment shareInstances] addMoMoPayCustomButton:btnPay forControlEvents:UIControlEventTouchUpInside toView:paymentArea];
     
     //Code của bạn
     [self.view addSubview:paymentArea];

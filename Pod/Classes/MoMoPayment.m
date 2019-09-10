@@ -233,10 +233,10 @@ static NSMutableDictionary *paymentInfo = nil;
             }
         }
         
-        NSString *appSource = [NSString stringWithFormat:@"%@://?%@",[MOMO_APP_BUNDLE_ID lowercaseString],inputParams];
+        NSString *appSource = [NSString stringWithFormat:@"%@://?%@",MOMO_APP_BUNDLE_ID,inputParams];
         BOOL isProduction = [MoMoConfig getEnvironment];
         if (!isProduction) {
-            appSource = [NSString stringWithFormat:@"%@://?%@",[MoMoConfig getMoMoAppScheme],inputParams];
+            appSource = [NSString stringWithFormat:@"com.momo.appv2.ios://?%@",inputParams];
         }
         
         appSource = [appSource stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -271,14 +271,26 @@ static NSMutableDictionary *paymentInfo = nil;
     return [MoMoConfig getMoMoAppScheme];
 }
 
--(void)initPaymentInformation:(NSMutableDictionary*)info momoAppScheme:(NSString*)bundleId environment:(MOMO_ENVIRONTMENT)type_environment
+//-(void)initPaymentInformation:(NSMutableDictionary*)info momoAppScheme:(NSString*)bundleId environment:(MOMO_ENVIRONTMENT)type_environment
+//{
+//    [self setEnvironment:type_environment];
+//    [MoMoConfig setMoMoAppScheme:bundleId];
+//    [MoMoConfig setSubmitUrl: type_environment == MOMO_SDK_DEVELOPMENT ? MOMO_WEB_SDK_REQUEST_DEV : MOMO_WEB_SDK_REQUEST_PRODUCTION ];
+//    paymentInfo = [[NSMutableDictionary alloc] initWithDictionary:info];
+//    
+//}
+
+-(void)initPayment:(NSMutableDictionary*)info environment:(MOMO_ENVIRONTMENT)type_environment
 {
-    [self setEnvironment:type_environment];
-    [MoMoConfig setMoMoAppScheme:bundleId];
-    [MoMoConfig setSubmitUrl: type_environment == MOMO_SDK_DEVELOPMENT ? MOMO_WEB_SDK_REQUEST_DEV : MOMO_WEB_SDK_REQUEST_PRODUCTION ];
+    if (type_environment == MOMO_SDK_DEVELOPMENT || type_environment == MOMO_SDK_DEBUG) {
+        [MoMoConfig setEnvironment:NO];
+    }else{
+        [MoMoConfig setEnvironment:YES];
+    }
     paymentInfo = [[NSMutableDictionary alloc] initWithDictionary:info];
     
 }
+
 -(void)setEnvironment:(MOMO_ENVIRONTMENT)type_environtment{
     if (type_environtment == MOMO_SDK_DEVELOPMENT || type_environtment == MOMO_SDK_DEBUG) {
         [MoMoConfig setEnvironment:NO];

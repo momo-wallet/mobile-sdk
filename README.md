@@ -1,235 +1,174 @@
-# mobile-sdk
-If your business have a mobile app. You can use this SDK to integrate MoMo app into your app.
+# MoMoiOSsdkv2
 
- # iOS APP
- ### STEP 1: Config file Plist (CFBundleURLTypes and LSApplicationQueriesSchemes)
+[![CI Status](http://img.shields.io/travis/momodevelopment/MoMoiOSsdkv2.svg?style=flat)](https://travis-ci.org/momodevelopment/MoMoiOSsdkv2)
+[![Version](https://img.shields.io/cocoapods/v/MoMoiOSsdkv2.svg?style=flat)](http://cocoapods.org/pods/MoMoiOSsdkv2)
+[![License](https://img.shields.io/cocoapods/l/MoMoiOSsdkv2.svg?style=flat)](http://cocoapods.org/pods/MoMoiOSsdkv2)
+[![Platform](https://img.shields.io/cocoapods/p/MoMoiOSsdkv2.svg?style=flat)](http://cocoapods.org/pods/MoMoiOSsdkv2)
 
- ```
- <key>CFBundleURLTypes</key>
- <array>
-   <dict>
-     <key>CFBundleURLName</key>
-     <string></string>
-     <key>CFBundleURLSchemes</key>
-     <array>
-       <string>partnerSchemeId</string>
-     </array>
-   </dict>
- </array>
- <key>LSApplicationQueriesSchemes</key>
- <array>
-   <string>momo</string>
- </array>
- <key>NSAppTransportSecurity</key>
- <dict>
-   <key>NSAllowsArbitraryLoads</key>
-   <true/>
- </dict>
- ```
-- CFBundleURLTypes: add scheme <partnerSchemeId> . Note: partnerSchemeId provided by MoMo , get from business.momo.vn
-- LSApplicationQueriesSchemes: add scheme "momo"
-- partnerSchemeId: match with partnerSchemeId as Step 1
- ### STEP 2: Your Button CTA / Open MoMo app. Build the deeplink as bellow
+## Example
 
-```
-Params description
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-Name                    Type      REQUIRED ?     Description
-action                 String    required      value = gettoken. DO NOT EDIT
-partner                String    required      value = merchant. DO NOT EDIT
-merchantcode           String    required      provided by MoMo. get from business.momo.vn
-merchantname           String    required      partner name / merchant name
-merchantnamelabel      String    optional      Merchantname Hint/Label
-appScheme              String    required      partnerSchemeId provided by MoMo , get from business.momo.vn
-orderId                String    required      billing purchaseId / Contract id
-amount                 int       required      bill amount total
-orderLabel             String    optional      Contract Number Hint/Label . Example value: "OrderId" , "BillId"
-description            String    required      bill description
-language               String    optional        DO NOT EDIT. value = vi
-fee                    int       optional        fee amount (just review). default = 0
-username               String    optional        user id/user identify/user email
-extra                  String    optional        json string - that should be more bill extra info
-```
-#### usage method
-```
-let paymentinfo = NSMutableDictionary()
-    paymentinfo["merchantcode"] = "CGV01"
-    paymentinfo["merchantname"] = "CGV Cinemas"
-    paymentinfo["merchantnamelabel"] = "Service"
-    paymentinfo["orderId"] = "012345XXX"
-    paymentinfo["orderLabel"] = "OrderID"
-    paymentinfo["amount"] = 20000
-    paymentinfo["fee"] = 0
-    paymentinfo["description"] = "Thanh toán vé xem phim"
-    paymentinfo["extra"] = "{\"key1\":\"value1\",\"key2\":\"value2\"}"
-    paymentinfo["username"] = payment_userId
-    paymentinfo["appScheme"] = "momopartnerscheme001" 
-    MoMoPayment.createPaymentInformation(info: paymentinfo)
-```
-
-#### momosdk generate deeplink base
-```
- momo://?action=gettoken&merchantcode=CGV01&merchantname=CGV Cinemas&amount=99000&orderId=012345XXX&description=Buy ticket&fee=0&ipaddress=192.168.1.154&username=username_accountId@yahoo.com&sdkversion=2.0&appScheme=partnerSchemeId
-```
-
-### Sample app ios-swift-CocoaPods
-    -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momodevelopment/MomoiOSSwiftSdk.git", :branch => "master", submodules: true
-
-
-
-# Android App
-
-At a minimum, this SDK is designed to work with Android SDK 14.
-
+## Requirements
 
 ## Installation
 
-To use the MoMo Android SDK, add the compile dependency with the latest version of the MoMo SDK.
+MoMoiOSsdkv2 is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
-### Gradle
-
-Step 1. Import SDK
-Add the JitPack repository to your `build.gradle`:
 ```
-allprojects {
-    repositories {
-        ...
-        maven { url 'https://jitpack.io' }
-    }
+pod 'MoMoiOSsdkv2', :git => 'https://github.com/momodevelopment/MoMoiOSsdkv2.git',:branch => "master"
+```
+
+Step 1. Config file Plist
+```
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleURLName</key>
+    <string></string>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>com.abcFoody.LuckyLuck</string>
+    </array>
+  </dict>
+</array>
+<key>LSApplicationQueriesSchemes</key>
+<array>
+  <string>com.momo.appv2.ios</string>
+  <string>com.mservice.com.vn.MoMoTransfer</string>
+</array>
+<key>NSAppTransportSecurity</key>
+<dict>
+  <key>NSAllowsArbitraryLoads</key>
+  <true/>
+</dict>
+```
+Step 2. Import SDK
+AppDelegate instance
+```
+#import "MoMoPayment.h"
+
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    [[MoMoPayment shareInstant] handleOpenUrl:url];
+    return YES;
 }
 ```
 
-Add the dependency:
+Step 3. Update Layout Payment
 ```
-dependencies {
-	        compile 'com.github.momodevelopment:androidsdkV2.2:1.1'
+#import "MoMoPayment.h"
+#import "MoMoDialogs.h"
+```
+
+#NotificationCenter registration
+MOMO NOTIFICATION KEYS SHOULD BE REMOVED WHEN THE VIEWCONTROLLERS DEALLOCATING OR DISMISSING COMPLETED
+(Notification keys: NoficationCenterTokenReceived , NoficationCenterTokenStartRequest)
+```
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenReceived:) name:@"NoficationCenterTokenReceived" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenStartRequest:) name:@"NoficationCenterTokenStartRequest" object:nil];
+    ///
+    [self initOrderAndButtonAction];
+}
+```
+#Handle MoMoNotificationReceive
+```
+-(void)processMoMoNoficationCenterTokenReceived:(NSNotification*)notif{
+  //Token Replied
+  NSLog(@"::MoMoPay Log::Received Token Replied::%@",notif.object);
+  lblMessage.text = [NSString stringWithFormat:@"%@",notif.object];
+
+  NSString *sourceText = [NSString stringWithFormat:@"%@",notif.object];
+
+  NSURL *url = [NSURL URLWithString:sourceText];
+  if (url) {
+      sourceText = url.query;
+  }
+
+  NSArray *parameters = [sourceText componentsSeparatedByString:@"&"];
+
+  NSDictionary *response = [self getDictionaryFromComponents:parameters];
+  NSString *status = [NSString stringWithFormat:@"%@",[response objectForKey:@"status"]];
+  NSString *message = [NSString stringWithFormat:@"%@",[response objectForKey:@"message"]];
+  if ([status isEqualToString:@"0"]) {
+
+      NSLog(@"::MoMoPay Log: SUCESS TOKEN.");
+      NSLog(@">>response::%@",notif.object);
+
+      NSString *sessiondata = [NSString stringWithFormat:@"%@",[response objectForKey:@"data"]];       //session data
+      NSString *phoneNumber =  [NSString stringWithFormat:@"%@",[response objectForKey:@"phonenumber"]]; //wallet Id
+
+      NSString *env = @"app";
+      if (response[@"env"]) {
+          env =  [NSString stringWithFormat:@"%@",[response objectForKey:@"env"]];
+      }
+
+      if (response[@"extra"]) {
+          //This a extra value which you put at initOrderAndButtonAction. Decode base 64 for using if need (Optional)
+      }
+
+      /*  SEND THESE PARRAM TO SERVER:  phoneNumber, sessiondata, env
+       CALL API MOMO PAYMENT
+       */
+       lblMessage.text = [NSString stringWithFormat:@">>response:: SUCESS TOKEN. \n %@",notif.object];
+
+  }else
+  {
+      if ([status isEqualToString:@"1"]) {
+          NSLog(@"::MoMoPay Log: REGISTER_PHONE_NUMBER_REQUIRE.");
+      }
+      else if ([status isEqualToString:@"2"]) {
+          NSLog(@"::MoMoPay Log: LOGIN_REQUIRE.");
+      }
+      else if ([status isEqualToString:@"3"]) {
+          NSLog(@"::MoMoPay Log: NO_WALLET. You need to cashin to MoMo Wallet ");
+      }
+      else
+      {
+          NSLog(@"::MoMoPay Log: %@",message);
+      }
+  }
+}
+-(void)NoficationCenterTokenStartRequest:(NSNotification*)notif
+{
+    if (notif.object != nil && [notif.object isEqualToString:@"MoMoWebDialogs"]) {
+        dialog = [[MoMoDialogs alloc] init];
+        [self presentViewController:dialog animated:YES completion:nil];
+    }
+}
+```
+Add Button Action to Pay Via MOMO
+Button title: EN = MoMo Wallet , VI = Ví MoMo
+```
+-(void)initOrderAndButtonAction{
+    //STEP 1: INIT ORDER INFO
+    NSMutableDictionary *paymentinfo = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                            [NSNumber numberWithInt:99000],@"amount",
+                                            [NSNumber numberWithInt:0],@"fee",
+                                            @"Buy CGV Cinemas",@"description",
+                                            @"{\"key1\":\"value1\",\"key2\":\"value2\"}",@"extra", //OPTIONAL
+                                            @"vi",@"language",
+                                            username,@"username",
+                                            @"Người dùng",@"usernamelabel",
+                                            nil];
+    [[MoMoPayment shareInstant] initPaymentInformation:paymentinfo momoAppScheme:@"com.mservice.com.vn.MoMoTransfer" environment:MOMO_SDK_PRODUCTION];
+
+    //STEP 2: ADD BUTTON ACTION TO PAY VIA MOMO WALLET
+    //buttonAction will open MoMo app to pay
+    [[MoMoPayment shareInstant] addMoMoPayCustomButton:buttonAction forControlEvents:UIControlEventTouchUpInside toView:yourPaymentView];
+
 }
 ```
 
-Step 2. Config AndroidMainfest
-```
-<uses-permission android:name="android.permission.INTERNET" />
-```
-Step 3. Build Layout
-Confirm order Activity
-```
-import vn.momo.momo_partner.AppMoMoLib;
-import vn.momo.momo_partner.MoMoParameterNameMap;
+## Author
 
-private String amount = "10000";
-private String fee = "0";
-int environment = 0;//developer default
-private String merchantName = "Demo SDK";
-private String merchantCode = "SCB01";
-private String merchantNameLabel = "Nhà cung cấp";
-private String description = "Thanh toán dịch vụ ABC";
+MoMo Development Team
 
-void onCreate(Bundle savedInstanceState)
-        AppMoMoLib.getInstance().setEnvironment(AppMoMoLib.ENVIRONMENT.DEVELOPMENT); // AppMoMoLib.ENVIRONMENT.PRODUCTION
-```
-- Display MoMo button label language (required): English = "MoMo e-wallet", Vietnamese = "Ví MoMo"
-- Display icon or button color (optional): title color #b0006d , icon https://img.mservice.io/momo-payment/icon/images/logo512.png
+## License
 
-Step 4. Get token & request payment
-```
-//Get token through MoMo app
-private void requestPayment() {
-        AppMoMoLib.getInstance().setAction(AppMoMoLib.ACTION.PAYMENT);
-        AppMoMoLib.getInstance().setActionType(AppMoMoLib.ACTION_TYPE.GET_TOKEN);
-        if (edAmount.getText().toString() != null && edAmount.getText().toString().trim().length() != 0)
-            amount = edAmount.getText().toString().trim();
-
-        Map<String, Object> eventValue = new HashMap<>();
-        //client Required
-        eventValue.put("merchantname", merchantName); //Tên đối tác. được đăng ký tại https://business.momo.vn. VD: Google, Apple, Tiki , CGV Cinemas
-        eventValue.put("merchantcode", merchantCode); //Mã đối tác, được cung cấp bởi MoMo tại https://business.momo.vn 
-        eventValue.put("amount", total_amount); //Kiểu integer 
-	eventValue.put("orderId", "orderId123456789"); //uniqueue id cho Bill order, giá trị duy nhất cho mỗi đơn hàng  
-	eventValue.put("orderLabel", "Mã đơn hàng"); //gán nhãn 
-	
-	//client Optional - bill info
-	eventValue.put("merchantnamelabel", "Dịch vụ");//gán nhãn 
-        eventValue.put("fee", total_fee); //Kiểu integer
-	eventValue.put("description", description); //mô tả đơn hàng - short description 
-
-        //client extra data 
-        eventValue.put("requestId",  merchantCode+"merchant_billId_"+System.currentTimeMillis());
-        eventValue.put("partnerCode", merchantCode);
-	//Example extra data 
-        JSONObject objExtraData = new JSONObject();
-        try {
-            objExtraData.put("site_code", "008");
-            objExtraData.put("site_name", "CGV Cresent Mall");
-            objExtraData.put("screen_code", 0);
-            objExtraData.put("screen_name", "Special");
-            objExtraData.put("movie_name", "Kẻ Trộm Mặt Trăng 3");
-            objExtraData.put("movie_format", "2D");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        eventValue.put("extraData", objExtraData.toString());
-
-        eventValue.put("extra", "");
-        AppMoMoLib.getInstance().requestMoMoCallBack(this, eventValue);
-
-
-    }
-//Get token callback from MoMo app an submit to server side
-void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == AppMoMoLib.getInstance().REQUEST_CODE_MOMO && resultCode == -1) {
-            if(data != null) {
-                if(data.getIntExtra("status", -1) == 0) {
-                    //TOKEN IS AVAILABLE
-                    tvMessage.setText("message: " + "Get token " + data.getStringExtra("message"));
-                    String token = data.getStringExtra("data"); //Token response
-                    String phoneNumber = data.getStringExtra("phonenumber");
-                    String env = data.getStringExtra("env");
-                    if(env == null){
-                        env = "app";
-                    }
-
-                    if(token != null && !token.equals("")) {
-                        // TODO: send phoneNumber & token to your server side to process payment with MoMo server
-                        // IF Momo topup success, continue to process your order
-                    } else {
-                        tvMessage.setText("message: " + this.getString(R.string.not_receive_info));
-                    }
-                } else if(data.getIntExtra("status", -1) == 1) {
-                    //TOKEN FAIL
-                    String message = data.getStringExtra("message") != null?data.getStringExtra("message"):"Thất bại";
-                    tvMessage.setText("message: " + message);
-                } else if(data.getIntExtra("status", -1) == 2) {
-                    //TOKEN FAIL
-                    tvMessage.setText("message: " + this.getString(R.string.not_receive_info));
-                } else {
-                    //TOKEN FAIL
-                    tvMessage.setText("message: " + this.getString(R.string.not_receive_info));
-                }
-            } else {
-                tvMessage.setText("message: " + this.getString(R.string.not_receive_info));
-            }
-        } else {
-            tvMessage.setText("message: " + this.getString(R.string.not_receive_info_err));
-        }
-    }
-```
-### Sample app android
-    -   https://github.com/momo-wallet/mobile-sdk/tree/master/android
-
- ## Version
-
- ```
- Version 2.0
- ```
-
- ## Authors
-
- * **Lành Lưu**
- * **Hưng Đỗ**
-
- ## License
- Since 2015 (c) MoMo
-
- ## Contact - Support
- * itc.payment@mservice.com.vn
+MoMoiOSsdkv2 is available under the MIT license. See the LICENSE file for more info.

@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint MoMoiOSsdkv2.podspec' to ensure this is a
+# Be sure to run `pod lib lint MoMoSDKiOSObjc.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
-    'MoMoiOSsdkv2' => ['Pod/Assets/*.png']
+    'MoMoSDKiOSObjc' => ['Pod/Assets/*.png']
   }
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

@@ -43,11 +43,18 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
--(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    NSLog(@">>handleopenUrl iOS 9 or newest");
     [[MoMoPayment shareInstances] handleOpenUrl:url];
     return YES;
 }
-
+#else
+-(BOOL)application:(UIApplication *)application handleOpenURL:(nonnull NSURL *)url
+{
+    NSLog(@">>handleopenUrl ios < 9.0");
+    [[MoMoPayment shareInstances] handleOpenUrl:url];
+    return YES;
+}
+#endif
 @end

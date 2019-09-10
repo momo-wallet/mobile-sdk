@@ -26,8 +26,8 @@ static NSMutableDictionary *paymentInfo = nil;
 
 - (void)initAppBundleId:(NSString*)bundleid partnerCode:(NSString*)partnerCode partnerName:(NSString*)partnerName partnerNameLabel:(NSString*)partnerNameLabel billLabel:(NSString*)billLabel{
     [MoMoConfig setAppBundleId:bundleid];
-    [MoMoConfig setMerchantcode:merchantId];
-    [MoMoConfig setMerchantname:merchantname];
+    [MoMoConfig setMerchantcode:partnerCode];
+    [MoMoConfig setMerchantname:partnerName];
     [MoMoConfig setMerchantnameLabel:@"Nhà cung cấp"];
     [MoMoConfig setUsernameLabel:@"Tài khoản"];
     //[MoMoConfig setPublickey:publickey];

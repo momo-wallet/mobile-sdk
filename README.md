@@ -6,7 +6,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-MoMoiOSsdkv2 is available through [CocoaPods](http://cocoapods.org). To install
+MoMoSDKiOSObjc is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```
@@ -164,4 +164,4 @@ MoMo Development Team
 
 ## License
 
-MoMoiOSsdkv2 is available under the MIT license. See the LICENSE file for more info.
+MoMoSDKiOSObjc is available under the MIT license. See the LICENSE file for more info.

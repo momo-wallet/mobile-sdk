@@ -17,7 +17,7 @@ static MoMoPayment *shareInstance = nil;
 static NSMutableDictionary *paymentInfo = nil;
 @implementation MoMoPayment
 
-+(MoMoPayment*)shareInstant{
++(MoMoPayment*)shareInstances{
     if (!shareInstance) {
         shareInstance = [[super allocWithZone:NULL] init];
     }
@@ -41,50 +41,7 @@ static NSMutableDictionary *paymentInfo = nil;
 -(void)setBillName:(NSString*)merchantname billTitle:(NSString*)billTitle{
     
 }
-/*
--(void)requestToken{
-    if ([paymentInfo isKindOfClass:[NSNull class]]) {
-        NSLog(@"<MoMoPay> Payment information should not be null.");
-        return;
-    }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"NoficationCenterStartRequestToken" object:nil];
-    
-    //Open MoMo App to get token
-    if ([paymentInfo isKindOfClass:[NSMutableDictionary class]]) {
-        NSString *inputParams = [NSString stringWithFormat:@"action=%@&partner=merchant",MOMO_PAY_SDK_ACTION_GETTOKEN];
-        [paymentInfo setValue:[MoMoConfig getMerchantcode]       forKey:MOMO_PAY_CLIENT_MERCHANT_CODE_KEY];
-        [paymentInfo setValue:[MoMoConfig getMerchantname]       forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY];
-        [paymentInfo setValue:[MoMoConfig getMerchantnameLabel]  forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY];
-        [paymentInfo setValue:[MoMoConfig getUsernameLabel]  forKey:MOMO_PAY_CLIENT_USERNAME_LABEL_KEY];
-        [paymentInfo setValue:[MoMoConfig getPublickey]          forKey:MOMO_PAY_CLIENT_PUBLIC_KEY_KEY];
-        [paymentInfo setValue:[MoMoConfig getIPAddress]          forKey:MOMO_PAY_CLIENT_IP_ADDRESS_KEY];
-        [paymentInfo setValue:[MoMoConfig getDeviceInfoString]   forKey:MOMO_PAY_CLIENT_OS_KEY];
-        [paymentInfo setValue:[MoMoConfig getAppBundleId]        forKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY];
-        [paymentInfo setValue:MOMO_PAY_SDK_VERSION               forKey:MOMO_PAY_SDK_VERSION_KEY];
-        
-        for (NSString *key in [paymentInfo allKeys]) {
-            if ([paymentInfo objectForKey:key] != nil) {
-                inputParams = [inputParams stringByAppendingFormat:@"&%@=%@",key,[paymentInfo objectForKey:key]];
-            }
-        }
-        
-        NSString *appSource = [NSString stringWithFormat:@"%@://?%@",[MOMO_APP_BUNDLE_ID lowercaseString],inputParams];
-        appSource = [appSource stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSURL *ourURL = [NSURL URLWithString:appSource];
-        if ([[UIApplication sharedApplication] canOpenURL:ourURL]) {
-            [[UIApplication sharedApplication] openURL:ourURL];
-        }
-        else{
-            NSURL *appStoreURL = [NSURL URLWithString:[NSString stringWithFormat:MOMO_APP_ITUNES_DOWNLOAD_PATH]];
-            if ([[UIApplication sharedApplication] canOpenURL:appStoreURL]) {
-                [[UIApplication sharedApplication] openURL:appStoreURL];
-            }
-        }
-    }
-    
-    
-}
-*/
+
 -(void)handleOpenUrl:(NSURL*)url
 {
     NSString *sourceURI = [url absoluteString];
@@ -128,38 +85,7 @@ static NSMutableDictionary *paymentInfo = nil;
 {
     [paymentInfo setValue:[NSNumber numberWithLongLong:amt] forKey:MOMO_PAY_CLIENT_AMOUNT_TRANSFER];
 }
-/*
--(NSDictionary*)dictionaryFromUrlParram:(NSString*)urlPararm
-{
-    
-    NSString *appBundleId = [MOMO_APP_BUNDLE_ID lowercaseString];
-    NSString *sourceText = [urlPararm stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@://?",appBundleId] withString:@""];
-    sourceText = [sourceText stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@://",appBundleId] withString:@""];
-    sourceText = [sourceText stringByReplacingOccurrencesOfString:MOMO_APP_BUNDLE_ID withString:@""];
-    
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    NSArray *components = [sourceText componentsSeparatedByString:@"&"];
-    
-    for (NSString *param in components) {
-        NSArray *component = [param componentsSeparatedByString:@"="];
-        if([component count] < 2) continue;
-        
-        // get key, value
-        NSString* key   = [component objectAtIndex:0];
-        key = [key stringByReplacingOccurrencesOfString:@"?" withString:@""];
-        NSString* value = [component objectAtIndex:1];
-        
-        if(value){
-            value = [value stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
-        }
-        
-        //
-        if(key.length && value.length){
-            [params setObject:value forKey:key];
-        }
-    }
-    return params;
-}*/
+
 - (NSString*) stringForCStr:(const char *) cstr{
     if(cstr){
         return [NSString stringWithCString: cstr encoding: NSUTF8StringEncoding];

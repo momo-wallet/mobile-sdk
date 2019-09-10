@@ -17,7 +17,7 @@ typedef enum {
 } MOMO_ENVIRONTMENT ;
 
 @interface MoMoPayment : NSObject
-+(MoMoPayment*)shareInstant;
++(MoMoPayment*)shareInstances;
 - (void)initializingAppBundleId:(NSString*)bundleid merchantId:(NSString*)merchantId merchantName:(NSString*)merchantname merchantNameTitle:(NSString*)merchantNameTitle billTitle:(NSString*)billTitle;
 -(void)requestToken;
 -(void)handleOpenUrl:(NSURL*)url;

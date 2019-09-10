@@ -39,8 +39,8 @@ export default class App extends Component<Props> {
                 let momoToken = response.data;
                 let phonenumber = response.phonenumber;
                 let message = response.message;
-                let orderId = response.refOrderId; //your orderId
-                let requestId = response.refRequestId; //your requestId
+                let orderId = response.orderId || response.refOrderId; //your orderId
+                let requestId = response.requestId || response.refRequestId; //your requestId
                 //continue to submit momoToken,phonenumber to server
               } else {
                 me.setState({ description: "message: Get token fail", processing: false });
@@ -48,16 +48,16 @@ export default class App extends Component<Props> {
         }catch(ex){}
 
     });
-    
+
     //OPTIONAL
     EventEmitter.addListener('RCTMoMoNoficationCenterRequestTokenState',(response) => {
         console.log("<MoMoPay>Listen.RequestTokenState:: " + response.status);
         // status = 1: Parameters valid & ready to open MoMo app.
-        // status = 2: canOpenURL failed for URL MoMo app 
+        // status = 2: canOpenURL failed for URL MoMo app
         // status = 3: Parameters invalid
     })
   }
-  
+
   formatNumberToMoney(number, defaultNum, predicate) {
     predicate = !predicate ? "" : "" + predicate;
     if (number == 0 || number == '' || number == null || number == 'undefined' ||
@@ -113,7 +113,7 @@ export default class App extends Component<Props> {
       let jsonData = {};
       jsonData.enviroment = "0"; //"0": SANBOX , "1": PRODUCTION
       jsonData.action = "gettoken";
-      jsonData.isDev = true; //SANBOX only , remove this key on PRODUCTION 
+      jsonData.isDev = true; //SANBOX only , remove this key on PRODUCTION
       jsonData.merchantname = merchantname;
       jsonData.merchantcode = merchantcode;
       jsonData.merchantnamelabel = merchantNameLabel;

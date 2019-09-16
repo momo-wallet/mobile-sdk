@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'MomoSdkiOSSwift'
+  s.name             = 'MomoiOSSwiftSdk'
   s.version          = '3.0.1'
   s.summary          = 'Momo iOS Swift Sdk V3'
 
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/**/*'
 
   s.resource_bundles = {
-     'MomoSdkiOSSwift' => ['MomoSdkiOSSwift/Resources/*.png']
+     'MomoiOSSwiftSdk' => ['MomoiOSSwiftSdk/*.png']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

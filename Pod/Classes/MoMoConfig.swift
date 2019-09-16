@@ -31,12 +31,13 @@ let MOMO_NOTIFICATION_CENTER_TOKEN_RECEIVED = "NoficationCenterTokenReceived"
  */
 let MOMO_APP_BUNDLE_ID = "momo"
 //let MOMO_APP_BUNDLE_ID_PRODUCT = "com.mservice.com.vn.momotransfer"
-let MOMO_PAY_SDK_VERSION = "2.2"
+let MOMO_PAY_SDK_VERSION = "3.0"
 let MOMO_APP_ITUNES_DOWNLOAD_PATH = "itms-apps://itunes.apple.com/us/app/momo-chuyen-nhan-tien/id918751511"
 
 let APP_MERCHANT_ACTION_KEY = "APP_MERCHANT_ACTION_KEY"
 let MOMO_PAY_SDK_ACTION_GETTOKEN = "gettoken"
 let MOMO_PAY_SDK_ACTION_MAPPING = "mapping"
+let MOMO_PAY_SDK_ACTION_LINK = "link"
 let MOMO_TOKEN_RESPONSE_SUCCESS = "0"
 let MOMO_TOKEN_RESPONSE_REGISTER_PHONE_NUMBER_REQUIRE = "1"
 let MOMO_TOKEN_RESPONSE_LOGIN_REQUIRE = "2"
@@ -109,7 +110,7 @@ public class MoMoConfig {
     
     class func getIPAddress() -> String {
         
-        return "10.10.100.100"
+        return "100.100.100.100"
     }
     
     class func getDeviceInfoString() -> String {

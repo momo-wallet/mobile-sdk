@@ -6,5 +6,5 @@ target 'testapp001' do
   use_frameworks!
 
   # Pods for testapp001
-pod "MomoiOSSwiftSdk", :git => "https://github.com/momodevelopment/MomoiOSSwiftSdk.git", :branch => "master", submodules: true
+  pod 'MomoiOSSwiftSdk', :git => 'https://github.com/momo-wallet/mobile-sdk.git',:branch => "release_swift", submodules: true
 end

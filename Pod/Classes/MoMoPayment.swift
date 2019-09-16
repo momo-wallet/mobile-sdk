@@ -83,7 +83,8 @@ public class MoMoPayment: NSObject {
         let fromapp:String = getQueryStringParameter(url: query,param: "fromapp")!
         let appSource:String = getQueryStringParameter(url: query,param: "appSource")!
         let base64Encoded:String = getQueryStringParameter(url: query,param: "extra")!
-        
+        let requestId:String = getQueryStringParameter(url: query,param: "requestId")!
+        let orderId:String = getQueryStringParameter(url: query,param: "orderId")!
         var extra = base64Encoded
         if (extra != ""){
             if let base64Decoded = NSData(base64Encoded: base64Encoded, options:   NSData.Base64DecodingOptions(rawValue: 0))
@@ -101,6 +102,8 @@ public class MoMoPayment: NSObject {
         info.setValue(String(describing: data), forKey: "data")
         info.setValue(String(describing: fromapp), forKey: "fromapp")
         info.setValue(String(describing: appSource), forKey: "appSource")
+        info.setValue(String(describing: requestId), forKey: "requestId")
+        info.setValue(String(describing: orderId), forKey: "orderId")
         info.setValue(String(describing: extra), forKey: "extra")
         
         return info
@@ -125,8 +128,8 @@ public class MoMoPayment: NSObject {
             print("<MoMoPay> Payment pakageApp should not be null.")
             return;
         }
-        
         print("<MoMoPay> requestToken")
+        NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: "NoficationCenterTokenStartRequest"), object: "InProgress", userInfo: nil)
         let bundleId = Bundle.main.bundleIdentifier
         //Open MoMo App to get token
         var inputParams = "action=\(MOMO_PAY_SDK_ACTION_GETTOKEN)&partner=merchant"
@@ -177,6 +180,7 @@ public class MoMoPayment: NSObject {
         print("<MoMoPay> open url \(appSource)")
 
         if let urlAppMoMo = URL(string: appSource) {
+            NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: "NoficationCenterTokenStartRequest"), object: "AppMoMoInstalled", userInfo: nil)
             if UIApplication.shared.canOpenURL(urlAppMoMo) {
                 if let momoAppURL:URL = URL(string:""+"\(appSource)") {
                     if #available(iOS 10, *) {
@@ -209,15 +213,10 @@ public class MoMoPayment: NSObject {
         }
         else {
             print("<MoMoPay> momoAppURL fail")
+            NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: "NoficationCenterTokenStartRequest"), object: "AppMoMoNotInstall", userInfo: nil)
         }
         
     }
-    
-    /*
-     * SERVER SIDE DEMO
-     * CALL MOMO API http://testing.momo.vn:8093/pay/app
-     */
-
     open func requestPayment(parram: NSMutableDictionary) {
         print("<MoMoPay> please implement this function by your self")
         //

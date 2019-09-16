@@ -12,7 +12,6 @@
 		E953DA3620D1C41B00C781C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E953DA3420D1C41B00C781C4 /* Main.storyboard */; };
 		E953DA3820D1C41C00C781C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E953DA3720D1C41C00C781C4 /* Assets.xcassets */; };
 		E953DA3B20D1C41C00C781C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E953DA3920D1C41C00C781C4 /* LaunchScreen.storyboard */; };
-		E953DA4720D230CA00C781C4 /* momo.png in Resources */ = {isa = PBXBuildFile; fileRef = E953DA4620D230CA00C781C4 /* momo.png */; };
 		FB380E8DBD7C11AD00EAA3E2 /* Pods_testapp001.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01FCB3C01DC60D7B1A7ED70 /* Pods_testapp001.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +26,6 @@
 		E953DA3720D1C41C00C781C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E953DA3A20D1C41C00C781C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E953DA3C20D1C41C00C781C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E953DA4620D230CA00C781C4 /* momo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = momo.png; path = Pods/MomoiOSSwiftSdk/MomoiOSvSwiftSdk/momo.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +78,6 @@
 		E953DA2F20D1C41B00C781C4 /* testapp001 */ = {
 			isa = PBXGroup;
 			children = (
-				E953DA4620D230CA00C781C4 /* momo.png */,
 				E953DA3020D1C41B00C781C4 /* AppDelegate.swift */,
 				E953DA3220D1C41B00C781C4 /* ViewController.swift */,
 				E953DA3420D1C41B00C781C4 /* Main.storyboard */,
@@ -154,7 +151,6 @@
 				E953DA3B20D1C41C00C781C4 /* LaunchScreen.storyboard in Resources */,
 				E953DA3820D1C41C00C781C4 /* Assets.xcassets in Resources */,
 				E953DA3620D1C41B00C781C4 /* Main.storyboard in Resources */,
-				E953DA4720D230CA00C781C4 /* momo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var payment_merchantName = "CGV Cinemas"
     var payment_amount       = 20000
     var payment_fee_display  = 0
-    var payment_userId       = "lanh.luu.vn@gmail.com"
+    var payment_userId       = "userid@gmail.com"
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint MoMoiOSsdkv2.podspec' to ensure this is a
+# Be sure to run `pod lib lint MomoiOSSwiftSdkV2.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'MoMoiOSsdkv2'
-  s.version          = '2.2.0'
-  s.summary          = 'MoMo Sdk framework for ObjC.'
+  s.name             = 'MomoSdkiOSSwift'
+  s.version          = '3.0.1'
+  s.summary          = 'Momo iOS Swift Sdk V3'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,19 +17,23 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = 'MoMo SDK is designed to work with iOS 8.0 or newest. Swift 2.0 , ObjC supported'
+  s.description      = 'Mobile sdk iOS '
 
-  s.homepage         = 'https://github.com/momodevelopment/MoMoiOSsdkv2'
+  s.homepage         = 'https://github.com/momo-wallet/mobile-sdk/tree/release_swift'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'momodevelopment' => 'lanhluu.vn@gmail.com' }
-  s.source           = { :git => 'https://github.com/momodevelopment/MoMoiOSsdkv2.git', :tag => s.version.to_s }
+  s.author           = { 'momodevelopment' => 'lanh.luu@mservice.com.vn' }
+  s.source           = { :git => 'https://github.com/momo-wallet/mobile-sdk.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+
   s.ios.deployment_target = '8.0'
-  s.source_files = 'MoMoiOSsdkv2/Classes/**/*'
+
+  s.source_files = 'Pod/**/*'
+
   s.resource_bundles = {
-    'MoMoiOSsdkv2' => ['MoMoiOSsdkv2/Assets/*.png']
+     'MomoSdkiOSSwift' => ['MomoSdkiOSSwift/Resources/*.png']
   }
+
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'

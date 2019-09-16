@@ -35,7 +35,7 @@ typedef enum {
 -(NSMutableDictionary*)getPaymentInfo;
 -(NSString*)getDeviceInfoString;
 -(void)setMoMoAppScheme:(NSString*)bundleId;
--(void)initPayment:(NSMutableDictionary*)info environment:(MOMO_ENVIRONTMENT)type_environment;
+-(void)initPayment:(NSMutableDictionary*)info;
 -(void)setEnvironment:(MOMO_ENVIRONTMENT)type_environtment;
 -(BOOL)getEnvironment;
 @end

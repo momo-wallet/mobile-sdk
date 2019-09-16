@@ -233,10 +233,10 @@ static NSMutableDictionary *paymentInfo = nil;
         }
         
         NSString *appSource = [NSString stringWithFormat:@"%@://?%@",MOMO_APP_BUNDLE_ID,inputParams];
-        BOOL isProduction = [MoMoConfig getEnvironment];
-        if (!isProduction) {
-            appSource = [NSString stringWithFormat:@"com.momo.appv2.ios://?%@",inputParams];
-        }
+//        BOOL isProduction = [MoMoConfig getEnvironment];
+//        if (!isProduction) {
+//            appSource = [NSString stringWithFormat:@"com.momo.appv2.ios://?%@",inputParams];
+//        }
         
         appSource = [appSource stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *ourURL = [NSURL URLWithString:appSource];
@@ -279,13 +279,13 @@ static NSMutableDictionary *paymentInfo = nil;
 //    
 //}
 
--(void)initPayment:(NSMutableDictionary*)info environment:(MOMO_ENVIRONTMENT)type_environment
+-(void)initPayment:(NSMutableDictionary*)info
 {
-    if (type_environment == MOMO_SDK_DEVELOPMENT || type_environment == MOMO_SDK_DEBUG) {
-        [MoMoConfig setEnvironment:NO];
-    }else{
-        [MoMoConfig setEnvironment:YES];
-    }
+//    if (type_environment == MOMO_SDK_DEVELOPMENT || type_environment == MOMO_SDK_DEBUG) {
+//        [MoMoConfig setEnvironment:NO];
+//    }else{
+//        [MoMoConfig setEnvironment:YES];
+//    }
     paymentInfo = [[NSMutableDictionary alloc] initWithDictionary:info];
     
 }

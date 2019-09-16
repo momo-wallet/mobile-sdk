@@ -40,16 +40,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    @available(iOS 9.0, *)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+        MoMoPayment.handleOpenUrl(url: url, sourceApp: "")
+        return true
+    }
+    @available(iOS 8.0, *)
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         MoMoPayment.handleOpenUrl(url: url, sourceApp: sourceApplication!)
         
         return true
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        MoMoPayment.handleOpenUrl(url: url, sourceApp: "")
-        return true
-    }
-
 }
 

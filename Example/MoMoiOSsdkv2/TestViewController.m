@@ -28,7 +28,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenStartRequest:) name:@"NoficationCenterTokenStartRequest" object:nil]; ///SHOULD BE REMOVE THIS KEY WHEN VIEWCONTROLLER DEALLOCATING OR DISMISSING COMPLETED
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NoficationCenterTokenReceived" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenReceived:) name:@"NoficationCenterTokenReceived" object:nil]; 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenReceived:) name:@"NoficationCenterTokenReceived" object:nil];
     
     [[MoMoPayment shareInstances] initAppBundleId:@"com.abcFoody.LuckyLuck" partnerCode:@"CGV01" partnerName:@"CGV" partnerNameLabel:@"Nhà cung cấp" billLabel:@"Mã thanh toán"];
     ///
@@ -254,7 +254,7 @@
     
     //Development environment (only testing)
     
-    [[MoMoPayment shareInstances] initPayment:paymentinfo environment:MOMO_SDK_DEVELOPMENT];
+    [[MoMoPayment shareInstances] initPayment:paymentinfo];
     
     //BUOC 2: add button Thanh toan bang Vi MoMo vao khu vuc ban can hien thi (Vi du o day la vung paymentArea)
     ///Custom button

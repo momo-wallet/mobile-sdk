@@ -35,6 +35,8 @@ class ViewController: UIViewController {
          */
         
         //STEP 1: addObserver Notification
+        NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenStartRequest), name:NSNotification.Name(rawValue: "NoficationCenterTokenStartRequest"), object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenReceived), name:NSNotification.Name(rawValue: "NoficationCenterTokenReceived"), object: nil)
         //        NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenReceived), name:NSNotification.Name(rawValue: "NoficationCenterTokenReceivedUri"), object: nil)
         //
@@ -43,9 +45,9 @@ class ViewController: UIViewController {
         let paymentinfo = NSMutableDictionary()
         paymentinfo["merchantcode"] = "CGV01"
         paymentinfo["merchantname"] = "CGV Cinemas"
-        paymentinfo["merchantnamelabel"] = "Service"
-        
+        paymentinfo["merchantnamelabel"] = "Dịch vụ"
         paymentinfo["amount"] = payment_amount
+        paymentinfo["orderId"] = "MM123456789XXX"
         paymentinfo["fee"] = payment_fee_display
         paymentinfo["description"] = "Thanh toán vé xem phim"
         paymentinfo["extra"] = "{\"key1\":\"value1\",\"key2\":\"value2\"}"
@@ -84,8 +86,14 @@ class ViewController: UIViewController {
     }
     
     /*
-     * SERVER SIDE
+     * NOTIFICATION HANDLER
      */
+    @objc func NoficationCenterTokenStartRequest(notif: NSNotification) {
+        print("::MoMoPay Log::TokenStartRequest::\(notif.object!)")
+        //InProgress
+        //AppMoMoInstalled
+        //AppMoMoNotInstall
+    }
     @objc func NoficationCenterTokenReceived(notif: NSNotification) {
         //Token Replied - Call Payment to MoMo Server
         print("::MoMoPay Log::Received Token Replied::\(notif.object!)")
@@ -101,8 +109,9 @@ class ViewController: UIViewController {
         if (_statusStr == "0") {
             
             print("::MoMoPay Log: SUCESS TOKEN. CONTINUE TO CALL API PAYMENT")
-            print(">>phone \(response["phonenumber"] as! String)   :: data \(response["data"] as! String)")
-            
+            print(">>MoMoPay response phone \(response["phonenumber"] as! String)")
+            print(">>MoMoPay response token \(response["data"] as! String) ")
+            print(">>MoMoPay response orderId \(response["orderId"] as! String) ")
             let merchant_username       = "username_or_email_or_fullname"
             
             let orderInfo = NSMutableDictionary();
@@ -115,8 +124,12 @@ class ViewController: UIViewController {
             orderInfo.setValue(payment_merchantCode,            forKey: "merchantcode");
             orderInfo.setValue(merchant_username,            forKey: "username");
             
-            lblMessage.text = "Get token success! status: \(_statusStr) - wallet: \(response["phonenumber"] as! String) - data: \(response["data"] as! String)"
-            submitOrderToServer(parram: orderInfo)
+            lblMessage.text = "Get token success! \n status: \(_statusStr) \n wallet: \(response["phonenumber"] as! String) \n orderId: \(response["orderId"] as! String) \n data: \(response["data"] as! String)"
+            let alert = UIAlertView()
+            alert.title = "success! "
+            alert.message = " continue submit param <phonenumber,data> to pay bill on server side"
+            alert.addButton(withTitle: "Ok")
+            alert.show()
             
         }
         else{
@@ -184,10 +197,11 @@ class ViewController: UIViewController {
         
         //var imgMoMo = UIImageView(frame: CGRectMake(0, 0, 50, 50))
         
-        let imgMoMo:UIImageView = UIImageView()
-        imgMoMo.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        imgMoMo.image = UIImage(named: "momo.png")!
-        paymentArea.addSubview(imgMoMo)
+//        let imgMoMo:UIImageView = UIImageView()
+//        imgMoMo.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        // img.mservice.io/momo-payment/icon/images/logo512.png
+//        imgMoMo.image = UIImage(named: "momo.png")!
+//        paymentArea.addSubview(imgMoMo)
         
         let lbl:UILabel = UILabel()
         lbl.frame = CGRect(x: 60, y: 0, width: 200, height: 20)
@@ -203,10 +217,9 @@ class ViewController: UIViewController {
         lbl2.backgroundColor = UIColor.clear
         paymentArea.addSubview(lbl2)
         
-        let amountStrVnd = self.cleanDollars(payment_amount).replacingOccurrences(of: "$", with: "")
         let lbl3:UILabel = UILabel()
         lbl3.frame = CGRect(x: 10, y: 60, width: 200, height: 30)
-        lbl3.text = "Total amount:  \(amountStrVnd)  vnd"
+        lbl3.text = "Total amount:  20.000  vnd"
         lbl3.font = UIFont.boldSystemFont(ofSize: 15)
         lbl3.backgroundColor = UIColor.clear
         paymentArea.addSubview(lbl3)
@@ -233,42 +246,5 @@ class ViewController: UIViewController {
         
     }
     
-    func cleanDollars(_ value: Int?) -> String {
-        guard value != nil else { return "$0.00" }
-        let doubleValue = Double(value!)
-        let formatter = NumberFormatter()
-        formatter.currencyCode = "USD"
-        formatter.currencySymbol = "$"
-        formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 2
-        formatter.numberStyle = .currencyAccounting
-        
-        return formatter.string(from: NSNumber(value: doubleValue)) ?? "\(doubleValue)"
-    }
-    
-    func submitOrderToServer(parram: NSMutableDictionary) {
-        btnPay.backgroundColor = UIColor.gray
-        
-        //lblMessage.text = "Please wait..."
-        let when = DispatchTime.now() + 2 // change 5 to desired number of seconds
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            // Your code with delay
-            //self.lblMessage.text = "{Submit order success}"
-            self.btnPay.isEnabled = true
-            self.btnPay.backgroundColor = UIColor.purple
-            let alert = UIAlertView()
-            alert.title = "MoMoPay alert"
-            alert.message = "please continue submit param <phonenumber,data> to server side"
-            alert.addButton(withTitle: "Ok")
-            alert.show()
-            
-        }
-        print("<MoMoPay> WARNING: implement this feature on your server side")
-        
-        /**********END Sample send request on Your Server -To - MoMo Server
-         **********WARNING: must to remove it on your product app
-         **********/
-        
-    }
 }
 

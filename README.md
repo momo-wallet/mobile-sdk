@@ -1,10 +1,46 @@
-# mobile-sdk
-If your business have a mobile app. You can use this SDK to integrate MoMo app into your app.
 
- # iOS APP
- ### STEP 1: Config file Plist (CFBundleURLTypes and LSApplicationQueriesSchemes)
+# react-native-momosdk
 
- ```
+### Module to create e-wallet payment method. That is the way to payment customer's order by their MoMo e-wallet.
+
+## Getting started
+
+`$ npm install react-native-momosdk --save`
+
+### Mostly automatic installation
+
+`$ react-native link react-native-momosdk`
+
+### Manual installation
+
+
+#### Android
+
+1. Open up `android/app/src/main/java/[...]/MainActivity.java`
+- Add `import com.reactlibrary.RNMomosdkPackage;` to the imports at the top of the file
+- Add `new RNMomosdkPackage()` to the list returned by the `getPackages()` method
+
+2. Append the following lines to `android/settings.gradle`:
+```
+include ':react-native-momosdk'
+project(':react-native-momosdk').projectDir = new File(rootProject.projectDir,     '../node_modules/react-native-momosdk/android')
+```
+
+3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
+```
+compile project(':react-native-momosdk')
+```
+
+#### iOS
+
+1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
+2. Go to `node_modules` ➜ `react-native-momosdk` and add `RNMomosdk.xcodeproj`
+3. In XCode, in the project navigator, select your project. Add `libRNMomosdk.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+4. Run your project (`Cmd+R`)<
+
+#### Config file Plist (CFBundleURLTypes and LSApplicationQueriesSchemes)
+
+```
  <key>CFBundleURLTypes</key>
  <array>
    <dict>
@@ -25,211 +61,103 @@ If your business have a mobile app. You can use this SDK to integrate MoMo app i
    <key>NSAllowsArbitraryLoads</key>
    <true/>
  </dict>
+```
+
+```
+AppDelegate
+#import "RNMomosdk.h"
+/*iOS 9 or newest*/
+-(BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+  [RNMomosdk handleOpenUrl:url];
+  return YES;
+}
+
+/*iOS 8 or lower*/
+-(BOOL)application:(UIApplication *)application
+             openURL:(NSURL *)url
+   sourceApplication:(NSString *)sourceApplication
+          annotation:(id)annotation;{
+  [RNMomosdk handleOpenUrl:url];
+  return YES;
+}
  ```
-- CFBundleURLTypes: add scheme <partnerSchemeId> . Note: partnerSchemeId provided by MoMo , get from business.momo.vn
-- LSApplicationQueriesSchemes: add scheme "momo"
-- partnerSchemeId: match with partnerSchemeId as Step 1
- ### STEP 2: Your Button CTA / Open MoMo app. Build the deeplink as bellow
 
-```
-Params description
+## Usage & Example code
+```javascript
+import { Platform, DeviceEventEmitter,NativeModules, NativeEventEmitter} from 'react-native';
+import RNMomosdk from 'react-native-momosdk';
+const RNMomosdkModule = NativeModules.RNMomosdk;
+const EventEmitter = new NativeEventEmitter(RNMomosdkModule);
 
-Name                    Type      REQUIRED ?     Description
-action                 String    required      value = gettoken. DO NOT EDIT
-partner                String    required      value = merchant. DO NOT EDIT
-merchantcode           String    required      provided by MoMo. get from business.momo.vn
-merchantname           String    required      partner name / merchant name
-merchantnamelabel      String    optional      Merchantname Hint/Label
-appScheme              String    required      partnerSchemeId provided by MoMo , get from business.momo.vn
-orderId                String    required      billing purchaseId / Contract id
-amount                 int       required      bill amount total
-orderLabel             String    optional      Contract Number Hint/Label . Example value: "OrderId" , "BillId"
-description            String    required      bill description
-language               String    optional        DO NOT EDIT. value = vi
-fee                    int       optional        fee amount (just review). default = 0
-username               String    optional        user id/user identify/user email
-extra                  String    optional        json string - that should be more bill extra info
-```
-#### usage method
-```
-let paymentinfo = NSMutableDictionary()
-    paymentinfo["merchantcode"] = "CGV01"
-    paymentinfo["merchantname"] = "CGV Cinemas"
-    paymentinfo["merchantnamelabel"] = "Service"
-    paymentinfo["orderId"] = "012345XXX"
-    paymentinfo["orderLabel"] = "OrderID"
-    paymentinfo["amount"] = 20000
-    paymentinfo["fee"] = 0
-    paymentinfo["description"] = "Thanh toán vé xem phim"
-    paymentinfo["extra"] = "{\"key1\":\"value1\",\"key2\":\"value2\"}"
-    paymentinfo["username"] = payment_userId
-    paymentinfo["appScheme"] = "momopartnerscheme001" 
-    MoMoPayment.createPaymentInformation(info: paymentinfo)
-```
-
-#### momosdk generate deeplink base
-```
- momo://?action=gettoken&merchantcode=CGV01&merchantname=CGV Cinemas&amount=99000&orderId=012345XXX&description=Buy ticket&fee=0&ipaddress=192.168.1.154&username=username_accountId@yahoo.com&sdkversion=2.0&appScheme=partnerSchemeId
-```
-
-### Sample app ios-swift-CocoaPods
-    -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momodevelopment/MomoiOSSwiftSdk.git", :branch => "master", submodules: true
+const merchantname = "CGV Cinemas";
+const merchantcode = "CGV01";
+const merchantNameLabel = "Nhà cung cấp";
+const billdescription = "Fast and Furious 8";
+const amount = 50000;
+const enviroment = "0"; //"0": SANBOX , "1": PRODUCTION
 
 
+componentDidMount(){
+    EventEmitter.addListener('RCTMoMoNoficationCenterRequestTokenReceived', (response) => {
+        try{
+            console.log("<MoMoPay>Listen.Event::" + JSON.stringify(response));
+              if (response && response.status == 0) {
+                //SUCCESS: continue to submit momoToken,phonenumber to server
+                let fromapp = response.fromapp; //ALWAYS:: fromapp==momotransfer
+                let momoToken = response.data;
+                let phonenumber = response.phonenumber;
+                let message = response.message;
+                let orderId = response.refOrderId;
+              } else {
+                //let message = response.message;
+                //Has Error: show message here
+              }
+        }catch(ex){}
+    });
+    //OPTIONAL
+    EventEmitter.addListener('RCTMoMoNoficationCenterRequestTokenState',(response) => {
+        console.log("<MoMoPay>Listen.RequestTokenState:: " + response.status);
+        // status = 1: Parameters valid & ready to open MoMo app.
+        // status = 2: canOpenURL failed for URL MoMo app
+        // status = 3: Parameters invalid
+    })
+}
 
-# Android App
-
-At a minimum, this SDK is designed to work with Android SDK 14.
-
-
-## Installation
-
-To use the MoMo Android SDK, add the compile dependency with the latest version of the MoMo SDK.
-
-### Gradle
-
-Step 1. Import SDK
-Add the JitPack repository to your `build.gradle`:
-```
-allprojects {
-    repositories {
-        ...
-        maven { url 'https://jitpack.io' }
+// TODO: Action to Request Payment MoMo App
+onPress = async () => {
+    let jsonData = {};
+    jsonData.enviroment = enviroment; //SANBOX OR PRODUCTION
+    jsonData.action = "gettoken"; //DO NOT EDIT
+    jsonData.merchantname = merchantname; //edit your merchantname here
+    jsonData.merchantcode = merchantcode; //edit your merchantcode here
+    jsonData.merchantnamelabel = merchantNameLabel;
+    jsonData.description = billdescription;
+    jsonData.amount = 5000;//order total amount
+    jsonData.orderId = "ID20181123192300";
+    jsonData.orderLabel = "Ma don hang";
+    jsonData.appScheme = "momocgv20170101";// iOS App Only , match with Schemes Indentify from your  Info.plist > key URL types > URL Schemes
+    console.log("data_request_payment " + JSON.stringify(jsonData));
+    if (Platform.OS === 'android'){
+      let dataPayment = await RNMomosdk.requestPayment(jsonData);
+      this.momoHandleResponse(dataPayment);
+    }else{
+      RNMomosdk.requestPayment(jsonData);
     }
 }
-```
 
-Add the dependency:
-```
-dependencies {
-	        compile 'com.github.momodevelopment:androidsdkV2.2:1.1'
+async momoHandleResponse(response){
+  try{
+    if (response && response.status == 0) {
+      //SUCCESS continue to submit momoToken,phonenumber to server
+      let fromapp = response.fromapp; //ALWAYS:: fromapp == momotransfer
+      let momoToken = response.data;
+      let phonenumber = response.phonenumber;
+      let message = response.message;
+
+    } else {
+      //let message = response.message;
+      //Has Error: show message here
+    }
+  }catch(ex){}
 }
 ```
-
-Step 2. Config AndroidMainfest
-```
-<uses-permission android:name="android.permission.INTERNET" />
-```
-Step 3. Build Layout
-Confirm order Activity
-```
-import vn.momo.momo_partner.AppMoMoLib;
-import vn.momo.momo_partner.MoMoParameterNameMap;
-
-private String amount = "10000";
-private String fee = "0";
-int environment = 0;//developer default
-private String merchantName = "Demo SDK";
-private String merchantCode = "SCB01";
-private String merchantNameLabel = "Nhà cung cấp";
-private String description = "Thanh toán dịch vụ ABC";
-
-void onCreate(Bundle savedInstanceState)
-        AppMoMoLib.getInstance().setEnvironment(AppMoMoLib.ENVIRONMENT.DEVELOPMENT); // AppMoMoLib.ENVIRONMENT.PRODUCTION
-```
-- Display MoMo button label language (required): English = "MoMo e-wallet", Vietnamese = "Ví MoMo"
-- Display icon or button color (optional): title color #b0006d , icon https://img.mservice.io/momo-payment/icon/images/logo512.png
-
-Step 4. Get token & request payment
-```
-//Get token through MoMo app
-private void requestPayment() {
-        AppMoMoLib.getInstance().setAction(AppMoMoLib.ACTION.PAYMENT);
-        AppMoMoLib.getInstance().setActionType(AppMoMoLib.ACTION_TYPE.GET_TOKEN);
-        if (edAmount.getText().toString() != null && edAmount.getText().toString().trim().length() != 0)
-            amount = edAmount.getText().toString().trim();
-
-        Map<String, Object> eventValue = new HashMap<>();
-        //client Required
-        eventValue.put("merchantname", merchantName); //Tên đối tác. được đăng ký tại https://business.momo.vn. VD: Google, Apple, Tiki , CGV Cinemas
-        eventValue.put("merchantcode", merchantCode); //Mã đối tác, được cung cấp bởi MoMo tại https://business.momo.vn 
-        eventValue.put("amount", total_amount); //Kiểu integer 
-	eventValue.put("orderId", "orderId123456789"); //uniqueue id cho Bill order, giá trị duy nhất cho mỗi đơn hàng  
-	eventValue.put("orderLabel", "Mã đơn hàng"); //gán nhãn 
-	
-	//client Optional - bill info
-	eventValue.put("merchantnamelabel", "Dịch vụ");//gán nhãn 
-        eventValue.put("fee", total_fee); //Kiểu integer
-	eventValue.put("description", description); //mô tả đơn hàng - short description 
-
-        //client extra data 
-        eventValue.put("requestId",  merchantCode+"merchant_billId_"+System.currentTimeMillis());
-        eventValue.put("partnerCode", merchantCode);
-	//Example extra data 
-        JSONObject objExtraData = new JSONObject();
-        try {
-            objExtraData.put("site_code", "008");
-            objExtraData.put("site_name", "CGV Cresent Mall");
-            objExtraData.put("screen_code", 0);
-            objExtraData.put("screen_name", "Special");
-            objExtraData.put("movie_name", "Kẻ Trộm Mặt Trăng 3");
-            objExtraData.put("movie_format", "2D");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        eventValue.put("extraData", objExtraData.toString());
-
-        eventValue.put("extra", "");
-        AppMoMoLib.getInstance().requestMoMoCallBack(this, eventValue);
-
-
-    }
-//Get token callback from MoMo app an submit to server side
-void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == AppMoMoLib.getInstance().REQUEST_CODE_MOMO && resultCode == -1) {
-            if(data != null) {
-                if(data.getIntExtra("status", -1) == 0) {
-                    //TOKEN IS AVAILABLE
-                    tvMessage.setText("message: " + "Get token " + data.getStringExtra("message"));
-                    String token = data.getStringExtra("data"); //Token response
-                    String phoneNumber = data.getStringExtra("phonenumber");
-                    String env = data.getStringExtra("env");
-                    if(env == null){
-                        env = "app";
-                    }
-
-                    if(token != null && !token.equals("")) {
-                        // TODO: send phoneNumber & token to your server side to process payment with MoMo server
-                        // IF Momo topup success, continue to process your order
-                    } else {
-                        tvMessage.setText("message: " + this.getString(R.string.not_receive_info));
-                    }
-                } else if(data.getIntExtra("status", -1) == 1) {
-                    //TOKEN FAIL
-                    String message = data.getStringExtra("message") != null?data.getStringExtra("message"):"Thất bại";
-                    tvMessage.setText("message: " + message);
-                } else if(data.getIntExtra("status", -1) == 2) {
-                    //TOKEN FAIL
-                    tvMessage.setText("message: " + this.getString(R.string.not_receive_info));
-                } else {
-                    //TOKEN FAIL
-                    tvMessage.setText("message: " + this.getString(R.string.not_receive_info));
-                }
-            } else {
-                tvMessage.setText("message: " + this.getString(R.string.not_receive_info));
-            }
-        } else {
-            tvMessage.setText("message: " + this.getString(R.string.not_receive_info_err));
-        }
-    }
-```
-### Sample app android
-    -   https://github.com/momo-wallet/mobile-sdk/tree/master/android
-
- ## Version
-
- ```
- Version 2.0
- ```
-
- ## Authors
-
- * **Lành Lưu**
- * **Hưng Đỗ**
-
- ## License
- Since 2015 (c) MoMo
-
- ## Contact - Support
- * itc.payment@mservice.com.vn

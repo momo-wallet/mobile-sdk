@@ -66,13 +66,12 @@ compile project(':react-native-momosdk')
 ```
 AppDelegate
 #import "RNMomosdk.h"
-/*iOS 9 or newest*/
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
 -(BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
   [RNMomosdk handleOpenUrl:url];
   return YES;
 }
-
-/*iOS 8 or lower*/
+#else
 -(BOOL)application:(UIApplication *)application
              openURL:(NSURL *)url
    sourceApplication:(NSString *)sourceApplication
@@ -80,6 +79,7 @@ AppDelegate
   [RNMomosdk handleOpenUrl:url];
   return YES;
 }
+#endif
  ```
 
 ## Usage & Example code

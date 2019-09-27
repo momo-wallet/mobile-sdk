@@ -47,12 +47,12 @@ class ViewController: UIViewController {
         paymentinfo["merchantname"] = "CGV Cinemas"
         paymentinfo["merchantnamelabel"] = "Dịch vụ"
         paymentinfo["amount"] = payment_amount
-        paymentinfo["orderId"] = "MM123456789XXX"
+        paymentinfo["requestId"] = "MM123456789XXX"
         paymentinfo["fee"] = payment_fee_display
         paymentinfo["description"] = "Thanh toán vé xem phim"
         paymentinfo["extra"] = "{\"key1\":\"value1\",\"key2\":\"value2\"}"
         paymentinfo["username"] = payment_userId
-        paymentinfo["appScheme"] = "momopartnerscheme001" //<partnerSchemeId>: app uniqueueId provided by MoMo , get from business.momo.vn. PLEASE MAKE SURE TO ADD <partnerSchemeId> TO PLIST file ( URL types > URL Schemes ). View more detail on https://github.com/momo-wallet/mobile-sdk/tree/master/ios
+        paymentinfo["appScheme"] = "momopartnerscheme001" //<partnerSchemeId> provided by MoMo , get from business.momo.vn. Config <partnerSchemeId> value into your .PLIST file ( URL types > URL Schemes )
         MoMoPayment.createPaymentInformation(info: paymentinfo)
         
         //STEP 3: INIT LAYOUT - ADD BUTTON PAYMENT VIA MOMO

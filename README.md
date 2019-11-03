@@ -34,8 +34,6 @@ If your business have a mobile app. You can use this SDK to integrate MoMo app i
 Params description
 
 Name                    Type      REQUIRED ?     Description
-action                 String    required      value = gettoken. DO NOT EDIT
-partner                String    required      value = merchant. DO NOT EDIT
 merchantcode           String    required      provided by MoMo. get from business.momo.vn
 merchantname           String    required      partner name / merchant name
 merchantnamelabel      String    optional      Merchantname Hint/Label

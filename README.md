@@ -45,12 +45,11 @@ orderId                String    required      billing purchaseId / Contract id
 amount                 int       required      bill amount total
 orderLabel             String    optional      Contract Number Hint/Label . Example value: "OrderId" , "BillId"
 description            String    required      bill description
-language               String    optional        DO NOT EDIT. value = vi
 fee                    int       optional        fee amount (just review). default = 0
 username               String    optional        user id/user identify/user email
 extra                  String    optional        json string - that should be more bill extra info
 ```
-#### usage method
+#### usage method - Swift
 ```
 let paymentinfo = NSMutableDictionary()
     paymentinfo["merchantcode"] = "CGV01"
@@ -62,19 +61,16 @@ let paymentinfo = NSMutableDictionary()
     paymentinfo["fee"] = 0
     paymentinfo["description"] = "Thanh toán vé xem phim"
     paymentinfo["extra"] = "{\"key1\":\"value1\",\"key2\":\"value2\"}"
-    paymentinfo["username"] = payment_userId
-    paymentinfo["appScheme"] = "momopartnerscheme001" 
+    paymentinfo["username"] = payment_username //user id/user identify/user email
+    paymentinfo["appScheme"] = "partnerSchemeId"   //partnerSchemeId provided by MoMo , get from business.momo.vn
     MoMoPayment.createPaymentInformation(info: paymentinfo)
 ```
 
-#### momosdk generate deeplink base
-```
- momo://?action=gettoken&merchantcode=CGV01&merchantname=CGV Cinemas&amount=99000&orderId=012345XXX&description=Buy ticket&fee=0&ipaddress=192.168.1.154&username=username_accountId@yahoo.com&sdkversion=2.0&appScheme=partnerSchemeId
-```
+### ios-swift CocoaPods
+    -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momo-wallet/mobile-sdk.git", :branch => "release_swift", submodules: true
 
-### Sample app ios-swift-CocoaPods
-    -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momodevelopment/MomoiOSSwiftSdk.git", :branch => "master", submodules: true
-
+### ios-Objective-C CocoaPods
+    -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momo-wallet/mobile-sdk.git", :branch => "release_objc", submodules: true
 
 
 # Android App

@@ -152,9 +152,10 @@ override func viewDidLoad() {
     [super viewDidLoad];
     //Remove all MOMO NOTIFICATION by self
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NoficationCenterTokenReceived" object:nil];
+    
     //Registration MOMO NOTIFICATION by self
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenReceived:) name:@"NoficationCenterTokenReceived" object:nil];
-    ///
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(processMoMoNoficationCenterTokenReceived:) name:@"NoficationCenterTokenReceived" object:nil];
+    
     NSMutableDictionary *paymentinfo = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                             [NSNumber numberWithInt:99000],@"amount",
                                             [NSNumber numberWithInt:0],@"fee",
@@ -163,10 +164,10 @@ override func viewDidLoad() {
                                             @"vi",@"language",
                                             @"your_orderId",@"orderId",
                                             @"Người dùng",@"orderLabel",
-                                            @"momopartnerscheme001": @"appScheme",
+                                            @"momopartnerscheme001", @"appScheme",
                                             nil];
-    //environment MOMO_SDK_PRODUCTION or MOMO_SDK_DEVELOPMENT use only one appScheme "momo"
-    [[MoMoPayment shareInstant] initPaymentInformation:paymentinfo momoAppScheme:@"momo" environment:MOMO_SDK_DEVELOPMENT];
+    
+    [[MoMoPayment shareInstances] initPayment:paymentinfo];
 }
 
 ```
@@ -266,14 +267,14 @@ func submitOrderToServer(parram: NSMutableDictionary) {
 
 //Objective-c Code
 -(void)processMoMoNoficationCenterTokenReceived:(NSNotification*)notif{
-NSString *sourceText = [NSString stringWithFormat:@"%@",notif.object];
+NSString *sourceUri = [NSString stringWithFormat:@"%@",notif.object];
     
     NSURL *url = [NSURL URLWithString:sourceText];
     if (url) {
         sourceText = url.query;
     }
     
-    NSArray *parameters = [sourceText componentsSeparatedByString:@"&"];
+    NSArray *parameters = [sourceUri componentsSeparatedByString:@"&"];
     
     NSDictionary *response = [self getDictionaryFromComponents:parameters];
     NSString *status = [NSString stringWithFormat:@"%@",[response objectForKey:@"status"]];
@@ -290,7 +291,41 @@ NSString *sourceText = [NSString stringWithFormat:@"%@",notif.object];
         NSLog(@"::MoMoPay Log: %@",message);
     }
 }
-
+-(NSMutableDictionary*)getDictionaryFromComponents:(NSArray*)components{
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    // parse parameters to dictionary
+    for (NSString *param in components) {
+        NSArray *elts = [param componentsSeparatedByString:@"="];
+        if([elts count] < 2) continue;
+        // get key, value
+        NSString* key   = [elts objectAtIndex:0];
+        key = [key stringByReplacingOccurrencesOfString:@"?" withString:@""];
+        NSString* value = [elts objectAtIndex:1];
+        
+        ///Start Fix HTML Property issue
+        if ([elts count]>2) {
+            @try {
+                value = [param substringFromIndex:([param rangeOfString:@"="].location+1)];
+            }
+            @catch (NSException *exception) {
+                
+            }
+            @finally {
+                
+            }
+        }
+        ///End HTML Property issue
+        if(value){
+            value = [NSString stringWithCString: [value UTF8String] encoding: NSUTF8StringEncoding];
+        }
+        
+        //
+        if(key.length && value.length){
+            [params setObject:value forKey:key];
+        }
+    }
+    return params;
+}
 ```
 ## Author
 

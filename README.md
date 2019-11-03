@@ -96,19 +96,15 @@ override func viewDidLoad() {
 @objc func openAppMoMo() {
         MoMoPayment.requestToken()
     }
-    @objc func NoficationCenterTokenReceived(notif: NSNotification) {
+@objc func NoficationCenterTokenReceived(notif: NSNotification) {
             //Token Replied - Call Payment to MoMo Server
             print("::MoMoPay Log::Received Token Replied::\(notif.object!)")
             //lblMessage.text = "RequestToken response:\n  \(notif.object as Any)"
             
             let response:NSMutableDictionary = notif.object! as! NSMutableDictionary
-            
-            
-            
-            //let _status = response["status"] as! String
+            let _reference_orderId = response["orderId"] as! String
             let _statusStr = "\(response["status"] as! String)"
-            
-            
+            let _messageStr = "\(response["message"] as! String)"	    
     }
 ```
 

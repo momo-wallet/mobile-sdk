@@ -28,7 +28,12 @@ If your business have a mobile app. You can use this SDK to integrate MoMo app i
  ```
 - CFBundleURLTypes: add scheme <partnerSchemeId> . Note: partnerSchemeId provided by MoMo , get from business.momo.vn
 - LSApplicationQueriesSchemes: add the scheme as "momo"
- ### STEP 2: Init the order parameters
+
+### ios-swift CocoaPods
+    -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momo-wallet/mobile-sdk.git", :branch => "release_swift", submodules: true
+
+### ios-Objective-C CocoaPods
+    -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momo-wallet/mobile-sdk.git", :branch => "release_objc", submodules: true
 
 ```
 Params description
@@ -46,6 +51,8 @@ fee                    int       optional        fee amount (just review). defau
 username               String    optional        user id/user identify/user email
 extra                  String    optional        json string - that should be more bill extra info
 ```
+
+### STEP 2: Init the order parameters
 
 ```
 override func viewDidLoad() {
@@ -104,11 +111,6 @@ override func viewDidLoad() {
             
     }
 ```
-### ios-swift CocoaPods
-    -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momo-wallet/mobile-sdk.git", :branch => "release_swift", submodules: true
-
-### ios-Objective-C CocoaPods
-    -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momo-wallet/mobile-sdk.git", :branch => "release_objc", submodules: true
 
 
 # Android App

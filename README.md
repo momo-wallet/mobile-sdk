@@ -27,9 +27,8 @@ If your business have a mobile app. You can use this SDK to integrate MoMo app i
  </dict>
  ```
 - CFBundleURLTypes: add scheme <partnerSchemeId> . Note: partnerSchemeId provided by MoMo , get from business.momo.vn
-- LSApplicationQueriesSchemes: add scheme "momo"
-- partnerSchemeId: match with partnerSchemeId as Step 1
- ### STEP 2: Your Button CTA / Open MoMo app. Build the deeplink as bellow
+- LSApplicationQueriesSchemes: add the scheme as "momo"
+ ### STEP 2: Init the order parameters
 
 ```
 Params description
@@ -49,9 +48,19 @@ fee                    int       optional        fee amount (just review). defau
 username               String    optional        user id/user identify/user email
 extra                  String    optional        json string - that should be more bill extra info
 ```
-#### usage method - Swift
+
 ```
-let paymentinfo = NSMutableDictionary()
+override func viewDidLoad() {
+	// Do any additional setup after loading the view.
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "NoficationCenterTokenReceived"), object: nil)
+        
+         NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenReceived), name:NSNotification.Name(rawValue: "NoficationCenterTokenReceived"), object: nil)
+}	 
+```	 
+
+#### usage method init paymentInfo - Swift
+```
+    let paymentinfo = NSMutableDictionary()
     paymentinfo["merchantcode"] = "CGV01"
     paymentinfo["merchantname"] = "CGV Cinemas"
     paymentinfo["merchantnamelabel"] = "Service"
@@ -66,6 +75,37 @@ let paymentinfo = NSMutableDictionary()
     MoMoPayment.createPaymentInformation(info: paymentinfo)
 ```
 
+### STEP 3: ADD BUTTON PAYMENT TO OPEN MOMO APP
+```
+        // Button title: ENGLISH = MoMo E-Wallet , VIETNAMESE = Ví MoMo
+	let buttonPay = UIButton()
+        buttonPay.frame = CGRect(x: 20, y: 200, width: 260, height: 40)
+        buttonPay.setTitle("Pay Via MoMo Wallet", for: .normal)
+        buttonPay.titleLabel!.font = UIFont.systemFont(ofSize: 15)
+        buttonPay.backgroundColor = UIColor.purple
+        // Add Button Action to OPEN MOMO APP
+        buttonPay.addTarget(self, action: #selector(self.openAppMoMo), for: .touchUpInside) //see @objc func gettoken()
+```
+
+```
+@objc func openAppMoMo() {
+        MoMoPayment.requestToken()
+    }
+    @objc func NoficationCenterTokenReceived(notif: NSNotification) {
+            //Token Replied - Call Payment to MoMo Server
+            print("::MoMoPay Log::Received Token Replied::\(notif.object!)")
+            //lblMessage.text = "RequestToken response:\n  \(notif.object as Any)"
+            
+            let response:NSMutableDictionary = notif.object! as! NSMutableDictionary
+            
+            
+            
+            //let _status = response["status"] as! String
+            let _statusStr = "\(response["status"] as! String)"
+            
+            
+    }
+```
 ### ios-swift CocoaPods
     -   pod "MomoiOSSwiftSdk", :git => "https://github.com/momo-wallet/mobile-sdk.git", :branch => "release_swift", submodules: true
 

@@ -61,10 +61,10 @@ func application(_ application: UIApplication, open url: URL, sourceApplication:
     return true
 }
 
-func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-    MoMoPayment.handleOpenUrl(url: url, sourceApp: "")
-    return true
-}
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        MoMoPayment.handleOpenUrl(url: url, sourceApp: "")
+        return true
+    }
 ```
 
 Step 3. Update Layout Payment

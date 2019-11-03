@@ -1,4 +1,4 @@
-# MomoiOSSwiftSdkV2
+# MoMo iOS SDK
 
 [![CI Status](http://img.shields.io/travis/momodevelopment/MomoiOSSwiftSdk.svg?style=flat)](https://travis-ci.org/momodevelopment/MomoiOSSwiftSdkV2)
 [![Version](https://img.shields.io/cocoapods/v/MomoiOSSwiftSdk.svg?style=flat)](http://cocoapods.org/pods/MomoiOSSwiftSdk)
@@ -17,7 +17,7 @@ MomoiOSSwiftSdkV2 is available through [CocoaPods](http://cocoapods.org). To ins
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'MomoiOSSwiftSdk', :git => 'https://github.com/momodevelopment/MomoiOSSwiftSdk.git',:branch => "master"
+pod 'MomoSdkiOSSwift', :git => 'https://github.com/momo-wallet/mobile-sdk.git',:branch => "release_swift"
 ```
 
 ## Installation Objective-C
@@ -26,7 +26,7 @@ MoMoiOSsdkv2 is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'MoMoiOSsdkv2', :git => 'https://github.com/momodevelopment/MoMoiOSsdkv2.git',:branch => "master"
+pod 'MoMoSDKiOSObjc', :git => 'https://github.com/momo-wallet/mobile-sdk.git',:branch => "release_objc"
 ```
 
 At a minimum, MoMo SDK is designed to work with iOS 8.0 or newest.
@@ -76,16 +76,22 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
 }
 
 //Objective-c code
+#import "MoMoPayment.h"
 
--(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    NSLog(@">>handleopenUrl iOS 9 or newest");
+    [[MoMoPayment shareInstances] handleOpenUrl:url];
+    return YES;
+}
+#else
+-(BOOL)application:(UIApplication *)application handleOpenURL:(nonnull NSURL *)url
 {
-    [[MoMoPayment shareInstant] handleOpenUrl:url];
+    NSLog(@">>handleopenUrl ios < 9.0");
+    [[MoMoPayment shareInstances] handleOpenUrl:url];
     return YES;
 }
--(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    [[MoMoPayment shareInstant] handleOpenUrl:url];
-    return YES;
-}
+#endif
 ```
 
 Step 3. Update Layout Payment
@@ -103,10 +109,8 @@ override func viewDidLoad() {
     //STEP 1: addObserver Notification
         //Remove all MOMO NOTIFICATION by self
     NotificationCenter.default.removeObserver(self, name: "NoficationCenterTokenReceived", object: nil)
-    NotificationCenter.default.removeObserver(self, name: "NoficationCenterTokenReceivedUri", object: nil)
         //Registration MOMO NOTIFICATION by self
-        NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenReceived), name:NSNotification.Name(rawValue: "NoficationCenterTokenReceived"), object: nil)
-        //        NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenReceived), name:NSNotification.Name(rawValue: "NoficationCenterTokenReceivedUri"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenReceived), name:NSNotification.Name(rawValue: "NoficationCenterTokenReceived"), object: nil)\
         //
     //STEP 2: INIT MERCHANT AND PAYMENT INFO. YOU CAN MODIFY ANYTIME IF NEED
 
@@ -120,7 +124,8 @@ override func viewDidLoad() {
     paymentinfo["description"] = "Thanh toán vé xem phim"
     paymentinfo["extra"] = "{\"key1\":\"value1\",\"key2\":\"value2\"}"
     paymentinfo["username"] = payment_userId
-    paymentinfo["appScheme"] = "momopartnerscheme001" //<partnerSchemeId>: app uniqueueId provided by MoMo , get from business.momo.vn. PLEASE MAKE SURE TO ADD <partnerSchemeId> TO PLIST file ( URL types > URL Schemes ). View more detail on https://github.com/momo-wallet/mobile-sdk/tree/master/ios
+    paymentinfo["appScheme"] = "partnerSchemeId" //<partnerSchemeId>: uniqueueId provided by MoMo , get from business.momo.vn. PLEASE MAKE SURE TO ADD <partnerSchemeId> TO PLIST file ( URL types > URL Schemes ). View more detail on https://github.com/momo-wallet/mobile-sdk/tree/master/ios
+    
     MoMoPayment.createPaymentInformation(info: paymentinfo)
     
     //STEP 3: INIT LAYOUT - ADD BUTTON PAYMENT VIA MOMO

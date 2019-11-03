@@ -17,7 +17,7 @@ MomoiOSSwiftSdkV2 is available through [CocoaPods](http://cocoapods.org). To ins
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'MomoSdkiOSSwift', :git => 'https://github.com/momo-wallet/mobile-sdk.git',:branch => "release_swift"
+pod 'MomoiOSSwiftSdk', :git => 'https://github.com/momo-wallet/mobile-sdk.git',:branch => "release_swift"
 ```
 
 At a minimum, MoMo SDK is designed to work with iOS 8.0 or newest.
@@ -78,9 +78,10 @@ import MomoiOSSwiftSdk
 override func viewDidLoad() {
     super.viewDidLoad()
     
+        
     //STEP 1: addObserver Notification
-        NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenReceived), name:NSNotification.Name(rawValue: "NoficationCenterTokenReceived"), object: nil)
-        //        NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenReceived), name:NSNotification.Name(rawValue: "NoficationCenterTokenReceivedUri"), object: nil)
+    NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "NoficationCenterTokenReceived"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenReceived), name:NSNotification.Name(rawValue: "NoficationCenterTokenReceived"), object: nil)
         //
     //STEP 2: INIT MERCHANT AND PAYMENT INFO. YOU CAN MODIFY ANYTIME IF NEED
 
@@ -107,11 +108,11 @@ override func viewDidLoad() {
     buttonPay.titleLabel!.font = UIFont.systemFont(ofSize: 15)
     buttonPay.backgroundColor = UIColor.purple
     // Add Button Action to OPEN MOMO APP 
-    buttonPay.addTarget(self, action: #selector(self.gettoken), for: .touchUpInside) //see @objc func gettoken() 
+    buttonPay.addTarget(self, action: #selector(self.openAppMoMo), for: .touchUpInside) //see @objc func gettoken() 
     self.view.addSubview(buttonPay)
 }
 
-@objc func gettoken() {
+@objc func openAppMoMo() {
     MoMoPayment.requestToken()
 }
 ```

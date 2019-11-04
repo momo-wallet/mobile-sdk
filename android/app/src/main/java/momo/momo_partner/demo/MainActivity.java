@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -17,10 +16,6 @@ public class MainActivity extends Activity {
 
 
     int environment = 1;//developer default - Production environment = 2
-//    @BindView(R.id.rdEnvironmentDebug)
-//    RadioButton rdEnvironmentDebug;
-//    @BindView(R.id.rdEnvironmentDeveloper)
-//    RadioButton rdEnvironmentDeveloper;
     @BindView(R.id.rdEnvironmentProduction)
     RadioButton rdEnvironmentProduction;
     @BindView(R.id.rdGroupEnvironment)

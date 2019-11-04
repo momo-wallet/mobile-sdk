@@ -65,8 +65,6 @@ public class PaymentActivity extends Activity {
     private void requestPayment() {
         AppMoMoLib.getInstance().setAction(AppMoMoLib.ACTION.PAYMENT);
         AppMoMoLib.getInstance().setActionType(AppMoMoLib.ACTION_TYPE.GET_TOKEN);
-        //Set token tracking
-        AppMoMoLib.getInstance().setToken("eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNT01PIiwiY3JlYXRlZCI6IlR1ZSBEZWMgMjUgMTU6NTA6MzIgSUNUIDIwMTgiLCJpYXQiOjE1NDU3Mjc4MzJ9.0tv2FgQhFFXcO7vK2lEoTUcduxpCe15siOnbnEjls9E");
 
         if (edAmount.getText().toString() != null && edAmount.getText().toString().trim().length() != 0)
             amount = edAmount.getText().toString().trim();
@@ -108,7 +106,6 @@ public class PaymentActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        AppMoMoLib.getInstance().trackEventResult(this,data);//request tracking result data
         if(requestCode == AppMoMoLib.getInstance().REQUEST_CODE_MOMO && resultCode == -1) {
             if(data != null) {
                 if(data.getIntExtra("status", -1) == 0) {

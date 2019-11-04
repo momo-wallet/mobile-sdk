@@ -19,6 +19,4 @@ public class MoMoConfig {
 
     public static final String ACTION_TYPE_GET_TOKEN = "gettoken";//action mapping
     public static final String ACTION_TYPE_LINK = "link";//action payment
-
-    public static final int MOMO_TIME_OUT = 60000;
 }

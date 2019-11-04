@@ -2,12 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.momodevelopment'
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
 
@@ -18,12 +18,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "URL_TRACK_DEV", '"http://172.16.13.25:5678/api/v1/app/sdk/event"'
-            buildConfigField "String", "URL_TRACK", '"https://ma.momo.vn/api/v1/app/sdk/event"'
-        }
-        debug {
-            buildConfigField "String", "URL_TRACK_DEV", '"http://172.16.13.25:5678/api/v1/app/sdk/event"'
-            buildConfigField "String", "URL_TRACK", '"https://ma.momo.vn/api/v1/app/sdk/event"'
         }
     }
     useLibrary 'org.apache.http.legacy'

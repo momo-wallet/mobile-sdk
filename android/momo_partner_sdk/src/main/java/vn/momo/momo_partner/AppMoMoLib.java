@@ -35,7 +35,6 @@ public class AppMoMoLib {
     //action type app momo ex: link, get token
     String actionType = "";
     JSONObject dataRequest = null;
-    String token = "";
     public static AppMoMoLib getInstance() {
         if (instance == null)
             instance = new AppMoMoLib();
@@ -76,12 +75,6 @@ public class AppMoMoLib {
         return environment;
     }
 
-    //todo set token momo
-    public String setToken(String _token) {
-        token =  _token;
-        return token;
-    }
-
     //todo request momo
     public void requestMoMoCallBack(final Activity activity, Map<String, Object> hashMap) {
         JSONObject jsonData = new JSONObject();
@@ -100,30 +93,24 @@ public class AppMoMoLib {
             }
 
         } catch (JSONException e) {
-            submitBehaviorData("deeplink_invalid_format", jsonData, activity);
             e.printStackTrace();
         }
         dataRequest = jsonData;
-        submitBehaviorData("click_checkout_btn", jsonData, activity);
         if (action.equals("")) {
             Toast.makeText(activity, "Please init AppMoMoLib.getInstance().setAction", Toast.LENGTH_LONG).show();
-            submitBehaviorData("deeplink_invalid_format", jsonData, activity);
             return;
         }
 
         if (hashMap == null) {
             Toast.makeText(activity, "Please set data after request", Toast.LENGTH_LONG).show();
-            submitBehaviorData("deeplink_invalid_format", jsonData, activity);
             return;
         }
         if (actionType.equals("")) {
-            submitBehaviorData("deeplink_invalid_format", jsonData, activity);
             Toast.makeText(activity, "Please init AppMoMoLib.getInstance().setActionType", Toast.LENGTH_LONG).show();
             return;
         } else {
             if ((action.equals(MoMoConfig.ACTION_SDK) && !actionType.equals(MoMoConfig.ACTION_TYPE_LINK)) ||
                     (action.equals(MoMoConfig.ACTION_PAYMENT) && !actionType.equals(MoMoConfig.ACTION_TYPE_GET_TOKEN))) {
-                submitBehaviorData("deeplink_invalid_format", jsonData, activity);
                 Toast.makeText(activity, "Please set action type and action", Toast.LENGTH_LONG).show();
                 return;
             }
@@ -131,9 +118,6 @@ public class AppMoMoLib {
         try {
             String packageClass;
             switch (environment) {
-                case MoMoConfig.ENVIRONMENT_DEBUG://environment debug
-                    packageClass = MoMoConfig.MOMO_APP_PAKAGE_CLASS_DEBUG;
-                    break;
                 case MoMoConfig.ENVIRONMENT_DEVELOPER://environment developer
                     packageClass = MoMoConfig.MOMO_APP_PAKAGE_CLASS_DEVELOPER;
                     break;
@@ -163,13 +147,10 @@ public class AppMoMoLib {
                 intent.setAction(action);
                 intent.putExtra("JSON_PARAM", jsonData.toString());
                 activity.startActivityForResult(intent, REQUEST_CODE_MOMO);
-                submitBehaviorData("open_app_momo_success", jsonData, activity);
             } else {
                 handleCallGooglePlay(activity, MoMoConfig.MOMO_APP_PAKAGE_STORE_DOWNLOAD);
-                submitBehaviorData("open_app_store", jsonData, activity);
             }
         } catch (Exception e) {
-            submitBehaviorData("open_app_momo_fail", jsonData, activity);
             e.printStackTrace();
         }
     }
@@ -192,59 +173,6 @@ public class AppMoMoLib {
             mActivity.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=" + packageClass)));
         } catch (Exception var4) {
             mActivity.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://play.google.com/store/apps/details?id=" + MoMoConfig.MOMO_APP_PAKAGE_CLASS_PRODUCTION)));
-        }
-    }
-
-    public void trackEventResult(Activity mActivity, Intent data) {
-        JSONObject jsonObject = new JSONObject();
-        if(dataRequest != null){
-            jsonObject = dataRequest;
-        }
-        String eventName = "user_cancel_payment";
-        if (data != null) {
-            Bundle bundle = data.getExtras();
-            if (bundle != null) {
-                int status = bundle.getInt("status");
-                if (status == 0) {
-                    eventName = "callback_successed";
-                } else if (status == 5) {
-                    eventName = "timeout_payment";
-                }
-            }
-        }
-        submitBehaviorData(eventName, jsonObject, mActivity);
-    }
-
-    //Tracking event
-    private void submitBehaviorData(String eventName, JSONObject params, Activity mActivity) {
-        if(!token.equals("")){
-            JSONObject jsonObject = new JSONObject();
-            try {
-                jsonObject.put("event", eventName);
-                jsonObject.put("sdkversion", "1.1.8");
-                jsonObject.put("appId", mActivity.getPackageName());
-                jsonObject.put("client", "sdk_mobile");
-                if (params.has("billId")) {
-                    jsonObject.put("billId", params.getString("billId"));
-                }
-                if (params.has("orderId")) {
-                    jsonObject.put("billId", params.getString("orderId"));
-                }
-                if (params.has("username")) {
-                    jsonObject.put("user", params.getString("username"));
-                }
-                if (params.has("partnerCode")) {
-                    jsonObject.put("partnerCode", params.getString("partnerCode"));
-                }
-                if (params.has("merchantcode")) {
-                    jsonObject.put("partnerCode", params.getString("merchantcode"));
-                }
-                jsonObject.put("description", "Android " + MoMoUtils.getDeviceName() + " " + MoMoUtils.getDeviceSoftwareVersion());
-                jsonObject.put("extraData", params.toString());
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            new ClientHttpAsyncTask(jsonObject.toString(), token).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         }
     }
 

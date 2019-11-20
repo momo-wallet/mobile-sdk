@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MomoiOSSwiftSdk'
-  s.version          = '3.0.2'
+  s.version          = '3.0.3'
   s.summary          = 'Momo iOS Swift Sdk V3'
 
 # This description is used to generate tags and improve search results.
@@ -28,11 +28,11 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'Pod/**/*.{swift,png}'
+  s.source_files = 'Pod/**/*.{swift}'
 
-  s.resource_bundles = {
-     'MomoiOSSwiftSdk' => ['MomoiOSSwiftSdk/*.png']
-  }
+  #s.resource_bundles = {
+  #   'MomoiOSSwiftSdk' => ['MomoiOSSwiftSdk/*.png']
+  #}
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

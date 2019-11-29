@@ -1,0 +1,51 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:1:1-11:12
+	package
+		ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:2:5-35
+		INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+		INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+		ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:1:1-11:12
+		INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+		ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:1:1-11:12
+		INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:3:5-66
+	android:name
+		ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:3:22-64
+application
+ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:4:5-9:19
+	android:supportsRtl
+		ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:6:9-35
+	android:label
+		ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:5:9-41
+	android:hardwareAccelerated
+		ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:8:9-43
+	android:theme
+		ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:7:9-40
+uses-sdk
+INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+		ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+		INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+		ADDED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+		INJECTED from /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml

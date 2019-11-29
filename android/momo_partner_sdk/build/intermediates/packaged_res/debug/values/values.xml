@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_color_url">#396049</color>
+    <color name="btn_selected">#7d004c</color>
+    <color name="colorAccent">#325340</color>
+    <color name="colorPrimary">#325340</color>
+    <color name="colorPrimaryDark">#325340</color>
+    <color name="color_url">#d3d3d3</color>
+    <color name="momo_color">#E0078C</color>
+    <color name="statusbar_default">#325340</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="app_name">sdk_momo_partner</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="myDialog_2" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+</resources>

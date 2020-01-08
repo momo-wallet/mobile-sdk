@@ -1,4 +1,4 @@
-#Fri Nov 29 10:51:59 ICT 2019
+#Wed Jan 08 11:47:29 ICT 2020
 base.0=/Users/zero/Project/mobile-sdk/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

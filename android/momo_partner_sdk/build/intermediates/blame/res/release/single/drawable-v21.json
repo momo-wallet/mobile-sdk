@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/res/merged/release/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/zero/.gradle/caches/transforms-2/files-2.1/ca5e99f711ec7ac480c6ef561f3bb344/appcompat-1.1.0/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/res/merged/release/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/zero/.gradle/caches/transforms-2/files-2.1/ca5e99f711ec7ac480c6ef561f3bb344/appcompat-1.1.0/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/res/merged/release/drawable-v21/notification_action_background.xml",
+        "source": "/Users/zero/.gradle/caches/transforms-2/files-2.1/8b23546cd7d5063202817f5db2fa891e/core-1.1.0/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/res/merged/release/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/zero/.gradle/caches/transforms-2/files-2.1/ca5e99f711ec7ac480c6ef561f3bb344/appcompat-1.1.0/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/res/merged/release/drawable-v21/abc_list_divider_material.xml",
+        "source": "/Users/zero/.gradle/caches/transforms-2/files-2.1/ca5e99f711ec7ac480c6ef561f3bb344/appcompat-1.1.0/res/drawable-v21/abc_list_divider_material.xml"
+    },
+    {
+        "merged": "/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/res/merged/release/drawable-v21/abc_dialog_material_background.xml",
+        "source": "/Users/zero/.gradle/caches/transforms-2/files-2.1/ca5e99f711ec7ac480c6ef561f3bb344/appcompat-1.1.0/res/drawable-v21/abc_dialog_material_background.xml"
+    }
+]

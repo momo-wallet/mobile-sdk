@@ -17,7 +17,7 @@ MomoiOSSwiftSdkV2 is available through [CocoaPods](http://cocoapods.org). To ins
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'MomoiOSSwiftSdk', :git => 'https://github.com/momodevelopment/MomoiOSSwiftSdk.git',:branch => "master"
+pod 'MomoSdkiOSSwift', :git => 'https://github.com/momo-wallet/mobile-sdk.git',:branch => "release_swift"
 ```
 
 At a minimum, MoMo SDK is designed to work with iOS 8.0 or newest.

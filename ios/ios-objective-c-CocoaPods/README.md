@@ -51,7 +51,7 @@ AppDelegate instance
             openURL:(NSURL *)url 
             options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
 {
-    [[MoMoPayment shareInstant] handleOpenUrl:url];
+    [[MoMoPayment shareInstances] handleOpenUrl:url];
     return YES;
 }
 ```

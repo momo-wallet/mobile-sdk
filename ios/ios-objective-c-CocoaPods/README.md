@@ -17,7 +17,7 @@ MoMoiOSsdkv2 is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```
-pod 'MoMoiOSsdkv2', :git => 'https://github.com/momodevelopment/MoMoiOSsdkv2.git',:branch => "master"
+pod 'MoMoSDKiOSObjc', :git => 'https://github.com/momo-wallet/mobile-sdk.git',:branch => "release_objc"
 ```
 
 Step 1. Config file Plist

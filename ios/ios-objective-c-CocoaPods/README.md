@@ -29,13 +29,12 @@ Step 1. Config file Plist
     <string></string>
     <key>CFBundleURLSchemes</key>
     <array>
-      <string>com.abcFoody.LuckyLuck</string>
+      <string>com.cgv.LuckyLuck</string>
     </array>
   </dict>
 </array>
 <key>LSApplicationQueriesSchemes</key>
 <array>
-  <string>com.momo.appv2.ios</string>
   <string>com.mservice.com.vn.MoMoTransfer</string>
 </array>
 <key>NSAppTransportSecurity</key>
@@ -48,8 +47,9 @@ Step 2. Import SDK
 AppDelegate instance
 ```
 #import "MoMoPayment.h"
-
--(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+- (BOOL)application:(UIApplication *)app 
+            openURL:(NSURL *)url 
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
 {
     [[MoMoPayment shareInstant] handleOpenUrl:url];
     return YES;
@@ -59,7 +59,6 @@ AppDelegate instance
 Step 3. Update Layout Payment
 ```
 #import "MoMoPayment.h"
-#import "MoMoDialogs.h"
 ```
 
 #NotificationCenter registration
@@ -71,7 +70,6 @@ MOMO NOTIFICATION KEYS SHOULD BE REMOVED WHEN THE VIEWCONTROLLERS DEALLOCATING O
     // Do any additional setup after loading the view, typically from a nib.
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenReceived:) name:@"NoficationCenterTokenReceived" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenStartRequest:) name:@"NoficationCenterTokenStartRequest" object:nil];
     ///
     [self initOrderAndButtonAction];
 }
@@ -133,13 +131,6 @@ MOMO NOTIFICATION KEYS SHOULD BE REMOVED WHEN THE VIEWCONTROLLERS DEALLOCATING O
           NSLog(@"::MoMoPay Log: %@",message);
       }
   }
-}
--(void)NoficationCenterTokenStartRequest:(NSNotification*)notif
-{
-    if (notif.object != nil && [notif.object isEqualToString:@"MoMoWebDialogs"]) {
-        dialog = [[MoMoDialogs alloc] init];
-        [self presentViewController:dialog animated:YES completion:nil];
-    }
 }
 ```
 Add Button Action to Pay Via MOMO

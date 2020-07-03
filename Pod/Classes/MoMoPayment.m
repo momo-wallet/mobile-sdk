@@ -226,6 +226,25 @@ static NSMutableDictionary *paymentInfo = nil;
         [paymentInfo setValue:[MoMoConfig getAppBundleId]        forKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY];
         [paymentInfo setValue:MOMO_PAY_SDK_VERSION               forKey:MOMO_PAY_SDK_VERSION_KEY];
         
+        [paymentInfo setValue:@"202007031045"               forKey:@"buildversion"];
+        if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_CODE_KEY] != nil){
+            [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_CODE_KEY]         forKey:MOMO_PAY_CLIENT_MERCHANT_CODE_KEY];
+        }
+        if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_PARTNER_CODE_KEY] != nil){
+            [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_PARTNER_CODE_KEY]          forKey:MOMO_PAY_CLIENT_PARTNER_CODE_KEY];
+        }
+        if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY] != nil){
+            [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY]         forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY];
+        }
+        if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_PARTNER_NAME_KEY] != nil){
+            [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_PARTNER_NAME_KEY]          forKey:MOMO_PAY_CLIENT_PARTNER_NAME_KEY];
+        }
+        if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY] != nil){
+            [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY]         forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY];
+        }
+       if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY] != nil){
+           [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY]         forKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY];
+       }
         for (NSString *key in [paymentInfo allKeys]) {
             if ([paymentInfo objectForKey:key] != nil) {
                 inputParams = [inputParams stringByAppendingFormat:@"&%@=%@",key,[paymentInfo objectForKey:key]];

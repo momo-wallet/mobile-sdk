@@ -1,0 +1,10 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'DEMO_MOBILESDK' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for DEMO_MOBILESDK
+  pod 'MoMoSDKiOSObjc', :git => 'https://github.com/momo-wallet/mobile-sdk.git',:branch => "release_objc"
+end

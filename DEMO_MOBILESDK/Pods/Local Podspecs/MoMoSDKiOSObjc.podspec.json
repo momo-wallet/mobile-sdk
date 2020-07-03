@@ -1,0 +1,27 @@
+{
+  "name": "MoMoSDKiOSObjc",
+  "version": "2.7.0",
+  "summary": "MoMo Sdk framework for ObjC.",
+  "description": "MoMo SDK is designed to work with iOS 8.0 or newest. Swift 2.0 , ObjC supported",
+  "homepage": "https://github.com/momo-wallet/mobile-sdk",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "momodevelopment": "lanhluu.vn@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/momo-wallet/mobile-sdk.git",
+    "tag": "2.7.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "MoMoSDKiOSObjc": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

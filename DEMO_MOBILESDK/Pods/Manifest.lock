@@ -1,0 +1,22 @@
+PODS:
+  - MoMoSDKiOSObjc (2.7.0)
+
+DEPENDENCIES:
+  - MoMoSDKiOSObjc (from `https://github.com/momo-wallet/mobile-sdk.git`, branch `release_objc`)
+
+EXTERNAL SOURCES:
+  MoMoSDKiOSObjc:
+    :branch: release_objc
+    :git: https://github.com/momo-wallet/mobile-sdk.git
+
+CHECKOUT OPTIONS:
+  MoMoSDKiOSObjc:
+    :commit: eb4498d12e57e9ca23db1710bce36d43c8e34916
+    :git: https://github.com/momo-wallet/mobile-sdk.git
+
+SPEC CHECKSUMS:
+  MoMoSDKiOSObjc: d765726c5c0c9b5cbfcc7ac5a96c6db67ed2abac
+
+PODFILE CHECKSUM: b8e110dea0498c5a977b37f48d0e9f1dd9973a72
+
+COCOAPODS: 1.9.3

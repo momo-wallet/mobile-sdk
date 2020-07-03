@@ -1,5 +1,0 @@
-use_frameworks!
-
-target 'MoMoiOSsdkv2' do
-    pod 'MoMoSDKiOSObjc', :git => 'https://github.com/momo-wallet/mobile-sdk.git',:branch => "release_objc"
-end

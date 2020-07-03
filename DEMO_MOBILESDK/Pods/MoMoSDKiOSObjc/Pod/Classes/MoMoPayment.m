@@ -4,7 +4,7 @@
 //
 //  Created by Luu Lanh on 9/30/15.
 //  Copyright (c) 2015 LuuLanh. All rights reserved.
-//  Last updated: 2020/07/03
+//  Last updated: 08/17/2017
 //
 
 #import "MoMoPayment.h"
@@ -215,7 +215,7 @@ static NSMutableDictionary *paymentInfo = nil;
         NSString *inputParams = [NSString stringWithFormat:@"action=%@&partner=merchant",[MoMoConfig getAction]];
         
         if (paymentInfo[@"action"]) {
-            inputParams = [NSString stringWithFormat:@"action=%@&partner=merchant&campaign=appinapp",paymentInfo[@"action"]];
+            inputParams = [NSString stringWithFormat:@"action=%@&partner=merchant&campaign=register",paymentInfo[@"action"]];
         }
         [paymentInfo setValue:[MoMoConfig getMerchantcode]          forKey:MOMO_PAY_CLIENT_MERCHANT_CODE_KEY];
         [paymentInfo setValue:[MoMoConfig getMerchantname]       forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY];
@@ -325,7 +325,7 @@ static NSMutableDictionary *paymentInfo = nil;
     return [MoMoConfig getEnvironment];
 }
 /*
- //End SDK v.2.3.1
- //Dated: 2020/07/03.
+ //End SDK v.2.2
+ //Dated: 7/25/17.
  */
 @end

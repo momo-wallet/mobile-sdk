@@ -1,0 +1,6 @@
+framework module Pods_DEMO_MOBILESDK {
+  umbrella header "Pods-DEMO_MOBILESDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

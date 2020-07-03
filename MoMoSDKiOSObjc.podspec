@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MoMoSDKiOSObjc'
-  s.version          = '2.7.0'
+  s.version          = '2.7.1'
   s.summary          = 'MoMo Sdk framework for ObjC.'
 
 # This description is used to generate tags and improve search results.
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = 'MoMo SDK is designed to work with iOS 8.0 or newest. Swift 2.0 , ObjC supported'
+  s.description      = 'MoMo SDK is designed to work with iOS 8.0 or newest. Swift 5.0 , ObjC supported'
 
   s.homepage         = 'https://github.com/momo-wallet/mobile-sdk'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'

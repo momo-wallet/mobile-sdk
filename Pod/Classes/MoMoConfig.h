@@ -12,6 +12,7 @@
 #define APP_MERCHANT_BUNDLE_ID_KEY               @"APP_MERCHANT_BUNDLE_ID_KEY"
 #define MOMO_PAY_CLIENT_MERCHANT_CODE_KEY        @"merchantcode"
 #define MOMO_PAY_CLIENT_PARTNER_CODE_KEY        @"partnerCode"
+#define MOMO_PAY_CLIENT_PARTNER_NAME_KEY        @"partnerName"
 #define MOMO_PAY_CLIENT_MERCHANT_NAME_KEY        @"merchantname"
 #define MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY  @"merchantnamelabel"
 #define MOMO_PAY_CLIENT_IP_ADDRESS_KEY           @"ipaddress"

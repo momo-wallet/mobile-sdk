@@ -14,7 +14,6 @@
     UILabel *lblMessage;
     UILocalNotification *noti;
     UITextField *txtAmount;
-
 }
 @end
 
@@ -24,13 +23,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NoficationCenterTokenStartRequest" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenStartRequest:) name:@"NoficationCenterTokenStartRequest" object:nil]; ///SHOULD BE REMOVE THIS KEY WHEN VIEWCONTROLLER DEALLOCATING OR DISMISSING COMPLETED
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NoficationCenterTokenReceived" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NoficationCenterTokenReceived:) name:@"NoficationCenterTokenReceived" object:nil];
-    
-    [[MoMoPayment shareInstances] initAppBundleId:@"com.abcFoody.LuckyLuck" partnerCode:@"CGV01" partnerName:@"CGV" partnerNameLabel:@"Nhà cung cấp" billLabel:@"Mã thanh toán"];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(processMoMoNoficationCenterTokenReceived:) name:@"NoficationCenterTokenReceived" object:nil]; //SHOULD BE REMOVE THIS KEY WHEN VIEWCONTROLLER DEALLOCATING OR DISMISSING COMPLETED
+//    
+//    [[MoMoPayment shareInstant] initializingAppBundleId:@"com.cgv001.LuckyLuck"
+//                                             merchantId:@"CGV01" //
+//                                           merchantName:@"CGV"
+//                                      merchantNameTitle:@"Nhà cung cấp" billTitle:@"Nguoi dung"];
     ///
     [self initOrderAndButtonAction];
 }
@@ -44,7 +42,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 - (NSString*) stringForCStr:(const char *) cstr{
     if(cstr){
@@ -126,12 +123,40 @@
         }
         
         lblMessage.text = [NSString stringWithFormat:@">>response:: SUCESS TOKEN. \n %@",notif.object];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Noti"
-                                                        message:@"GET TOKEN SUCESS "
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        
+        /*  SEND THESE PARRAM TO SERVER:  phoneNumber, data, env
+         CALL API MOMO PAYMENT
+         
+         NSString *requestBody = [NSString stringWithFormat:@"{\"data\":\"%@\",\"hash\":\"%@\",\"ipaddress\":\"%@\",\"merchantcode\":\"%@\",\"phonenumber\":\"%@\"}",data,[parram objectForKey:@"hash"],[parram objectForKey:@"ipaddress"],[MoMoConfig getMerchantcode],[parram objectForKey:@"phonenumber"]];
+         
+         NSLog(@">>Body payment: %@",requestBody);
+         
+         NSData *postData = [requestBody dataUsingEncoding:NSUTF8StringEncoding];;
+         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+         [request setURL:[NSURL URLWithString:MOMO_PAYMENT_URL]];
+         [request setHTTPMethod:@"POST"];
+         [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+         [request setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
+         [request setHTTPBody:postData];
+         [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+         
+         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+         NSURLResponse *response;
+         NSError *err;
+         NSData *GETReply = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+         dispatch_async(dispatch_get_main_queue(), ^(void){
+         if (!err) {
+         NSError *errJson;
+         id responseObject = [NSJSONSerialization JSONObjectWithData:GETReply options:0 error:&errJson];
+         [[NSNotificationCenter defaultCenter] postNotificationName:@"NoficationCenterCreateOrderReceived" object:responseObject];
+         }
+         else
+         {
+         [[NSNotificationCenter defaultCenter] postNotificationName:@"NoficationCenterCreateOrderReceived" object:err.description];
+         }
+         });
+         });
+         */
         
     }else
     {
@@ -148,33 +173,18 @@
         {
             NSLog(@"::MoMoPay Log: %@",message);
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Noti"
-                                                        message: [ NSString stringWithFormat:@"GET TOKEN FAIL::%@",message]
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
     }
 }
 
 -(void)NoficationCenterTokenReceived:(NSNotification*)notif
 {
-   [self processMoMoNoficationCenterTokenReceived:notif];
+    [self processMoMoNoficationCenterTokenReceived:notif];
 }
+
 /*
  //SDK v.2.2
  //Dated: 7/25/17.
  */
--(void)NoficationCenterTokenStartRequest:(NSNotification*)notif
-{
-    if (notif.object != nil && [notif.object isEqualToString:@"InProgress"]) {
-        NSLog(@"::MoMoPay Log::InProgress");
-    }else if (notif.object != nil && [notif.object isEqualToString:@"AppMoMoNotInstall"]) {
-        NSLog(@"::MoMoPay Log::AppMoMoNotInstall");
-    }else{
-        NSLog(@"::MoMoPay Log::AppMoMoInstalled");
-    }
-}
 -(void)initOrderAndButtonAction{
     //Code của bạn
     UIView *paymentArea = [[UIView alloc] initWithFrame:CGRectMake(20, 100, 300, 300)];
@@ -244,21 +254,22 @@
                                         @"mua vé xem phim cgv",@"description",
                                         @"{\"key1\":\"value1\",\"key2\":\"value2\"}",@"extra", 
                                         @"vi",@"language",
-                                        @"username_accountId@yahoo.com",@"username",
+                                        @"username_accountId",@"username",
+                                        @"20200703102500",@"orderId",
+                                        @"Mã đơn hàng",@"orderLabel",
+                                        @"com.cgv001.LuckyLuck",@"appScheme"
                                         nil];
     
-    [paymentinfo setValue:@"partnerSchemeId00001" forKey:@"appScheme"]; //<partnerSchemeId>: app uniqueueId provided by MoMo , get from business.momo.vn. PLEASE MAKE SURE TO ADD <partnerSchemeId> TO PLIST file ( URL types > URL Schemes )
-    
-    
-    //[[MoMoPayment shareInstant] initPayment:paymentinfo  environment:MOMO_SDK_PRODUCTION];
+   //appScheme value: app uniqueueId provided by MoMo , get from business.momo.vn. PLEASE MAKE SURE TO ADD <partnerSchemeId> TO PLIST file ( URL types > URL Schemes )
     
     //Development environment (only testing)
+    //[[MoMoPayment shareInstant] initPaymentInformation:paymentinfo momoAppScheme:@"com.momo.appv2.ios" environment:MOMO_SDK_PRODUCTION];
     
-    [[MoMoPayment shareInstances] initPayment:paymentinfo];
+    [[MoMoPayment shareInstant] initPaymentInformation:paymentinfo momoAppScheme:@"com.momo.appv2.ios" environment:MOMO_SDK_DEVELOPMENT];
     
     //BUOC 2: add button Thanh toan bang Vi MoMo vao khu vuc ban can hien thi (Vi du o day la vung paymentArea)
     ///Custom button
-    [[MoMoPayment shareInstances] addMoMoPayCustomButton:btnPay forControlEvents:UIControlEventTouchUpInside toView:paymentArea];
+    [[MoMoPayment shareInstant] addMoMoPayCustomButton:btnPay forControlEvents:UIControlEventTouchUpInside toView:paymentArea];
     
     //Code của bạn
     [self.view addSubview:paymentArea];

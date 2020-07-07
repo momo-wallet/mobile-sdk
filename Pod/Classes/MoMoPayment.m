@@ -227,7 +227,7 @@ static NSMutableDictionary *paymentInfo = nil;
         [requestInfo setValue:[MoMoConfig getAppBundleId]        forKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY];
         [requestInfo setValue:MOMO_PAY_SDK_VERSION               forKey:MOMO_PAY_SDK_VERSION_KEY];
         
-         [requestInfo setValue:@"202007031548"               forKey:@"buildversion"];
+         [requestInfo setValue:@"202007071308"               forKey:@"buildversion"];
          if (paymentInfo[@"merchantcode"] && ![paymentInfo[@"merchantcode"]  isEqualToString:@"(null)"]){
              [requestInfo setValue:paymentInfo[@"merchantcode"]         forKey:@"merchantcode"];
              

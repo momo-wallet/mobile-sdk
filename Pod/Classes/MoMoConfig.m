@@ -169,8 +169,8 @@
     return [[NSUserDefaults standardUserDefaults] objectForKey:MOMO_APP_SCHEME_BUNDLE_ID_KEY];
 }
 
-+(void)setEnvironment:(BOOL)isproduct{
-    [[NSUserDefaults standardUserDefaults] setBool:isproduct forKey:@"MOMO_SDK_ENVIRONTMENT"];
++(void)setEnvironment:(int)isproduct{
+    [[NSUserDefaults standardUserDefaults] setBool: isproduct == 1 forKey:@"MOMO_SDK_ENVIRONTMENT"];
 }
 
 +(BOOL)getEnvironment{

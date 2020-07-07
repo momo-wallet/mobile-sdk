@@ -30,7 +30,7 @@ static NSMutableDictionary *paymentInfo = nil;
     [MoMoConfig setMerchantname:partnerName];
     [MoMoConfig setMerchantnameLabel:@"Nhà cung cấp"];
     [MoMoConfig setUsernameLabel:@"Tài khoản"];
-    //[MoMoConfig setPublickey:publickey];
+    [MoMoConfig setEnvironment:1];
     NSLog(@"<MoMoPay> initializing successful");
 }
 -(void)setMerchantName:(NSString*)merchantname merchantNameTitle:(NSString*)merchantNameTitle{
@@ -210,77 +210,93 @@ static NSMutableDictionary *paymentInfo = nil;
         return;
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NoficationCenterStartRequestToken" object:@"InProgress"];
+    NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc] initWithDictionary:paymentInfo];
+    
     //Open MoMo App to get token
-    if ([paymentInfo isKindOfClass:[NSMutableDictionary class]]) {
-        NSString *inputParams = [NSString stringWithFormat:@"action=%@&partner=merchant",[MoMoConfig getAction]];
-        
-        if (paymentInfo[@"action"]) {
-            inputParams = [NSString stringWithFormat:@"action=%@&partner=merchant&campaign=appinapp",paymentInfo[@"action"]];
+    if ([requestInfo isKindOfClass:[NSMutableDictionary class]]) {
+        NSString *inputParams = @"action=gettoken&partner=merchant";
+        if (requestInfo[@"action"]) {
+            inputParams = [NSString stringWithFormat:@"action=%@&partner=merchant&campaign=appinapp",requestInfo[@"action"]];
         }
-        [paymentInfo setValue:[MoMoConfig getMerchantcode]          forKey:MOMO_PAY_CLIENT_MERCHANT_CODE_KEY];
-        [paymentInfo setValue:[MoMoConfig getMerchantname]       forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY];
-        [paymentInfo setValue:[MoMoConfig getMerchantnameLabel]  forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY];
-        [paymentInfo setValue:@""          forKey:MOMO_PAY_CLIENT_PUBLIC_KEY_KEY];
-        [paymentInfo setValue:[MoMoConfig getIPAddress]          forKey:MOMO_PAY_CLIENT_IP_ADDRESS_KEY];
-        [paymentInfo setValue:[self getDeviceInfoString]   forKey:MOMO_PAY_CLIENT_OS_KEY];
-        [paymentInfo setValue:[MoMoConfig getAppBundleId]        forKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY];
-        [paymentInfo setValue:MOMO_PAY_SDK_VERSION               forKey:MOMO_PAY_SDK_VERSION_KEY];
+        [requestInfo setValue:[MoMoConfig getMerchantcode]          forKey:MOMO_PAY_CLIENT_MERCHANT_CODE_KEY];
+        [requestInfo setValue:[MoMoConfig getMerchantname]       forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY];
+        [requestInfo setValue:[MoMoConfig getMerchantnameLabel]  forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY];
+        [requestInfo setValue:@""          forKey:MOMO_PAY_CLIENT_PUBLIC_KEY_KEY];
+        [requestInfo setValue:[MoMoConfig getIPAddress]          forKey:MOMO_PAY_CLIENT_IP_ADDRESS_KEY];
+        [requestInfo setValue:[self getDeviceInfoString]   forKey:MOMO_PAY_CLIENT_OS_KEY];
+        [requestInfo setValue:[MoMoConfig getAppBundleId]        forKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY];
+        [requestInfo setValue:MOMO_PAY_SDK_VERSION               forKey:MOMO_PAY_SDK_VERSION_KEY];
         
-        [paymentInfo setValue:@"202007031045"               forKey:@"buildversion"];
-        if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_CODE_KEY] != nil){
-            [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_CODE_KEY]         forKey:MOMO_PAY_CLIENT_MERCHANT_CODE_KEY];
-            
-        }
+         [requestInfo setValue:@"202007031548"               forKey:@"buildversion"];
+         if (paymentInfo[@"merchantcode"] && ![paymentInfo[@"merchantcode"]  isEqualToString:@"(null)"]){
+             [requestInfo setValue:paymentInfo[@"merchantcode"]         forKey:@"merchantcode"];
+             
+         }
         if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_PARTNER_CODE_KEY] != nil){
-            [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_PARTNER_CODE_KEY]          forKey:MOMO_PAY_CLIENT_PARTNER_CODE_KEY];
-            [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_CODE_KEY]          forKey:MOMO_PAY_CLIENT_MERCHANT_CODE_KEY];
+            [requestInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_PARTNER_CODE_KEY]         forKey:MOMO_PAY_CLIENT_PARTNER_CODE_KEY];
+            [requestInfo setValue:paymentInfo[@"partnerCode"]         forKey:MOMO_PAY_CLIENT_MERCHANT_CODE_KEY];
         }
-        if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY] != nil){
-            [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY]         forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY];
+         if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY] != nil){
+             [requestInfo setValue:[requestInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY]         forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY];
+         }
+         if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_PARTNER_NAME_KEY] != nil){
+             [requestInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_PARTNER_NAME_KEY]          forKey:MOMO_PAY_CLIENT_PARTNER_NAME_KEY];
+             [requestInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_PARTNER_NAME_KEY]          forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY];
+         }
+         if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY] != nil){
+             [requestInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY]         forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY];
+         }
+        if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY] != nil){
+            [requestInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY]         forKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY];
         }
-        if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_PARTNER_NAME_KEY] != nil){
-            [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_PARTNER_NAME_KEY]          forKey:MOMO_PAY_CLIENT_PARTNER_NAME_KEY];
-            [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY]          forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_KEY];
-        }
-        if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY] != nil){
-            [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY]         forKey:MOMO_PAY_CLIENT_MERCHANT_NAME_LABEL_KEY];
-        }
-       if ([paymentInfo objectForKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY] != nil){
-           [paymentInfo setValue:[paymentInfo objectForKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY]         forKey:MOMO_PAY_CLIENT_APP_SOURCE_KEY];
-       }
-        for (NSString *key in [paymentInfo allKeys]) {
-            if ([paymentInfo objectForKey:key] != nil) {
-                inputParams = [inputParams stringByAppendingFormat:@"&%@=%@",key,[paymentInfo objectForKey:key]];
-            }
-        }
+         for (NSString *key in [requestInfo allKeys]) {
+             //if ([requestInfo objectForKey:key]) {
+                 NSLog(@"<MoMoSDK> add key value to deeplink %@", key);
+                 if ([key isEqualToString:@"amount"] || [key isEqualToString:@"fee"]) {
+                     inputParams = [inputParams stringByAppendingFormat:@"&%@=%ld",key,[[requestInfo objectForKey:key] integerValue]];
+                 }else{
+                     inputParams = [inputParams stringByAppendingFormat:@"&%@=%@",key,[ NSString stringWithFormat:@"%@", [requestInfo objectForKey:key] ]];
+                 }
+             //}
+         }
         
         NSString *appSource = [NSString stringWithFormat:@"%@://?%@",MOMO_APP_BUNDLE_ID,inputParams];
-//        BOOL isProduction = [MoMoConfig getEnvironment];
-//        if (!isProduction) {
-//            appSource = [NSString stringWithFormat:@"com.momo.appv2.ios://?%@",inputParams];
-//        }
         
         appSource = [appSource stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *ourURL = [NSURL URLWithString:appSource];
-        
-        if ([[UIApplication sharedApplication] canOpenURL:ourURL])
+        UIApplication *application = [UIApplication sharedApplication];
+        if ([application canOpenURL:ourURL])
         {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"NoficationCenterTokenStartRequest" object:@"AppMoMoInstalled"];
-            
-            UIApplication *application = [UIApplication sharedApplication];
-            if (IS_IOS_10_OR_LATER && [application respondsToSelector:@selector(openURL:options:completionHandler:)]) {
-                NSLog(@"iOS 10.X handle openURL");
+            NSLog(@"<MoMoSDK> App MoMo has already installed");
+            if (@available(iOS 10.0, *)) {
                 [application openURL:ourURL options:@{}
                    completionHandler:^(BOOL success) {
-                       ////
-                   }];
-            }
-            else{
+                    ////
+                }];
+            } else {
+                // Fallback on earlier versions
                 [[UIApplication sharedApplication] openURL:ourURL];
             }
         }
         else{
             [[NSNotificationCenter defaultCenter] postNotificationName:@"NoficationCenterTokenStartRequest" object:@"AppMoMoNotInstall"];
+            NSLog(@"<MoMoSDK> This app is not allowed to query for scheme momo MoMo App. May be: - App MoMo is not installed \n- Not add scheme momo into plist yet");
+            bool isProduction = [MoMoConfig getEnvironment];
+            NSString *storeUrl = MOMO_STORE_DOWNLOAD;
+            if (!isProduction) {
+                storeUrl = MOMO_STORE_DOWNLOAD_TEST;
+            }
+            ourURL = [NSURL URLWithString:storeUrl];
+            if (@available(iOS 10.0, *)) {
+                [application openURL:ourURL options:@{}
+                   completionHandler:^(BOOL success) {
+                    ////
+                }];
+            } else {
+                // Fallback on earlier versions
+                [[UIApplication sharedApplication] openURL:ourURL];
+            }
         }
         
     }
@@ -303,17 +319,12 @@ static NSMutableDictionary *paymentInfo = nil;
 
 -(void)initPayment:(NSMutableDictionary*)info
 {
-//    if (type_environment == MOMO_SDK_DEVELOPMENT || type_environment == MOMO_SDK_DEBUG) {
-//        [MoMoConfig setEnvironment:NO];
-//    }else{
-//        [MoMoConfig setEnvironment:YES];
-//    }
+    [MoMoConfig setEnvironment:1];
     paymentInfo = [[NSMutableDictionary alloc] initWithDictionary:info];
-    
 }
 
--(void)setEnvironment:(MOMO_ENVIRONTMENT)type_environtment{
-    if (type_environtment == MOMO_SDK_DEVELOPMENT || type_environtment == MOMO_SDK_DEBUG) {
+-(void)setEnvironment:(int)type_environtment{
+    if (type_environtment == 0) {
         [MoMoConfig setEnvironment:NO];
     }
     else{
@@ -323,6 +334,33 @@ static NSMutableDictionary *paymentInfo = nil;
 
 -(BOOL)getEnvironment{
     return [MoMoConfig getEnvironment];
+}
+
+-(BOOL) isNumeric: (NSString*) text
+{
+    NSScanner *sc = [NSScanner scannerWithString: text];
+    // We can pass NULL because we don't actually need the value to test
+    // for if the string is numeric. This is allowable.
+    if ( [sc scanFloat:NULL] )
+    {
+        // Ensure nothing left in scanner so that "42foo" is not accepted.
+        // ("42" would be consumed by scanFloat above leaving "foo".)
+        return [sc isAtEnd];
+    }
+    // Couldn't even scan a float :(
+    return NO;
+}
+- (NSString *)stringForStringOrNumber:(id)object
+{
+    NSString *result = nil;
+    if ([object isKindOfClass:[NSString class]]) {
+        result = object;
+    } else if ([object isKindOfClass:[NSNumber class]]) {
+        result = [object stringValue];
+    } else {
+        result = @"<MoMoSDK>I can't convert this object";
+    }
+    return result;
 }
 /*
  //End SDK v.2.3.1

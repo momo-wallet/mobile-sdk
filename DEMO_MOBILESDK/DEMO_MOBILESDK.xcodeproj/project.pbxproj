@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -53,7 +53,6 @@
 				18609B9B2F89B7FB74D7DFC6 /* Pods-DEMO_MOBILESDK.debug.xcconfig */,
 				58D0917912C0DBE931F09447 /* Pods-DEMO_MOBILESDK.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -366,7 +365,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.momo.neabrapp.demo02.DEMO-MOBILESDK";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgv001.LuckyLuck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -384,7 +383,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.momo.neabrapp.demo02.DEMO-MOBILESDK";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgv001.LuckyLuck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -43,21 +43,17 @@
 #define MOMO_TOKEN_RESPONSE_LOGIN_REQUIRE @"2"
 #define MOMO_TOKEN_RESPONSE_NO_WALLET @"3"
 
-#define MOMO_HTTP @"http://"
-#define MOMO_HTTPS @"https://"
+#define MOMO_STORE_DOWNLOAD @"https://momo.vn/download/"
+#define MOMO_STORE_DOWNLOAD_TEST @"https://test-payment.momo.vn/download/"
 
 /*
  Sanbox API http://
  */
-
-#define MOMO_REQUEST_PATH @"172.16.43.22:8082/paygamebill" //@"apptest2.momo.vn:8091/paygamebill" //
-#define MOMO_PAYMENT_URL [NSString stringWithFormat:@"%@%@",MOMO_HTTP,MOMO_REQUEST_PATH]
-
 //Version 2.2 update
 #define MOMO_PAY_CLIENT_APP_SUBMIT_URL_WEB           @"momofeedurl"
 #define MOMO_APP_SCHEME_BUNDLE_ID_KEY               @"MOMO_APP_SCHEME_BUNDLE_ID_KEY"
-#define MOMO_WEB_SDK_REQUEST_DEV @"http://118.69.187.119:9090/sdk/api/v1/payment/request"
-#define MOMO_WEB_SDK_REQUEST_PRODUCTION @"https://payment.momo.vn:18088/sdk/api/v1/payment/request"
+//#define MOMO_WEB_SDK_REQUEST_DEV @"http://118.69.187.119:9090/sdk/api/v1/payment/request"
+//#define MOMO_WEB_SDK_REQUEST_PRODUCTION @"https://payment.momo.vn:18088/sdk/api/v1/payment/request"
 extern NSString *CLIENT_MERCHANT_CODE;
 extern NSString *CLIENT_MERCHANT_NAME;
 extern NSString *CLIENT_MERCHANT_NAME_LABEL;
@@ -100,6 +96,6 @@ static NSString *CLIENT_USERNAME;
 +(void)setMoMoAppScheme:(NSString*)bundleId;
 +(NSString*)getMoMoAppScheme;
 
-+(void)setEnvironment:(BOOL)isproduct;
++(void)setEnvironment:(int)isproduct;
 +(BOOL)getEnvironment;
 @end

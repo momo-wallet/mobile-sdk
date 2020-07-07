@@ -237,8 +237,8 @@
     //Buoc 1: Khoi tao Payment info, add button MoMoPay
     
     NSMutableDictionary *paymentinfo = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                                        [NSNumber numberWithInt:99000],@"amount",
-                                        [NSNumber numberWithInt:0],@"fee",
+                                        @"99000",@"amount",
+                                        @"0",@"fee",
                                         @"CGV01",@"partnerCode",
                                         @"CGV Cinemas",@"partnerName",
                                         @"mua vé xem phim cgv",@"description",
@@ -253,9 +253,8 @@
    //appScheme value: app uniqueueId provided by MoMo , get from business.momo.vn. PLEASE MAKE SURE TO ADD <partnerSchemeId> TO PLIST file ( URL types > URL Schemes )
     
     //Development environment (only testing)
-    //[[MoMoPayment shareInstant] initPaymentInformation:paymentinfo momoAppScheme:@"com.momo.appv2.ios" environment:MOMO_SDK_PRODUCTION];
-    
     [[MoMoPayment shareInstances] initPayment:paymentinfo];
+    [[MoMoPayment shareInstances] setEnvironment:0]; //0: test  , 1: production
     //BUOC 2: add button Thanh toan bang Vi MoMo vao khu vuc ban can hien thi (Vi du o day la vung paymentArea)
     ///Custom button
     [[MoMoPayment shareInstances] addMoMoPayCustomButton:btnPay forControlEvents:UIControlEventTouchUpInside toView:paymentArea];

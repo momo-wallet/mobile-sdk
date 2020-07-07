@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MoMoSDKiOSObjc'
-  s.version          = '2.7.1'
+  s.version          = '2.7.2'
   s.summary          = 'MoMo Sdk framework for ObjC.'
 
 # This description is used to generate tags and improve search results.

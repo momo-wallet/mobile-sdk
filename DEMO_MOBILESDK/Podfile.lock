@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MoMoSDKiOSObjc:
-    :commit: eb4498d12e57e9ca23db1710bce36d43c8e34916
+    :commit: f43aa3de33de1e12ee25060df405eca6462cbcf2
     :git: https://github.com/momo-wallet/mobile-sdk.git
 
 SPEC CHECKSUMS:

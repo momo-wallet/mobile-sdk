@@ -17,7 +17,7 @@ MomoiOSSwiftSdkV2 is available through [CocoaPods](http://cocoapods.org). To ins
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'MomoSdkiOSSwift', :git => 'https://github.com/momo-wallet/mobile-sdk.git',:branch => "release_swift"
+pod 'MomoiOSSwiftSdk', :git => 'https://github.com/momo-wallet/mobile-sdk.git',:branch => "release_swift",submodules: true
 ```
 
 ## Installation Objective-C

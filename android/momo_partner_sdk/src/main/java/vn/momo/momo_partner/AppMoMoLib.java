@@ -64,14 +64,10 @@ public class AppMoMoLib {
 
     //todo set environment momo
     public int setEnvironment(Enum _environment) {
-        if (_environment.equals(ENVIRONMENT.DEBUG)) {
-            environment = MoMoConfig.ENVIRONMENT_DEBUG;
-        } else if (_environment.equals(ENVIRONMENT.DEVELOPMENT)) {
-            environment = MoMoConfig.ENVIRONMENT_DEVELOPER;
-        } else if (_environment.equals(ENVIRONMENT.PRODUCTION)) {
+        if (_environment.equals(ENVIRONMENT.PRODUCTION)) {
             environment = MoMoConfig.ENVIRONMENT_PRODUCTION;
         } else {
-            environment = MoMoConfig.ENVIRONMENT_DEBUG;
+            environment = MoMoConfig.ENVIRONMENT_DEVELOPER;
         }
         return environment;
     }

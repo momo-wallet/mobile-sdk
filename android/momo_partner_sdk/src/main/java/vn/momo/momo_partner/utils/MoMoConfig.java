@@ -9,7 +9,7 @@ public class MoMoConfig {
 
     public static final String MOMO_APP_PAKAGE_CLASS_PRODUCTION = "com.mservice.momotransfer"; //production
     public static final String MOMO_APP_PAKAGE_CLASS_DEBUG = "com.mservice.debug";//DEBUG MODE IS NO LONGER SUPPORTED 
-    public static final String MOMO_APP_PAKAGE_CLASS_DEVELOPER = "vn.momo.platform";// App Test ver 3.0.12 or newest supported appid "vn.momo.platform", App Test ver 3.0.11 or lower using id "com.mservice";
+    public static final String MOMO_APP_PAKAGE_CLASS_DEVELOPER = "vn.momo.platform.test";// App Test ver 3.0.12 or newest supported appid "vn.momo.platform.test", App Test ver 3.0.11 or lower using id "com.mservice";
 
     public static final String ACTION_SDK = "com.android.momo.SDK";//action mapping
     public static final String ACTION_PAYMENT = "com.android.momo.PAYMENT";//action payment

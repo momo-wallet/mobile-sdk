@@ -136,7 +136,7 @@ public class AppMoMoLib {
             appName = (stringId == 0) ? applicationInfo.nonLocalizedLabel.toString() : activity.getApplicationContext().getString(stringId);
 
             //put data to json object
-            jsonData.put("sdkversion", BuildConfig.VERSION_NAME);
+            jsonData.put("sdkversion", "3.0.1");
             jsonData.put("clientIp", MoMoUtils.getIPAddress(true));
             jsonData.put("appname", appName);
             jsonData.put("packagename", activity.getPackageName());

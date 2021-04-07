@@ -23,7 +23,7 @@ allprojects {
 Add the dependency:
 ```
 dependencies {
-	        compile 'com.github.momodevelopment:androidsdkV2.2:3.0'
+	        compile 'com.github.momo-wallet:mobile-sdk:1.0.6'
 }
 ```
  

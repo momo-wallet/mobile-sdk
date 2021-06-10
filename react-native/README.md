@@ -1,7 +1,7 @@
 
-# react-native-momosdk v1.3.4
+# react-native-momosdk 
 
-### Module to create e-wallet payment method. That is the way to payment customer's order by their MoMo e-wallet.
+### The module support to implement MoMo payment method into your app. This way, customers can pay for orders on your app with their MoMo E-Wallet.
 
 ## Getting started
 

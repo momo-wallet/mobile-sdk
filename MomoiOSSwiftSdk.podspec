@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MomoiOSSwiftSdk'
-  s.version          = '3.0.3'
+  s.version          = '3.0.4'
   s.summary          = 'Momo iOS Swift Sdk V3'
 
 # This description is used to generate tags and improve search results.

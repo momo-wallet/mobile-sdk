@@ -43,7 +43,7 @@ let MOMO_TOKEN_RESPONSE_REGISTER_PHONE_NUMBER_REQUIRE = "1"
 let MOMO_TOKEN_RESPONSE_LOGIN_REQUIRE = "2"
 let MOMO_TOKEN_RESPONSE_NO_WALLET = "3"
 let MOMO_TOKEN_RESPONSE_USER_CANCELED = "4"
-
+let MOMO_PARAMS_REQUIRED = ["merchantcode","appScheme","amount","merchantname"]
 public class MoMoConfig {
     enum MOMO_ENVIRONEMENT: Int {
         case DEFAULT = 1, DEVELOPMENT = 2, PRODUCTION = 3

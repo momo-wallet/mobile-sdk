@@ -169,9 +169,16 @@ public class MoMoPayment: NSObject {
                 }
                 print("<MoMoPay> request param > \(key) = \(paymentInfo?[key] as! String)")
             }
-            
+            if MOMO_PARAMS_REQUIRED.contains((key as? String)!) {
+                countFieldRequiredMatched += 1;
+                print("<MoMoPay> params required matched \(key)")
+            }
         }
-        
+        if countFieldRequiredMatched < 4 {
+            print("<MoMoPay>Ops! Parameters merchantcode, merchantname, amount, appScheme cannot be null. Please check again")
+        }
+        else
+        {
         var appSource:String = "\(MOMO_APP_BUNDLE_ID)://?\(inputParams)"
         
         //appSource = appSource.removingPercentEncoding! as String
@@ -215,7 +222,7 @@ public class MoMoPayment: NSObject {
             print("<MoMoPay> momoAppURL fail")
             NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: "NoficationCenterTokenStartRequest"), object: "AppMoMoNotInstall", userInfo: nil)
         }
-        
+        }  
     }
     open func requestPayment(parram: NSMutableDictionary) {
         print("<MoMoPay> please implement this function by your self")

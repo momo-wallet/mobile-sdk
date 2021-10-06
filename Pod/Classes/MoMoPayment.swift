@@ -2,9 +2,9 @@
 //  MoMoPayment.swift
 //  SampleApp-Swift
 //
-//  Created by Luu Lanh on 4/24/17.
+//  Created by Luu Lanh on 2017/04/24 
 //  Copyright © 2017 LuuLanh. All rights reserved.
-// Updated on on 12/07/17.
+// Updated on on 2021/10/06.
 //
 
 import Foundation
@@ -132,6 +132,7 @@ public class MoMoPayment: NSObject {
         NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: "NoficationCenterTokenStartRequest"), object: "InProgress", userInfo: nil)
         let bundleId = Bundle.main.bundleIdentifier
         //Open MoMo App to get token
+        var countFieldRequiredMatched = 0 
         var inputParams = "action=\(MOMO_PAY_SDK_ACTION_GETTOKEN)&partner=merchant"
         //paymentInfo?[MOMO_PAY_CLIENT_MERCHANT_CODE_KEY] = MoMoConfig.getMerchantcode()
         //paymentInfo?[MOMO_PAY_CLIENT_MERCHANT_NAME_KEY] = MoMoConfig.getMerchantname()

@@ -136,7 +136,7 @@ allprojects {
 Add the dependency:
 ```
 dependencies {
-	        compile 'com.github.momo-wallet:mobile-sdk:1.0.6'
+	        compile 'com.github.momo-wallet:mobile-sdk:1.0.7'
 }
 ```
 

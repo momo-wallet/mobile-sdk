@@ -14,7 +14,7 @@ If your business have a mobile app. You can use this SDK to integrate MoMo app i
      <string></string>
      <key>CFBundleURLSchemes</key>
      <array>
-       <string>partnerSchemeId</string>
+       <string>appScheme</string>
      </array>
    </dict>
  </array>
@@ -28,7 +28,7 @@ If your business have a mobile app. You can use this SDK to integrate MoMo app i
    <true/>
  </dict>
  ```
-- CFBundleURLTypes: add scheme <partnerSchemeId> . Note: partnerSchemeId provided by MoMo , get from business.momo.vn
+- CFBundleURLTypes: add scheme <appScheme> value . Note: partnerSchemeId provided by MoMo , get from business.momo.vn
 - LSApplicationQueriesSchemes: add the scheme as "momo"
 
 ### ios-swift CocoaPods

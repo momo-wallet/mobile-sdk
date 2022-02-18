@@ -263,6 +263,3 @@ void onActivityResult(int requestCode, int resultCode, Intent data) {
 
  ## License
  Since 2015 (c) MoMo
-
- ## Contact - Support
- * itc.payment@mservice.com.vn

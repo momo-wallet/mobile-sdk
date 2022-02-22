@@ -1,0 +1,156 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:2:1-24:12
+MERGED from [:momo_partner_sdk] /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-18:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/ca5e99f711ec7ac480c6ef561f3bb344/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.jakewharton:butterknife:10.2.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/671ee2f040c9ffaa8b9a2b8d499b0749/butterknife-10.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/b2675f37f79aeda5eb3f3fa38d81f636/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/86b24b2732e210030dd944a9685dcba0/appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4bc4c54fb8f0466718991d7e831deda9/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife-runtime:10.2.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/54f728536955240267e0bfc75a90509c/butterknife-runtime-10.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4476ab3465b72d758fdc681648bed5c3/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/b2fc602ef92b32939de8c9c406b7a970/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/247fa83c9fe53dce8e916dc6120920b9/activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/5b1fb6c6938b90d80b0f58bd7fe9bca7/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4cd230b17b7b79c93a0a6c674b6c0be0/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/583ed0a49c4bdbffde9a4ee9b2061014/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/8b23546cd7d5063202817f5db2fa891e/core-1.1.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/6a200cd5dc88099033865fdeaad4551b/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4286f4a84e89f6212b3a9d7c793ba3c2/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/d919259a00a4f5dd1cdd399f03c5bcfc/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/072e1556f66b353da086110fa838ae12/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/a52733502b0e2df25ea28b3472bc87a0/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/ee8e8a3eb9f2d2993fefc1d0800a1a24/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/675bfd837175b8a502f68af50b1b7a63/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/6d978635fe38fb996e9c2d60a1ece858/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/ca43afdda48d08bbd01e1b63eb10cddc/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:2:1-24:12
+	package
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:3:5-37
+		INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:2:1-24:12
+		INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:2:1-24:12
+		INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:5:5-22:19
+MERGED from [:momo_partner_sdk] /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-16:19
+MERGED from [:momo_partner_sdk] /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-16:19
+MERGED from [androidx.core:core:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/8b23546cd7d5063202817f5db2fa891e/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/8b23546cd7d5063202817f5db2fa891e/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4286f4a84e89f6212b3a9d7c793ba3c2/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4286f4a84e89f6212b3a9d7c793ba3c2/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/8b23546cd7d5063202817f5db2fa891e/core-1.1.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:8:9-41
+	android:hardwareAccelerated
+		ADDED from [:momo_partner_sdk] /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:9-43
+	android:roundIcon
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:9:9-50
+	android:icon
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:7:9-45
+	android:allowBackup
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:11:9-40
+activity#momo.momo_partner.demo.MainActivity
+ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:12:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:16:27-74
+activity#momo.momo_partner.demo.PaymentActivity
+ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:19:9-52
+	android:name
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:19:19-50
+activity#momo.momo_partner.demo.MappingActivity
+ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:20:9-52
+	android:name
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml:20:19-50
+uses-sdk
+INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+MERGED from [:momo_partner_sdk] /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:momo_partner_sdk] /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/ca5e99f711ec7ac480c6ef561f3bb344/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/ca5e99f711ec7ac480c6ef561f3bb344/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.jakewharton:butterknife:10.2.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/671ee2f040c9ffaa8b9a2b8d499b0749/butterknife-10.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.jakewharton:butterknife:10.2.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/671ee2f040c9ffaa8b9a2b8d499b0749/butterknife-10.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/b2675f37f79aeda5eb3f3fa38d81f636/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/b2675f37f79aeda5eb3f3fa38d81f636/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/86b24b2732e210030dd944a9685dcba0/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/86b24b2732e210030dd944a9685dcba0/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4bc4c54fb8f0466718991d7e831deda9/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4bc4c54fb8f0466718991d7e831deda9/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife-runtime:10.2.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/54f728536955240267e0bfc75a90509c/butterknife-runtime-10.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.jakewharton:butterknife-runtime:10.2.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/54f728536955240267e0bfc75a90509c/butterknife-runtime-10.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4476ab3465b72d758fdc681648bed5c3/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4476ab3465b72d758fdc681648bed5c3/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/b2fc602ef92b32939de8c9c406b7a970/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/b2fc602ef92b32939de8c9c406b7a970/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/247fa83c9fe53dce8e916dc6120920b9/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/247fa83c9fe53dce8e916dc6120920b9/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/5b1fb6c6938b90d80b0f58bd7fe9bca7/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/5b1fb6c6938b90d80b0f58bd7fe9bca7/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4cd230b17b7b79c93a0a6c674b6c0be0/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4cd230b17b7b79c93a0a6c674b6c0be0/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/583ed0a49c4bdbffde9a4ee9b2061014/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/583ed0a49c4bdbffde9a4ee9b2061014/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/8b23546cd7d5063202817f5db2fa891e/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/8b23546cd7d5063202817f5db2fa891e/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/6a200cd5dc88099033865fdeaad4551b/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/6a200cd5dc88099033865fdeaad4551b/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4286f4a84e89f6212b3a9d7c793ba3c2/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/4286f4a84e89f6212b3a9d7c793ba3c2/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/d919259a00a4f5dd1cdd399f03c5bcfc/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/d919259a00a4f5dd1cdd399f03c5bcfc/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/072e1556f66b353da086110fa838ae12/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/072e1556f66b353da086110fa838ae12/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/a52733502b0e2df25ea28b3472bc87a0/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/a52733502b0e2df25ea28b3472bc87a0/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/ee8e8a3eb9f2d2993fefc1d0800a1a24/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/ee8e8a3eb9f2d2993fefc1d0800a1a24/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/675bfd837175b8a502f68af50b1b7a63/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/675bfd837175b8a502f68af50b1b7a63/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/6d978635fe38fb996e9c2d60a1ece858/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/6d978635fe38fb996e9c2d60a1ece858/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/ca43afdda48d08bbd01e1b63eb10cddc/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/ca43afdda48d08bbd01e1b63eb10cddc/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/zero/Project/mobile-sdk/android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from [:momo_partner_sdk] /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from [:momo_partner_sdk] /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-64

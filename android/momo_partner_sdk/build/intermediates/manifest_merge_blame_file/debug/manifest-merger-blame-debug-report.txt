@@ -1,0 +1,25 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="vn.momo.momo_partner"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="14"
+8-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:3:5-66
+11-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:3:22-64
+12
+13    <application
+13-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:4:5-7:19
+14        android:hardwareAccelerated="true"
+14-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:6:9-43
+15        android:supportsRtl="true" >
+15-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/src/main/AndroidManifest.xml:5:9-35
+16    </application>
+17
+18</manifest>

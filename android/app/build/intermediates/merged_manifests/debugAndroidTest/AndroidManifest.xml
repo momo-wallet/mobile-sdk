@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="momo.momo_partner.demo.test">
+
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="29" />
+
+    <application android:debuggable="true" >
+        <uses-library android:name="android.test.runner" />
+    </application>
+
+    <instrumentation android:name="androidx.test.runner.AndroidJUnitRunner"
+                     android:targetPackage="momo.momo_partner.demo"
+                     android:handleProfiling="false"
+                     android:functionalTest="false"
+                     android:label="Tests for momo.momo_partner.demo"/>
+</manifest>

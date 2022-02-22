@@ -1,0 +1,44 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="vn.momo.momo_partner.test" >
+4
+5    <uses-sdk
+5-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger2635567132145369775.xml:5:5-74
+6        android:minSdkVersion="14"
+6-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger2635567132145369775.xml:5:15-41
+7        android:targetSdkVersion="29" />
+7-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger2635567132145369775.xml:5:42-71
+8
+9    <instrumentation
+9-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger2635567132145369775.xml:11:5-15:75
+10        android:name="androidx.test.runner.AndroidJUnitRunner"
+10-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger2635567132145369775.xml:11:22-76
+11        android:functionalTest="false"
+11-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger2635567132145369775.xml:14:22-52
+12        android:handleProfiling="false"
+12-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger2635567132145369775.xml:13:22-53
+13        android:label="Tests for vn.momo.momo_partner.test"
+13-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger2635567132145369775.xml:15:22-73
+14        android:targetPackage="vn.momo.momo_partner.test" />
+14-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger2635567132145369775.xml:12:22-71
+15
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->[__tested_artifact__::momo_partner_sdk] /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-67
+16-->[__tested_artifact__::momo_partner_sdk] /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-64
+17
+18    <application
+18-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger2635567132145369775.xml:7:5-9:19
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.1.0] /Users/zero/.gradle/caches/transforms-2/files-2.1/8b23546cd7d5063202817f5db2fa891e/core-1.1.0/AndroidManifest.xml:24:18-86
+20        android:debuggable="true"
+20-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger2635567132145369775.xml:7:18-43
+21        android:hardwareAccelerated="true"
+21-->[__tested_artifact__::momo_partner_sdk] /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:9-43
+22        android:supportsRtl="true" >
+22-->[__tested_artifact__::momo_partner_sdk] /Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:9-35
+23        <uses-library android:name="android.test.runner" />
+23-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger2635567132145369775.xml:8:9-60
+23-->/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger2635567132145369775.xml:8:23-57
+24    </application>
+25
+26</manifest>

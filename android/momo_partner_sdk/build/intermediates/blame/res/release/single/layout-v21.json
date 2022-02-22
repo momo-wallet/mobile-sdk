@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/res/merged/release/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/zero/.gradle/caches/transforms-2/files-2.1/8b23546cd7d5063202817f5db2fa891e/core-1.1.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/res/merged/release/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/zero/.gradle/caches/transforms-2/files-2.1/8b23546cd7d5063202817f5db2fa891e/core-1.1.0/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/res/merged/release/layout-v21/notification_action.xml",
+        "source": "/Users/zero/.gradle/caches/transforms-2/files-2.1/8b23546cd7d5063202817f5db2fa891e/core-1.1.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/zero/Project/mobile-sdk/android/momo_partner_sdk/build/intermediates/res/merged/release/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/zero/.gradle/caches/transforms-2/files-2.1/8b23546cd7d5063202817f5db2fa891e/core-1.1.0/res/layout-v21/notification_template_custom_big.xml"
+    }
+]
